@@ -1,0 +1,12 @@
+/venv
+__pycache__
+*.pyc
+*.sqlite3
+/static
+/media
+/node_modules
+*.log
+*.retry
+.env
+.DS_Store
+htmlcov
