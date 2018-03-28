@@ -15,6 +15,7 @@ I would recommend installing [virtualenv](https://virtualenv.readthedocs.io/).
 git clone git@github.com:NathanWorkman/seeker.git
 cd seeker/
 virtualenv venv -p python3
+source venv/bin/activate
 pip install -r requirements.txt
 cd seeker/
 python manage.py migrate
