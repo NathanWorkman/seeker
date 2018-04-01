@@ -2,8 +2,8 @@
 __pycache__
 *.pyc
 *.sqlite3
-/static
-/media
+seeker/static
+seeker/media
 /node_modules
 *.log
 *.retry

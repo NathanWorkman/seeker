@@ -19,4 +19,4 @@ class Company(models.Model):
 
     def get_absolute_url(self):
         """Get Company Detail URL."""
-        return reverse("company_detail", args=[str(self.slug)])
+        return reverse("company_detail", args=[str(self.pk)])

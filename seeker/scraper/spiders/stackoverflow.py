@@ -38,14 +38,13 @@ class StackOverflowSpider(Spider):
         items = []
         for job in jobs:
             item = JobItem()
-            item["title"] = job.xpath('.//a[@class="job-link"]/text()').extract()
+            item["title"] = job.xpath('.//a[@class="job-link"]/text()').extract_first()
             item["company"] = re.sub(r'\W+', '', job.xpath('.//div[@class="-name"]/text()').extract_first(default='n/a').strip())
             item["body"] = job.xpath('.//div[@class="-name"]/text()').extract()[0].strip()
             item["location"] = re.sub(r'\W+', '', job.xpath('.//div[@class="-location"]/text()').extract()[0].strip())
             item["url"] = job.xpath('.//a[@class="job-link"]/@href').extract()[0]
             item["pub_date"] = job.xpath('.//p[contains(@class, "-posted-date")]/text()').extract()[0].strip()
             item["email"] = "N/A"
-
             item["salary"] = job.xpath('.//span[@class="-salary"]/text()').extract_first(default='n/a').strip()
             # item["tags"] = job.css('.-tags p a.post-tag::text').extract()
             item["scrape_date"] = timezone.now()
