@@ -45,7 +45,6 @@ class StackOverflowSpider(Spider):
             item["url"] = job.xpath('.//a[@class="job-link"]/@href').extract()[0]
             item["pub_date"] = job.xpath('.//p[contains(@class, "-posted-date")]/text()').extract()[0].strip()
             item["email"] = "N/A"
-
             item["salary"] = job.xpath('.//span[@class="-salary"]/text()').extract_first(default='n/a').strip()
             # item["tags"] = job.css('.-tags p a.post-tag::text').extract()
             item["scrape_date"] = timezone.now()

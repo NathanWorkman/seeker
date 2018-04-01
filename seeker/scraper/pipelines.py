@@ -20,7 +20,7 @@ class JobsPipeline(object):
 
     def process_item(self, item, spider):
         item['board'] = self.get_or_create_board(item['job_board'], item['board_url'])
-        item['title'] = item['title'][0]
+        item['title'] = item['title']
         item['company'] = self.get_or_create_company(item['company'], item['email'])
         item['body'] = item['body'][0]
         item['pub_date'] = item['pub_date']
