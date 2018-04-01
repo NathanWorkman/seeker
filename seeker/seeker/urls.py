@@ -24,4 +24,5 @@ urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('about/', AboutView.as_view(), name='about'),
     path('jobs/', include('jobs.urls')),
+    path('companies/', include('companies.urls'))
 ]
