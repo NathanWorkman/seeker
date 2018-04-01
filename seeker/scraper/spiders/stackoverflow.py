@@ -38,7 +38,7 @@ class StackOverflowSpider(Spider):
         items = []
         for job in jobs:
             item = JobItem()
-            item["title"] = job.xpath('.//a[@class="job-link"]/text()').extract()
+            item["title"] = job.xpath('.//a[@class="job-link"]/text()').extract_first()
             item["company"] = re.sub(r'\W+', '', job.xpath('.//div[@class="-name"]/text()').extract_first(default='n/a').strip())
             item["body"] = job.xpath('.//div[@class="-name"]/text()').extract()[0].strip()
             item["location"] = re.sub(r'\W+', '', job.xpath('.//div[@class="-location"]/text()').extract()[0].strip())
