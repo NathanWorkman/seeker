@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% load tz humanize %} {% block title %} Jobs &#183; {{ block.super }} {% endblock %} {% block content %}
+<div class="col-md-8">
+    <h1 class="my-4">Jobs <small>{{ paginator.count|intcomma }} job{{ paginator.count|pluralize }}</small></h1> {% for job in job_list %}
+    <!-- Blog Post -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="card-title">Post Title</h2>
+            <a href="{{ job.get_absolute_url }}">{{ job.title }}</a>
+            <br> {{ job.pub_date|localtime }}
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+        </div>
+        <div class="card-footer text-muted">
+            Posted on January 1, 2017 by
+            <a href="#">Start Bootstrap</a>
+        </div>
+    </div>
+        {% endfor %}
+        	</div>
+    {% endblock %}
