@@ -1,3 +1,4 @@
+beautifulsoup4==4.6.0
 celery==4.1.0
 Django==2.0.3
 django-anymail==2.0
@@ -7,6 +8,8 @@ django-widget-tweaks==1.4.1
 gunicorn==19.7.1
 pip-tools==1.11.0
 psycopg2==2.7.4
+PyVirtualDisplay==0.2.1
 redis==2.10.6
 Scrapy==1.5.0
 scrapy-djangoitem==1.1.1
+selenium==3.11.0
