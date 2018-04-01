@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+{% load tz humanize %}
+{% block content %}
+<div class="col-md-12">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+    </nav>
+</div>
+<div class="col-md-8">
+    {% for job in job_list %}
+    <!-- Job Post -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="card-title"><a href="{{ job.get_absolute_url }}">{{ job.title }}</a></h2>
+            <p class="card-text">{{ job.body }}</p>
+            <a href="{{ job.get_absolute_url }}" class="btn btn-primary">View Details &rarr;</a>
+        </div>
+        <div class="card-footer text-muted">
+            Posted {{ job.pub_date }} on
+            <a href="https://{{ job.board.url }}{{ job.url }}" target="_blank">{{ job.board }}</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% include 'includes/job_sidebar.html' %}
+{% endblock %}
