@@ -1,0 +1,58 @@
+<!DOCTYPE html> {% load i18n staticfiles %}
+<html lang="{% get_current_language as language %}{{ language }}">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ request.site.name }}{% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#"><img width="30" height="30" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGNpcmNsZSBzdHlsZT0iZmlsbDojRjdCMjM5OyIgY3g9IjI1Ni4wMDQiIGN5PSIyNTYuMDA0IiByPSIyNDYuODU1Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiNFMDlCMkQ7IiBkPSJNMTI2LjMwOCwzODUuNjk0Yy04OC44MDItODguODAyLTk1Ljc5OS0yMjguNDI2LTIwLjk5OS0zMjUuMjQxICBjLTguMjg2LDYuNDAxLTE2LjI1OCwxMy4zOTktMjMuODU4LDIwLjk5OWMtOTYuNDAxLDk2LjQwMS05Ni40MDEsMjUyLjY5OCwwLDM0OS4wOTlzMjUyLjY5OCw5Ni40MDEsMzQ5LjA5OSwwICBjNy41OTktNy41OTksMTQuNTk3LTE1LjU3MywyMC45OTktMjMuODU4QzM1NC43MzQsNDgxLjQ5MiwyMTUuMTA4LDQ3NC40OTUsMTI2LjMwOCwzODUuNjk0eiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojNEQ0RDREOyIgZD0iTTI1Ni4wMDEsMTg0Ljg2NEwyNTYuMDAxLDE4NC44NjRjMTQuNTUxLDAsMjkuMDItMS45NzgsNDMuMS01LjY1ICBjNTMuNDc4LTEzLjk0NiwxMTIuMzc3LTUuMjksMTQ5LjA4NiwzLjE4M2MxOS41NzQsNC41MTksMzAuODY4LDI1LjA0LDI0LjE2Myw0My45NzhsLTIwLjY2OSw1OC4zNzIgIGMtNC43NSwxMy40MTQtMTcuNjU0LDIyLjE5OC0zMS44NzcsMjEuNjk4bC05NC4xNjctMy4zMTZjLTE1Ljg3LTAuNTU5LTI5LjI4My0xMS45MzMtMzIuNDI2LTI3LjVsLTQuNzU4LTIzLjU1OCAgYy0zLjExOS0xNS40NDYtMTYuNjk1LTI2LjU1MS0zMi40NTItMjYuNTQ4bDAsMGwwLDBjLTE1Ljc1OSwwLTI5LjMzMywxMS4xMDgtMzIuNDUzLDI2LjU1NGwtNC43NTcsMjMuNTUyICBjLTMuMTQ0LDE1LjU2NS0xNi41NTcsMjYuOTQtMzIuNDI2LDI3LjVsLTk0LjE2NywzLjMxNmMtMTQuMjIyLDAuNTAxLTI3LjEyNy04LjI4Mi0zMS44NzYtMjEuNjk4bC0yMC42NjktNTguMzcyICBjLTYuNzA2LTE4LjkzNyw0LjU4OS0zOS40NTksMjQuMTYzLTQzLjk3OGMzNi43MDktOC40NzIsOTUuNjA3LTE3LjEyOSwxNDkuMDg2LTMuMTgzICBDMjI2Ljk4MSwxODIuODg1LDI0MS40NDksMTg0Ljg2NCwyNTYuMDAxLDE4NC44NjRMMjU2LjAwMSwxODQuODY0eiIvPgo8cGF0aCBkPSJNMjU1Ljk5OSw1MTJDMTE0Ljg0MSw1MTIsMCwzOTcuMTYsMCwyNTYuMDAxUzExNC44NDEsMCwyNTUuOTk5LDBDMzk3LjE1OSwwLDUxMiwxMTQuODQxLDUxMiwyNTYuMDAxICBTMzk3LjE1OSw1MTIsMjU1Ljk5OSw1MTJ6IE0yNTUuOTk5LDE4LjI5OWMtMTMxLjA2OCwwLTIzNy43LDEwNi42MzItMjM3LjcsMjM3LjcwMnMxMDYuNjMyLDIzNy43MDIsMjM3LjcsMjM3LjcwMiAgYzEzMS4wNjksMCwyMzcuNzAyLTEwNi42MzIsMjM3LjcwMi0yMzcuNzAyUzM4Ny4wNjgsMTguMjk5LDI1NS45OTksMTguMjk5eiIvPgo8cGF0aCBkPSJNMjU2LjI2OSwzOTEuNjA3Yy0yLjcxNiwwLTUuNDQzLTAuMDUxLTguMTg2LTAuMTU1Yy00Mi45NTItMS42MjQtODAuNTE2LTE1LjkyNS0xMDMuMDYyLTM5LjIzNyAgYy0zLjUxMy0zLjYzMy0zLjQxNi05LjQyNSwwLjIxNi0xMi45MzdjMy42MzMtMy41MTUsOS40MjUtMy40MTYsMTIuOTM3LDAuMjE2YzQwLjIyOCw0MS41OTUsMTM4LjEwNyw0NS42MzEsMTg3LjAxOCw3LjcwOCAgYzIuNTA2LTEuOTQyLDcuMjU5LTYuMzk5LDguODc5LTcuOTUyYzMuNjQ2LTMuNDk2LDkuNDM3LTMuMzc2LDEyLjkzNiwwLjI3MmMzLjQ5OCwzLjY0OCwzLjM3Niw5LjQzOS0wLjI3MiwxMi45MzYgIGMtMC42NjYsMC42MzgtNi42MTYsNi4zMjQtMTAuMzMsOS4yMDRDMzMxLjYzNywzODAuODY1LDI5NS40OTYsMzkxLjYwNywyNTYuMjY5LDM5MS42MDd6Ii8+CjxwYXRoIGQ9Ik00MjAuOTg2LDMxNS42MTJjLTAuNTAxLDAtMS0wLjAwOS0xLjUwNC0wLjAyNmwtOTQuMTY3LTMuMzE2Yy0yMC4xODUtMC43MTEtMzcuMDc1LTE1LjAzNS00MS4wNzMtMzQuODMybC00Ljc1OC0yMy41NTggIGMtMi4yNDgtMTEuMTMyLTEyLjEyMy0xOS4yMS0yMy40NzgtMTkuMjFjLTAuMDAxLDAtMC4wMDIsMC0wLjAwNCwwYy0xMS4zNjEsMC0yMS4yMzgsOC4wODItMjMuNDg2LDE5LjIxNWwtNC43NTcsMjMuNTUzICBjLTMuOTk4LDE5Ljc5OC0yMC44ODgsMzQuMTItNDEuMDczLDM0LjgzMmwtOTQuMTY3LDMuMzE2Yy0xOC4yOCwwLjYxNS0zNC43MDgtMTAuNTIyLTQwLjgyMy0yNy43ODdsLTIwLjY2OS01OC4zNzIgIGMtNC4wNjEtMTEuNDY5LTMuMDM0LTI0LjE2MiwyLjgxNy0zNC44MjZjNS44NTktMTAuNjgxLDE2LjAzNC0xOC4zNzgsMjcuOTEzLTIxLjEyMWM0MC4wMzItOS4yMzksOTkuMTUxLTE3LjI4MywxNTMuNDU0LTMuMTIyICBjMTMuNjIzLDMuNTUyLDI3LjM0Nyw1LjM1NCw0MC43OTEsNS4zNTRsMCwwYzEzLjQ0NCwwLDI3LjE2OC0xLjgwMiw0MC43OTEtNS4zNTRjNTQuMzAyLTE0LjE2LDExMy40MjEtNi4xMTgsMTUzLjQ1MiwzLjEyMSAgYzExLjg4LDIuNzQyLDIyLjA1NCwxMC40NCwyNy45MTMsMjEuMTIxYzUuODUxLDEwLjY2NSw2Ljg3OCwyMy4zNTcsMi44MTcsMzQuODI2bC0yMC42NjksNTguMzcyICBDNDU0LjM1OSwzMDQuNTg4LDQzOC42NzgsMzE1LjYxMSw0MjAuOTg2LDMxNS42MTJ6IE0xNTAuMzExLDE4MC45NjljLTIzLjQzLDAtNTEuNTI1LDIuNzQ1LTg0LjQzOSwxMC4zNDEgIGMtNi44MDUsMS41Ny0xMi42MzEsNS45NzgtMTUuOTg2LDEyLjA5MmMtMy4zOTUsNi4xODgtMy45NjYsMTMuMjYxLTEuNjEsMTkuOTE2bDIwLjY2OSw1OC4zNzIgIGMzLjQzNCw5LjY5NywxMi42NDcsMTUuOTYyLDIyLjkyOSwxNS42MDdsOTQuMTY3LTMuMzE2YzExLjY4Ny0wLjQxMSwyMS40NjUtOC43MDQsMjMuNzgtMjAuMTY2bDQuNzU3LTIzLjU1MyAgYzMuOTY2LTE5LjYzOSwyMS4zODctMzMuODkyLDQxLjQyMi0zMy44OTJjMC4wMDIsMCwwLjAwNSwwLDAuMDA3LDBjMjAuMDMsMCwzNy40NDcsMTQuMjUsNDEuNDEzLDMzLjg4Nmw0Ljc1OCwyMy41NTggIGMyLjMxNCwxMS40NjMsMTIuMDkzLDE5Ljc1NiwyMy43OCwyMC4xNjdsOTQuMTY3LDMuMzE2YzEwLjI5NCwwLjM2NywxOS40OTYtNS45MDksMjIuOTMtMTUuNjA3bDIwLjY2OS01OC4zNzIgIGMyLjM1Ny02LjY1NiwxLjc4NS0xMy43MjgtMS42MS0xOS45MTZjLTMuMzU1LTYuMTE0LTkuMTgxLTEwLjUyMi0xNS45ODYtMTIuMDkyYy0zOC4wMzMtOC43NzctOTQuMDEyLTE2LjQ2OS0xNDQuNzE5LTMuMjQ1ICBjLTE1LjEzMSwzLjk0NS0zMC40MDgsNS45NDYtNDUuNDA5LDUuOTQ2Yy0xNSwwLTMwLjI3OS0yLjAwMS00NS40MS01Ljk0NkMxOTUuOTcyLDE4NC4yNTUsMTc1LjkzMiwxODAuOTY5LDE1MC4zMTEsMTgwLjk2OXoiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" /> Seeker </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/jobs/">Jobs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Companies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Job Boards</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <main role="main" class="container">
+        <div class="row">
+            {% block content %}
+                <h1>Bootstrap starter template</h1>
+                <p class="lead">Use this document as a way to quickly start any new project.
+                <br> All you get is this text and a mostly barebones HTML document.</p>
+            {% endblock content %}
+        </div>
+    </main>
+    <footer>
+        <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    </footer>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
