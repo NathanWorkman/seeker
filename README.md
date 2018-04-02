@@ -3,7 +3,7 @@
 ## What is Seeker?
 Seeker aims not to be a job board for everyone, but a job board for you.
 
-Inevitably the time will come when you are on the hunt for a job, be it circumstance, looking for new opportunity, or just keeping an eye out for the dream job you don't know you want yet. Let Seeker do the leg work for you of checking multiple job boards for positions you might be interested in and organize them all in one convenient location.
+Inevitably the time will come when you are on the hunt for a new job. Let Seeker do the leg work for you. Check multiple job boards for positions you might be interested in and organize them all in one convenient location.
 
 Currently, the search terms are hard coded to remote django and remote python positions - you'll need to manually update these for now.
 
