@@ -12,6 +12,7 @@ help:
 	@echo "migrations 					Create database migrations"
 	@echo "collectstatic 				Collect static assets"
 	@echo "run 							Run Django Server"
+	@echo "crawl <spidername>           Run Scrapy Spider"
 
 .PHONY: requirements
 
@@ -110,3 +111,10 @@ run:
 		$(MANAGE_CMD) runserver; \
 	)
 
+crawl:
+# Run scrapy spider
+	$(call ECHO_GREEN, Running $(spider) spider... )
+	(\
+		cd seeker; \
+		scrapy crawl $(spider);  \
+	)
