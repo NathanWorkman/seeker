@@ -1,11 +1,7 @@
 import scrapy
-import re
-
 from scrapy.spiders import Spider
 from scrapy.selector import Selector
-# from scrapy.linkextractors import LinkExtractor
 from scraper.items import JobItem
-# from datetime import datetime
 from django.utils import timezone
 
 
@@ -22,13 +18,11 @@ class StackOverflowSpider(Spider):
         self.search_terms = search_params.split(",")
 
     def start_requests(self):
-        location = ""
-        distance = ""
-        search_query = "sort=p&q=%s&l=%s&d=%s&r=true"
+        search_query = "q=django&r=true&sort=p"
         base_url = "https://stackoverflow.com/jobs?"
         start_urls = []
 
-        start_urls.append(base_url + search_query % (self.search_terms, location, distance))
+        start_urls.append(base_url + search_query)
 
         return [scrapy.http.Request(url=start_url) for start_url in start_urls]
 
@@ -39,9 +33,9 @@ class StackOverflowSpider(Spider):
         for job in jobs:
             item = JobItem()
             item["title"] = job.xpath('.//a[@class="job-link"]/text()').extract_first()
-            item["company"] = re.sub(r'\W+', '', job.xpath('.//div[@class="-name"]/text()').extract_first(default='n/a').strip())
-            item["body"] = job.xpath('.//div[@class="-name"]/text()').extract()[0].strip()
-            item["location"] = re.sub(r'\W+', '', job.xpath('.//div[@class="-location"]/text()').extract()[0].strip())
+            item["company"] = job.xpath('.//div[@class="-name"]/text()').extract()
+            item["body"] = job.xpath('.//div[@class="-name"]/text()').extract()
+            item["location"] = job.xpath('.//div[@class="-location"]/text()').extract()[0].strip()
             item["url"] = job.xpath('.//a[@class="job-link"]/@href').extract()[0]
             item["pub_date"] = job.xpath('.//p[contains(@class, "-posted-date")]/text()').extract()[0].strip()
             item["email"] = "N/A"

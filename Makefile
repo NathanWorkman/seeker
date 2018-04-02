@@ -31,6 +31,7 @@ ECHO_GREEN = @echo "\033[33;32m $1\033[0m"
 # The default server host local development
 HOST ?= localhost:8000
 
+reset: delete_sqlite migrate user run
 
 virtualenv:
 # Create virtualenv
@@ -114,7 +115,14 @@ run:
 crawl:
 # Run scrapy spider
 	$(call ECHO_GREEN, Running $(spider) spider... )
-	(\
+	 (\
 		cd seeker; \
 		scrapy crawl $(spider);  \
+	)
+
+delete_sqlite: 
+# delete project db
+	( \
+		cd seeker; \
+		rm -rf db.sqlite3;\
 	)
