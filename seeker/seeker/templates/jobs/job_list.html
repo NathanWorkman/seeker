@@ -16,12 +16,13 @@
     <div class="card mb-4">
         <div class="card-body">
             <h2 class="card-title"><a href="{{ job.get_absolute_url }}">{{ job.title }}</a></h2>
-            <p class="card-text">{{ job.body }}</p>
+            <p class="card-text">{{ job.body | safe }}</p>
             <a href="{{ job.get_absolute_url }}" class="btn btn-primary">View Details &rarr;</a>
         </div>
         <div class="card-footer text-muted">
             Posted {{ job.pub_date }} on
             <a href="https://{{ job.board.url }}{{ job.url }}" target="_blank">{{ job.board }}</a>
+            Scraped on {{ job.scrape_date }}
         </div>
     </div>
     {% endfor %}
