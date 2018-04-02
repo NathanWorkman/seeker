@@ -16,7 +16,7 @@
     <div class="card mb-4">
         <div class="card-body">
             <h2 class="card-title"><a href="{{ job.get_absolute_url }}">{{ job.title }}</a></h2>
-            <p class="card-text">{{ job.body | safe }}</p>
+            <!--<p class="card-text">{{ job.body | safe }}</p>-->
             <a href="{{ job.get_absolute_url }}" class="btn btn-primary">View Details &rarr;</a>
         </div>
         <div class="card-footer text-muted">
@@ -26,6 +26,7 @@
         </div>
     </div>
     {% endfor %}
+    {% include 'includes/pagination.html' %}
 </div>
 {% include 'includes/job_sidebar.html' %}
 {% endblock %}

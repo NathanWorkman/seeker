@@ -56,6 +56,7 @@ Navigate to the django admin to view your results.
 #### Future features.
 - [x] Simple UI
 - [ ] Enhanced UI
+- [x] Pagination
 - [ ] Breadcrumbs Navigation
 - [ ] Settings Panel 
 - [ ] Move all environmental variables to .env using PyEnv.
