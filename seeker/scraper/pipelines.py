@@ -22,7 +22,7 @@ class JobsPipeline(object):
         item['board'] = self.get_or_create_board(item['job_board'], item['board_url'])
         item['title'] = item['title']
         item['company'] = self.get_or_create_company(item['company'], item['email'])
-        item['body'] = item['body'][0]
+        item['body'] = "\n".join(item['body'])  # extract() will return a list, which you need to concatenate to restore the original html
         item['pub_date'] = item['pub_date']
         item['salary'] = item['salary']
         item['location'] = item['location']

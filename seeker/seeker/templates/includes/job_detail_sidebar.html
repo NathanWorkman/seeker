@@ -12,6 +12,13 @@
             </div>
         </div>
     </div>
+    <!-- Contact Widget -->
+    <div class="card my-4">
+        <h5 class="card-header">Company</h5>
+        <div class="card-body">
+            {{ job.company }}
+        </div>
+    </div>
     <!-- Location Widget -->
     <div class="card my-4">
         <h5 class="card-header">Location</h5>
@@ -40,7 +47,7 @@
             <ul class="list-unstyled">
                 <li>Website:</li>
                 <li>Phone:</li>
-                <li>Email:</li>
+                <li>Email: {{ job.company.email }}</li>
             </ul>
         </div>
     </div>
