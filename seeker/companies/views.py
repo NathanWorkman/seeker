@@ -11,4 +11,5 @@ class CompanyDetailView(DetailView):
 
 class CompanyListView(ListView):
     """Companies List View."""
-    model = Company
+    paginate_by = 10
+    queryset = Company.objects.all()

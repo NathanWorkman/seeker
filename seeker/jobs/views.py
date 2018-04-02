@@ -11,4 +11,5 @@ class JobDetailView(DetailView):
 
 class JobListView(ListView):
     """Job List View."""
-    model = Job
+    paginate_by = 10
+    queryset = Job.objects.all()
