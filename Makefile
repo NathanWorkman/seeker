@@ -112,7 +112,16 @@ run:
 		$(MANAGE_CMD) runserver; \
 	)
 
+
 crawl:
+# Run ALL scrapy spiders
+	$(call ECHO_GREEN, Running spiders... )
+	 (\
+		cd seeker; \
+		python crawl.py;  \
+	)
+
+crawl_spider:
 # Run scrapy spider
 	$(call ECHO_GREEN, Running $(spider) spider... )
 	 (\
