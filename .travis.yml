@@ -1,4 +1,4 @@
-language: python
+language: generic
 python:
   - "3.5"
 # command to install dependencies
