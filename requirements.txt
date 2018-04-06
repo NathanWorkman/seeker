@@ -45,6 +45,7 @@ pydispatcher==2.0.5       # via scrapy
 pyflakes==1.6.0           # via flake8
 pyopenssl==17.5.0         # via scrapy, service-identity
 pytest-django==3.1.2
+pytest-pythonpath==0.7.2
 pytest==3.5.0
 pytz==2018.3              # via celery, django
 queuelib==1.5.0           # via scrapy

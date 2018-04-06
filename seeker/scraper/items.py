@@ -8,7 +8,7 @@
 import scrapy
 from scrapy_djangoitem import DjangoItem
 
-from jobs.models import Job
+from job.models import Job
 
 
 class JobItem(DjangoItem):
