@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'widget_tweaks',
 
-    'jobs',
-    'companies',
+    'job',
+    'company',
 ]
 
 MIDDLEWARE = [
