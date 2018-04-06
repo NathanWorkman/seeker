@@ -22,12 +22,15 @@ django-debug-toolbar==1.9.1
 django-dotenv==1.4.2
 django-widget-tweaks==1.4.1
 django==2.0.3
+factory-boy==2.10.0       # via pytest-factoryboy
+faker==0.8.12             # via factory-boy
 first==2.0.1              # via pip-tools
 flake8==3.5.0
 gunicorn==19.7.1
 hyperlink==18.0.0         # via twisted
 idna==2.6                 # via cryptography, hyperlink, requests
 incremental==17.5.0       # via twisted
+inflection==0.3.1         # via pytest-factoryboy
 kombu==4.1.0              # via celery
 lxml==4.2.1               # via parsel, scrapy
 mccabe==0.6.1             # via flake8
@@ -45,8 +48,9 @@ pydispatcher==2.0.5       # via scrapy
 pyflakes==1.6.0           # via flake8
 pyopenssl==17.5.0         # via scrapy, service-identity
 pytest-django==3.1.2
-pytest-pythonpath==0.7.2
+pytest-factoryboy==2.0.1
 pytest==3.5.0
+python-dateutil==2.7.2    # via faker
 pytz==2018.3              # via celery, django
 queuelib==1.5.0           # via scrapy
 redis==2.10.6
@@ -54,8 +58,9 @@ requests==2.18.4          # via django-anymail
 scrapy-djangoitem==1.1.1
 scrapy==1.5.0
 service-identity==17.0.0  # via scrapy
-six==1.11.0               # via automat, cryptography, django-anymail, more-itertools, parsel, pip-tools, pyopenssl, pytest, scrapy, scrapy-djangoitem, tox, w3lib
+six==1.11.0               # via automat, cryptography, django-anymail, faker, more-itertools, parsel, pip-tools, pyopenssl, pytest, python-dateutil, scrapy, scrapy-djangoitem, tox, w3lib
 sqlparse==0.2.4           # via django-debug-toolbar
+text-unidecode==1.2       # via faker
 tox==3.0.0
 twisted==17.9.0           # via scrapy
 urllib3==1.22             # via requests
