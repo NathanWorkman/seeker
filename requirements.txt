@@ -6,7 +6,7 @@
 #
 amqp==2.2.2               # via kombu
 asn1crypto==0.24.0        # via cryptography
-attrs==17.4.0             # via automat, service-identity
+attrs==17.4.0             # via automat, pytest, service-identity
 automat==0.6.0            # via twisted
 billiard==3.5.0.3         # via celery
 celery==4.1.0
@@ -15,7 +15,7 @@ cffi==1.11.5              # via cryptography
 chardet==3.0.4            # via requests
 click==6.7                # via pip-tools
 constantly==15.1.0        # via twisted
-cryptography==2.2.1       # via pyopenssl
+cryptography==2.2.2       # via pyopenssl
 cssselect==1.0.3          # via parsel, scrapy
 django-anymail==2.0
 django-debug-toolbar==1.9.1
@@ -29,14 +29,19 @@ idna==2.6                 # via cryptography, hyperlink, requests
 incremental==17.5.0       # via twisted
 kombu==4.1.0              # via celery
 lxml==4.2.1               # via parsel, scrapy
+more-itertools==4.1.0     # via pytest
 parsel==1.4.0             # via scrapy
 pip-tools==1.11.0
+pluggy==0.6.0             # via pytest
 psycopg2==2.7.4
+py==1.5.3                 # via pytest
 pyasn1-modules==0.2.1     # via service-identity
 pyasn1==0.4.2             # via pyasn1-modules, service-identity
 pycparser==2.18           # via cffi
 pydispatcher==2.0.5       # via scrapy
 pyopenssl==17.5.0         # via scrapy, service-identity
+pytest-django==3.1.2
+pytest==3.5.0
 pytz==2018.3              # via celery, django
 queuelib==1.5.0           # via scrapy
 redis==2.10.6
@@ -44,7 +49,7 @@ requests==2.18.4          # via django-anymail
 scrapy-djangoitem==1.1.1
 scrapy==1.5.0
 service-identity==17.0.0  # via scrapy
-six==1.11.0               # via automat, cryptography, django-anymail, parsel, pip-tools, pyopenssl, scrapy, scrapy-djangoitem, w3lib
+six==1.11.0               # via automat, cryptography, django-anymail, more-itertools, parsel, pip-tools, pyopenssl, pytest, scrapy, scrapy-djangoitem, w3lib
 sqlparse==0.2.4           # via django-debug-toolbar
 twisted==17.9.0           # via scrapy
 urllib3==1.22             # via requests

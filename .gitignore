@@ -1,12 +1,34 @@
+
+# general things to ignore
+build/
+dist/
+*.egg-info/
+*.egg
+*.py[cod]
+__pycache__/
+*.so
+*~
 /venv
 __pycache__
 *.pyc
 *.sqlite3
+.DS_Store
+
+# due to using tox and pytest
+.tox
+.cache
+.pytest_cache
+
+# node modules
+/node_modules
+
+# project dist static files
 seeker/static
 seeker/media
-/node_modules
+
+# project secrets
+.env
+
+# due to ansible logs
 *.log
 *.retry
-.env
-.DS_Store
-htmlcov
