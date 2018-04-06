@@ -34,9 +34,9 @@ mccabe==0.6.1             # via flake8
 more-itertools==4.1.0     # via pytest
 parsel==1.4.0             # via scrapy
 pip-tools==1.11.0
-pluggy==0.6.0             # via pytest
+pluggy==0.6.0             # via pytest, tox
 psycopg2==2.7.4
-py==1.5.3                 # via pytest
+py==1.5.3                 # via pytest, tox
 pyasn1-modules==0.2.1     # via service-identity
 pyasn1==0.4.2             # via pyasn1-modules, service-identity
 pycodestyle==2.3.1        # via flake8
@@ -53,10 +53,12 @@ requests==2.18.4          # via django-anymail
 scrapy-djangoitem==1.1.1
 scrapy==1.5.0
 service-identity==17.0.0  # via scrapy
-six==1.11.0               # via automat, cryptography, django-anymail, more-itertools, parsel, pip-tools, pyopenssl, pytest, scrapy, scrapy-djangoitem, w3lib
+six==1.11.0               # via automat, cryptography, django-anymail, more-itertools, parsel, pip-tools, pyopenssl, pytest, scrapy, scrapy-djangoitem, tox, w3lib
 sqlparse==0.2.4           # via django-debug-toolbar
+tox==3.0.0
 twisted==17.9.0           # via scrapy
 urllib3==1.22             # via requests
 vine==1.1.4               # via amqp
+virtualenv==15.2.0        # via tox
 w3lib==1.19.0             # via parsel, scrapy
 zope.interface==4.4.3     # via twisted
