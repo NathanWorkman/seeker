@@ -1,5 +1,5 @@
 # import pytest
-from seeker.job import models
+# from seeker.job import models
 
 
 def test_django():
