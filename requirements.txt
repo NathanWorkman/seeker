@@ -23,12 +23,14 @@ django-dotenv==1.4.2
 django-widget-tweaks==1.4.1
 django==2.0.3
 first==2.0.1              # via pip-tools
+flake8==3.5.0
 gunicorn==19.7.1
 hyperlink==18.0.0         # via twisted
 idna==2.6                 # via cryptography, hyperlink, requests
 incremental==17.5.0       # via twisted
 kombu==4.1.0              # via celery
 lxml==4.2.1               # via parsel, scrapy
+mccabe==0.6.1             # via flake8
 more-itertools==4.1.0     # via pytest
 parsel==1.4.0             # via scrapy
 pip-tools==1.11.0
@@ -37,8 +39,10 @@ psycopg2==2.7.4
 py==1.5.3                 # via pytest
 pyasn1-modules==0.2.1     # via service-identity
 pyasn1==0.4.2             # via pyasn1-modules, service-identity
+pycodestyle==2.3.1        # via flake8
 pycparser==2.18           # via cffi
 pydispatcher==2.0.5       # via scrapy
+pyflakes==1.6.0           # via flake8
 pyopenssl==17.5.0         # via scrapy, service-identity
 pytest-django==3.1.2
 pytest==3.5.0
