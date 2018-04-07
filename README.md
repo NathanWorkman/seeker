@@ -1,5 +1,7 @@
 # :sunglasses: Seeker [WIP]
 
+[![Build Status](https://travis-ci.org/NathanWorkman/seeker.svg?branch=master)](https://travis-ci.org/NathanWorkman/seeker)
+
 ## What is Seeker?
 Seeker aims not to be a job board for everyone, but a job board for you.
 
