@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'widget_tweaks',
 
-    'jobs',
-    'companies',
+    'job',
+    'company',
 ]
 
 MIDDLEWARE = [
@@ -143,4 +143,3 @@ STATIC_URL = '/static/'
 MEDIAFILES_LOCATION = 'media'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-

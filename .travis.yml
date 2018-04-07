@@ -1,0 +1,12 @@
+language: python
+
+python:
+  - "3.6"
+
+install:
+  - pip install setuptools --upgrade
+  - pip install tox-travis
+  - pip install -r requirements.txt
+
+script:
+  - tox

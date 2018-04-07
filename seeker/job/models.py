@@ -2,7 +2,7 @@
 from django.urls import reverse
 from django.db import models
 
-from companies.models import Company
+from company.models import Company
 
 
 class Board(models.Model):
@@ -27,11 +27,11 @@ class Job(models.Model):
         on_delete=models.CASCADE
     )
     company = models.ForeignKey(
-            Company,
-            blank=True,
-            null=True,
-            on_delete=models.SET_NULL
-        )
+        Company,
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL
+    )
     body = models.TextField()
     url = models.URLField("URL")
     pub_date = models.TextField()
