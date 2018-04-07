@@ -1,19 +1,27 @@
-# import factory
-# from seeker.job.models import Board, Job
+import factory
+from seeker.job.models import Board, Job
+from seeker.company.models import Company
 
 
-# class BoardFactory(factory.DjangoModelFactory):
-#     """
-#         Define Board Factory
-#     """
-#     class Meta:
-#         model = Board
+class CompanyFactory(factory.DjangoModelFactory):
+    """Define Company Factory."""
+
+    class Meta:
+        model = Company
 
 
-# class JobFactory(factory.DjangoModelFactory):
-#     """
-#         Define Job Factory
-#     """
-#     class Meta:
-#         model = Job
-#     customer = factory.SubFactory(BoardFactory)
+class BoardFactory(factory.DjangoModelFactory):
+    """Define Board Factory"""
+
+    class Meta:
+        model = Board
+
+
+class JobFactory(factory.DjangoModelFactory):
+    """ Define Job Factory"""
+
+    class Meta:
+        model = Job
+
+    board = factory.SubFactory(BoardFactory)
+    company = factory.SubFactory(CompanyFactory)
