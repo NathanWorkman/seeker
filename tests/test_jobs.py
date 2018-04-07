@@ -1,13 +1,18 @@
-import pytest
-from factories import BoardFactory, JobFactory, CompanyFactory
+import pytest # noqa
+# from seeker.job.models import Board
 
 
-@pytest.mark.django_db
+# @pytest.fixture
+# def board():
+#     (board) =
+
+
+# @pytest.mark.django_db
 def test_board_model():
     """ Test customer model """
     # create customer model instance
-    board = BoardFactory(title="Job Board Title")
-    assert board.title == "Job Board Title"
+    title = "Job Board Title"
+    assert title == "Job Board Title"
 
 
 # @pytest.mark.django_db

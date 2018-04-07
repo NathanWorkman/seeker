@@ -1,6 +1,8 @@
 import os
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'seeker.seeker.settings'
+# from seeker.seeker.settings import *  # noqa
+
 
 DATABASES = {
     'default': {
