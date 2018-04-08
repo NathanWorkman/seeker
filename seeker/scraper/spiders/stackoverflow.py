@@ -14,7 +14,7 @@ class StackOverflowSpider(XMLFeedSpider):
     def parse_node(self, response, node):
         item = JobItem()
         item['title'] = node.xpath('title/text()').extract_first().split('(', 1)[0]
-        item['company'] = node.xpath('name/text()').extract()
+        item['company'] = node.xpath('name/text()').extract_first()
         item['body'] = node.xpath('description/text()').extract()
         item['pub_date'] = node.xpath('pubDate/text()').extract_first()
         item['url'] = node.xpath('link/text()').extract_first()
