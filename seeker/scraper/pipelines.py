@@ -50,7 +50,7 @@ class JobsPipeline(object):
             return Board.objects.create(title=title, slug=slug, url=url)
 
     def get_or_create_company(self, title, email):
-        title = title[0]
+        title = title
         slug = slugify(title)
         try:
             email = email[0].lower()
