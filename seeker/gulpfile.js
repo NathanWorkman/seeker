@@ -40,7 +40,7 @@ gulp.task('css', function() {
 // Scripts
 gulp.task('js', function() {
   return gulp.src([
-    '../node_modules/kquery/dist/jquery.min.js',
+    '../node_modules/jquery/dist/jquery.min.js',
     '../node_modules/bootstrap/dist/js/bootstrap.bundle.js',
     src + 'js/**.js'
   ])
