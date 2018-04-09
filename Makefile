@@ -32,13 +32,16 @@ ECHO_GREEN = @echo "\033[33;32m $1\033[0m"
 HOST ?= localhost:8000
 
 reset: delete_sqlite migrate user run
+setup: virtualenv requirements migrate user yarn build collectstatic 
 
 virtualenv:
 # Create virtualenv
+	$(call ECHO_GREEN, Creating virtualenv... )
 	virtualenv -p python3 $(VIRTUALENV_NAME)
 
 requirements:
 # Install project requirements
+	$(call ECHO_GREEN, Installing requirements... )
 	( \
 		source venv/bin/activate;\
 		$(PIP_INSTALL_CMD) -r requirements.txt; \
@@ -46,6 +49,7 @@ requirements:
 
 migrate:
 # Run django migrations
+	$(call ECHO_GREEN, Running migrations... )
 	( \
 		cd seeker; \
 		$(MANAGE_CMD) migrate; \
@@ -53,6 +57,7 @@ migrate:
 
 user:
 # Create user account
+	$(call ECHO_GREEN, Creating super user... )
 	( \
 		cd seeker; \
 		echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@email.com', 'pass')" | ./manage.py shell; \
@@ -90,15 +95,9 @@ migrations:
 		$(MANAGE_CMD) makemigrations; \
 	)
 
-migrate:
-# Run database migrations
-	( \
-		cd seeker; \
-		$(MANAGE_CMD) migrate; \
-	)
-
 collectstatic:
 # Collect static assets
+	$(call ECHO_GREEN, Collecting static assets...)
 	( \
 		cd seeker; \
 		$(MANAGE_CMD) collectstatic; \
@@ -134,4 +133,19 @@ delete_sqlite:
 	( \
 		cd seeker; \
 		rm -rf db.sqlite3;\
+	)
+
+yarn: 
+# install npm modules
+	$(call ECHO_GREEN, Installing npm modules... )
+	( \
+		yarn; \
+	)
+
+build: 
+# build static assets
+	$(call ECHO_GREEN, Compiling static assets... )
+	( \
+		cd seeker; \
+		gulp build; \
 	)

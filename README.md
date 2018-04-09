@@ -13,7 +13,19 @@ To change the search terms edit the query inside each spider.
 
 ## Setup
 
-Some quick setup instructions
+Some quick setup instructions:
+
+You will need `yarn` and `virtualenv` installed on your machine.
+
+Install Yarn
+```
+brew install yarn
+```
+
+Install virtualenv
+```
+pip install virtualenv
+```
 
 I would recommend installing [virtualenv](https://virtualenv.readthedocs.io/).
 
@@ -24,11 +36,12 @@ cd seeker/
 virtualenv venv -p python3
 source venv/bin/activate
 pip install -r requirements.txt
+yarn 
 cd seeker/
 python manage.py migrate
 python manage.py createsuperuser
-python manage.py runserver
-
+make build
+make run
 ```
 
 ### To run the spiders

@@ -62,7 +62,7 @@ gulp.task('build',['css','js','images']);
 gulp.task('default',['runserver'], function() {
     browserSync.init({
         notify: true,
-        online: false,
+        online: true,
         injectChanges: true,
         proxy: "localhost:8000"
     });
@@ -79,12 +79,3 @@ gulp.task('runserver', function() {
     return process.stdout.write(data);
   });
 });
-
-
-// gulp.task('runserver', function(cb) {
-//   var cmd = spawn('python', ['manage.py', 'runserver'], {stdio: 'inherit'});
-//   cmd.on('close', function(code) {
-//     console.log('runserver exited with code ' + code);
-//     cb(code);
-//   });
-// });
