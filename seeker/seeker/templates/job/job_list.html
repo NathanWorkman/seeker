@@ -1,22 +1,32 @@
-{% extends "base.html" %} {% load tz humanize %} {% block content %}
-<div class="col-md-8">
-  <div class="media-item-total mb-4">
-    <p>There are currently <strong>{{ jobs_count }}</strong> jobs listed.</p>
-  </div>
-  {% for job in job_list %}
-  <!-- Job Post -->
-  <div class="media media-item mb-4">
-    <a href="{{ job.get_absolute_url }}">
-      {% if job.company.logo %}
-        <img class="align-self-start mr-3" src="{{ job.company.logo }}" alt="{{ job.company.name }}">
-      {% else %}
-        <img class="align-self-start mr-3" src="https://dummyimage.com/200x200?text=No%20Logo" alt="Placeholder logo">
-      {% endif %}
-    </a>
-    <div class="media-body">
-      <h2 class="mt-0"><a href="{{ job.get_absolute_url }}">{{ job.title }}</a></h2>
-    </div>
-  </div>
-  {% endfor %} {% include 'includes/pagination.html' %}
+{% extends "base.html" %} 
+{% load tz humanize %}
+{% block content %}
+<div class="col-md-12">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+    </nav>
 </div>
-{% include 'includes/job_sidebar.html' %} {% endblock %}
+<div class="col-md-8">
+    {% for job in job_list %}
+    <!-- Job Post -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="card-title"><a href="{{ job.get_absolute_url }}">{{ job.title }}</a></h2>
+            <!--<p class="card-text">{{ job.body | safe }}</p>-->
+            <a href="{{ job.get_absolute_url }}" class="btn btn-primary">View Details &rarr;</a>
+        </div>
+        <div class="card-footer text-muted">
+            Posted {{ job.pub_date }} on
+            <a href="https://{{ job.board.url }}{{ job.url }}" target="_blank">{{ job.board }}</a>
+            Scraped on {{ job.scrape_date }}
+        </div>
+    </div>
+    {% endfor %}
+    {% include 'includes/pagination.html' %}
+</div>
+{% include 'includes/job_sidebar.html' %}
+{% endblock %}
