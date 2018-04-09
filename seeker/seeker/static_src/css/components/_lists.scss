@@ -1,0 +1,32 @@
+.media-item {
+  background: $white;
+  padding: 25px;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+
+  img {
+    width: 60px;
+    height: 60px;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  a {
+    color: $grey-dark;
+  }
+
+  p {
+    font-size: .9rem;
+    a {
+      margin-right: 10px;
+      color: #4bb9e5;
+    }
+    span {
+      color: $grey;
+    }
+  }
+}
