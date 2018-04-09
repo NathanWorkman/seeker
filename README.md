@@ -1,5 +1,7 @@
 # :sunglasses: Seeker [WIP]
 
+[![Build Status](https://travis-ci.org/NathanWorkman/seeker.svg?branch=master)](https://travis-ci.org/NathanWorkman/seeker)
+
 ## What is Seeker?
 Seeker aims not to be a job board for everyone, but a job board for you.
 
@@ -11,7 +13,19 @@ To change the search terms edit the query inside each spider.
 
 ## Setup
 
-Some quick setup instructions
+Some quick setup instructions:
+
+You will need `yarn` and `virtualenv` installed on your machine.
+
+Install Yarn
+```
+brew install yarn
+```
+
+Install virtualenv
+```
+pip install virtualenv
+```
 
 I would recommend installing [virtualenv](https://virtualenv.readthedocs.io/).
 
@@ -22,11 +36,12 @@ cd seeker/
 virtualenv venv -p python3
 source venv/bin/activate
 pip install -r requirements.txt
+yarn 
 cd seeker/
 python manage.py migrate
 python manage.py createsuperuser
-python manage.py runserver
-
+make build
+make run
 ```
 
 ### To run the spiders
@@ -67,20 +82,24 @@ Navigate to the django admin to view your results.
 - [ ] Celery Beat - run spiders on a schedule.
 
 #### Spiders
-Want a spider not listed here? Feel free to open a pull request and add it to the list or implement the spider yourself. 
-- [x] [Stack Overflow](https://www.stackoverflow.com/jobs)
-- [ ] [Indeed](https://www.indeed.com)
-- [ ] [Dice](http://dice.com)
-- [ ] [Angel.co](https://angel.co/)
-- [ ] [RemotePython](https://www.remotepython.com)
-- [ ] [DjangoJobs](https://djangojobs.net/jobs/)
-- [ ] [DjangoGigs](https://djangogigs.com)
-- [ ] [Jobspresso](http://jobspresso.co)
-- [ ] [Authentic Jobs](http://authenticjobs.com/)
-- [ ] [We Work Remotely](https://weworkremotely.com/)
-- [ ] [Remotive](https://remotive.io)
-- [ ] [Python.org](https://www.python.org/jobs/)
+Want a spider not listed here? Feel free to open a pull request and add it to the list or implement the spider yourself.
 
+- [x] [Stack Overflow](https://www.stackoverflow.com/jobs)
+- [x] [Indeed](https://www.indeed.com)
+- [ ] [Angel.co](https://angel.co/)
+- [x] [RemotePython](https://www.remotepython.com)
+- [ ] [DjangoJobs](https://djangojobs.net/jobs/)
+- [x] [DjangoGigs](https://djangogigs.com)
+- [ ] [Jobspresso](http://jobspresso.co)
+- [ ] [We Work Remotely](https://weworkremotely.com/)
+- [x] [Python.org](https://www.python.org/jobs/)
+- [ ] [Working Nomads](https://www.workingnomads.co/jobs)
+- [ ] [Remote Work Hub](https://remoteworkhub.com)
+- [ ] [Telecommunity](http://remotejobs.telecommunity.net/#s=1)
+- [ ] [Remote Base](https://remotebase.io/)
+- [ ] [WFH](https://www.wfh.io)
+- [ ] [Remote Ok](https://remoteok.io)
+- [ ] [Remotely Awesome Job](https://www.remotelyawesomejobs.com/remote-django-jobs)
 
 
 

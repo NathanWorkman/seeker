@@ -5,15 +5,11 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
-import re
-from datetime import datetime
-
-import pytz
 from django.utils.text import slugify
 from scrapy.exceptions import DropItem
 
-from jobs.models import Job, Board
-from companies.models import Company
+from job.models import Job, Board
+from company.models import Company
 
 
 class JobsPipeline(object):
@@ -40,7 +36,7 @@ class JobsPipeline(object):
         """
         For every job that we create, delete the oldest job
         """
-        # TODO: possibly remove this and just keep a large index of 
+        # TODO: possibly remove this and just keep a large index of
         # job = Job.objects.all().last()
         # job.delete()
 
@@ -54,7 +50,7 @@ class JobsPipeline(object):
             return Board.objects.create(title=title, slug=slug, url=url)
 
     def get_or_create_company(self, title, email):
-        title = title[0]
+        title = title
         slug = slugify(title)
         try:
             email = email[0].lower()
