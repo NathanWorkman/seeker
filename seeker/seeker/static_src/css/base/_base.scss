@@ -2,6 +2,15 @@ body {
   font-size: 0.9em;
 }
 
+a {
+  color: $secondary;
+
+  &:hover {
+    color: $grey;
+    text-decoration: none;
+  }
+}
+
 .page{
   background: $grey-lighter;
 }

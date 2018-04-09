@@ -2,13 +2,13 @@
   font-size: .9rem;
 	li a {
     font-weight: 700;
-    color: $primary;
+    color: $secondary;
     &:hover {
       color: $grey;
     }
   }	
   .page-item.active .page-link {
-    background-color: $primary;
-    border-color: $primary;
+    background-color: $secondary;
+    border-color: $secondary;
   }
 }
