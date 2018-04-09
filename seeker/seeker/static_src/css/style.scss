@@ -1,14 +1,11 @@
-// Libs
-@import '../node_modules/bootstrap/dist/css/bootstrap.min';
+@import 'bootstrap.min';
 
-// Config
-@import 'base/config';
+body {
+    padding-top: 5rem;
+}
 
-// Base Styles
-@import 'base/base';
 
-// Components
-@import 'components/header';
-@import 'components/lists';
-@import 'components/breadcrumbs';
-@import 'components/pagination';
+div {
+	padding: 4px;
+	margin: 10px;
+}

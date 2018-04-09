@@ -1,16 +1,22 @@
-{% extends "base.html" %} {% load tz %} {% block content %}
+{% extends "base.html" %} 
+{% load tz %} 
+{% block title %}
+    {{ job.title }}{{ block.super }}
+{% endblock %} 
+{% block content %}
 <div class="col-md-8">
-  <h2>{{ job.title }}</h2>
-  <p>{{ job.pub_date|localtime }}</p>
-  <hr>
-  <!-- Date/Time -->
-  <p> Posted {{ job.pub_date }} on <a href="{{ job.url }}" target="_blank">{{ job.board }}</a></p>
-  <hr>
-  <!-- Preview Image -->
-  <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
-  <hr>
-  <!-- Post Content -->
-  <p>{{ job.body|safe }}</p>
-  <hr>
+    <h2>{{ job.title }}</h2>
+    <p>{{ job.pub_date|localtime }}</p>
+    <hr>
+    <!-- Date/Time -->
+    <p> Posted {{ job.pub_date }} on <a href="{{ job.url }}" target="_blank">{{ job.board }}</a></p>
+    <hr>
+    <!-- Preview Image -->
+    <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+    <hr>
+    <!-- Post Content -->
+    <p>{{ job.body|safe }}</p>
+    <hr>
 </div>
-{% include 'includes/job_detail_sidebar.html' %} {% endblock %}
+{% include 'includes/job_detail_sidebar.html' %}
+{% endblock %}
