@@ -1,0 +1,27 @@
+{
+  "name": "seeker",
+  "version": "1.0.0",
+  "description": "Job Board Aggregator",
+  "main": "index.js",
+  "repository": "git@github.com:NathanWorkman/seeker.git",
+  "author": "Nathan Workman <nathancworkman@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-spawn": "^0.4.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
+    "node-sass": "^4.5.3"
+  }
+}

@@ -13,7 +13,19 @@ To change the search terms edit the query inside each spider.
 
 ## Setup
 
-Some quick setup instructions
+Some quick setup instructions:
+
+You will need `yarn` and `virtualenv` installed on your machine.
+
+Install Yarn
+```
+brew install yarn
+```
+
+Install virtualenv
+```
+pip install virtualenv
+```
 
 I would recommend installing [virtualenv](https://virtualenv.readthedocs.io/).
 
@@ -24,11 +36,12 @@ cd seeker/
 virtualenv venv -p python3
 source venv/bin/activate
 pip install -r requirements.txt
+yarn 
 cd seeker/
 python manage.py migrate
 python manage.py createsuperuser
-python manage.py runserver
-
+make build
+make run
 ```
 
 ### To run the spiders
@@ -74,12 +87,12 @@ Want a spider not listed here? Feel free to open a pull request and add it to th
 - [x] [Stack Overflow](https://www.stackoverflow.com/jobs)
 - [x] [Indeed](https://www.indeed.com)
 - [ ] [Angel.co](https://angel.co/)
-- [ ] [RemotePython](https://www.remotepython.com)
+- [x] [RemotePython](https://www.remotepython.com)
 - [ ] [DjangoJobs](https://djangojobs.net/jobs/)
-- [ ] [DjangoGigs](https://djangogigs.com)
+- [x] [DjangoGigs](https://djangogigs.com)
 - [ ] [Jobspresso](http://jobspresso.co)
 - [ ] [We Work Remotely](https://weworkremotely.com/)
-- [ ] [Python.org](https://www.python.org/jobs/)
+- [x] [Python.org](https://www.python.org/jobs/)
 - [ ] [Working Nomads](https://www.workingnomads.co/jobs)
 - [ ] [Remote Work Hub](https://remoteworkhub.com)
 - [ ] [Telecommunity](http://remotejobs.telecommunity.net/#s=1)
