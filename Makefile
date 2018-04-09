@@ -109,7 +109,7 @@ run:
 	$(call ECHO_GREEN, Starting Django Server...)
 	( \
 		cd seeker; \
-		$(MANAGE_CMD) runserver; \
+		gulp; \
 	)
 
 

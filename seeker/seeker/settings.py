@@ -133,7 +133,7 @@ STATICFILES_FINDERS = [
 ]
 
 STATICFILES_DIRS = [
-    "seeker/static/",
+    "seeker/static_src/",
 ]
 
 STATICFILES_LOCATION = 'static'
