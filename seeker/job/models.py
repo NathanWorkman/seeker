@@ -41,7 +41,7 @@ class Job(models.Model):
 
     class Meta:
         """Order by date published."""
-        ordering = ["-scrape_date"]
+        ordering = ["scrape_date"]
 
     def __str__(self):
         """Set title."""
