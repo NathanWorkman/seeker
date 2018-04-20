@@ -1,0 +1,14 @@
+.pagination {
+  font-size: .9rem;
+	li a {
+    font-weight: 700;
+    color: $secondary;
+    &:hover {
+      color: $grey;
+    }
+  }	
+  .page-item.active .page-link {
+    background-color: $secondary;
+    border-color: $secondary;
+  }
+}
