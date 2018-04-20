@@ -12,4 +12,10 @@ class JobDetailView(DetailView):
 class JobListView(ListView):
     """Job List View."""
     paginate_by = 10
-    queryset = Job.objects.all()
+    model = Job
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(JobListView, self).get_context_data(*args, **kwargs)
+        context['jobs_list'] = Job.objects.all()
+        context['jobs_count'] = Job.objects.all().count()
+        return context

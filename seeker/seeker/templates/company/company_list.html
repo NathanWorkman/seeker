@@ -1,26 +1,19 @@
-{% extends "base.html" %} 
-{% load tz humanize %}
-{% block content %}
+{% extends "base.html" %} {% load tz humanize %} {% block content %}
 <div class="col-md-8 offset-md-2">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Library</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Data</li>
-        </ol>
-    </nav>
-</div>
-<div class="col-md-8 offset-md-2">
-    {% for company in company_list %}
-    <!-- Job Post -->
-    <div class="card mb-4">
-        <div class="card-body">
-            <h2 class="card-title"><a href="{{ company.get_absolute_url }}">{{ company.title }}</a></h2>
-            <p class="card-text">{{ company.body }}</p>
-            <a href="{{ company.get_absolute_url }}" class="btn btn-primary">View Details &rarr;</a>
-        </div>
+  {% for company in company_list %}
+  <!-- Company Post -->
+  <div class="media media-item mb-4">
+    <a href="{{ company.get_absolute_url }}">
+      {% if company.logo %}
+        <img class="align-self-start mr-3" src="{{ company.logo }}" alt="{{ company.title }}">
+      {% else %}
+        <img class="align-self-start mr-3" src="https://dummyimage.com/200x200?text=No%20Logo" alt="Placeholder logo">
+      {% endif %}
+    </a>
+    <div class="media-body">
+      <h2 class="mt-0"><a href="{{ company.get_absolute_url }}">{{ company.title }}</a></h2>
     </div>
-    {% endfor %}
-    {% include 'includes/pagination.html' %}
+  </div>
+  {% endfor %} {% include 'includes/pagination.html' %}
 </div>
 {% endblock %}
