@@ -50,3 +50,7 @@ class Job(models.Model):
     def get_absolute_url(self):
         """Get job detail url."""
         return reverse("job_detail", args=[str(self.pk)])
+
+    def get_count(self):
+
+        return self.objects.all().count()

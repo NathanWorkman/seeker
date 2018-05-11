@@ -1,56 +1,55 @@
 <!-- Sidebar Widgets Column -->
 <div class="col-md-4">
-    <!-- Search Widget -->
-    <div class="card">
-        <h5 class="card-header">Search</h5>
-        <div class="card-body">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Search</button>
-                </span>
-            </div>
-        </div>
+  <!-- Search Widget -->
+  <div class="card">
+    <h5 class="card-header">Search</h5>
+    <div class="card-body">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" type="button">Search</button>
+        </span>
+      </div>
     </div>
-    <!-- Contact Widget -->
-    <div class="card my-4">
-        <h5 class="card-header">Company</h5>
-        <div class="card-body">
-            {{ job.company }}
-        </div>
+  </div>
+  <!-- Contact Widget -->
+  <div class="card my-4">
+    <h5 class="card-header">Company</h5>
+    <div class="card-body">
+      {{ job.company }}
     </div>
-    <!-- Location Widget -->
-    <div class="card my-4">
-        <h5 class="card-header">Location</h5>
-        <div class="card-body">
-            {{ job.location }}
-        </div>
+  </div>
+  <!-- Location Widget -->
+  <div class="card my-4">
+    <h5 class="card-header">Location</h5>
+    <div class="card-body">
+      {{ job.location }}
     </div>
-     <!-- Salary Widget -->
-    <div class="card my-4">
-        <h5 class="card-header">Salary</h5>
-        <div class="card-body">
-            {{ job.salary }}
-        </div>
+  </div>
+  <!-- Salary Widget -->
+  <div class="card my-4">
+    <h5 class="card-header">Salary</h5>
+    <div class="card-body">
+      {{ job.salary }}
     </div>
-     <!-- Skills Widget -->
-    <div class="card my-4">
-        <h5 class="card-header">Skills</h5>
-        <div class="card-body">
-            Coming Soon...
-        </div>
+  </div>
+  <!-- Skills Widget -->
+  <div class="card my-4">
+    <h5 class="card-header">Skills</h5>
+    <div class="card-body">
+      Coming Soon...
     </div>
-    <!-- Contact Widget -->
-    <div class="card my-4">
-        <h5 class="card-header">Contact</h5>
-        <div class="card-body">
-            <ul class="list-unstyled">
-                <li>Website:</li>
-                <li>Phone:</li>
-                <li>Email: {{ job.company.email }}</li>
-            </ul>
-        </div>
+  </div>
+  <!-- Contact Widget -->
+  <div class="card my-4">
+    <h5 class="card-header">Contact</h5>
+    <div class="card-body">
+      <ul class="list-unstyled">
+        <li>Website:</li>
+        <li>Phone:</li>
+        <li>Email: {{ job.company.email }}</li>
+      </ul>
     </div>
-</div>
+  </div>
 </div>
 <!-- /.row -->

@@ -16,6 +16,6 @@ class JobListView(ListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super(JobListView, self).get_context_data(*args, **kwargs)
-        context['jobs_list'] = Job.objects.all()
-        context['jobs_count'] = Job.objects.all().count()
+        context['job_list'] = Job.objects.order_by('-scrape_date')
+        context['job_count'] = Job.objects.all().count()
         return context
