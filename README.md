@@ -3,9 +3,7 @@
 [![Build Status](https://travis-ci.org/NathanWorkman/seeker.svg?branch=master)](https://travis-ci.org/NathanWorkman/seeker)
 
 ## What is Seeker?
-Seeker aims not to be a job board for everyone, but a job board for you.
-
-Inevitably the time will come when you are on the hunt for a new job. Let Seeker do the leg work for you. Check multiple job boards for positions you might be interested in and organize them all in one convenient location.
+Seeker is just another job board aggregator. Let Seeker do the leg work for you. Check multiple job boards for positions you might be interested in and organize them all in one convenient location.
 
 Currently, the search terms are hard coded to remote django and remote python positions - you'll need to manually update these for now.
 
@@ -26,8 +24,6 @@ Install virtualenv
 ```
 pip install virtualenv
 ```
-
-I would recommend installing [virtualenv](https://virtualenv.readthedocs.io/).
 
 ### To run the project
 ```
@@ -56,50 +52,16 @@ and then run the following to run the individual spiders, replacing `spidername`
 scrapy crawl spidername
 ```
 
-Currently only the StackOverflow spider is working, others to come soon. 
+or run all the spiders at once:
 
 ```
-scrapy crawl stackoverflow
+python crawl.py
 ```
-
 
 Navigate to the django admin to view your results.
 
 
-## TODO
-
-#### Future features.
-- [x] Simple UI
-- [ ] Enhanced UI
-- [x] Pagination
-- [ ] Breadcrumbs Navigation
-- [ ] Settings Panel 
-- [ ] Move all environmental variables to .env using PyEnv.
-- [ ] Save/Favorite Job Postings
-- [ ] Tag/Skill Views
-- [ ] Full-Time, Part-Time, Contract
-- [ ] Email Notifications - send daily, weekly, monthly email notifications of new job postings.
-- [ ] Celery Beat - run spiders on a schedule.
-
-#### Spiders
-Want a spider not listed here? Feel free to open a pull request and add it to the list or implement the spider yourself.
-
-- [x] [Stack Overflow](https://www.stackoverflow.com/jobs)
-- [x] [Indeed](https://www.indeed.com)
-- [ ] [Angel.co](https://angel.co/)
-- [x] [RemotePython](https://www.remotepython.com)
-- [ ] [DjangoJobs](https://djangojobs.net/jobs/)
-- [x] [DjangoGigs](https://djangogigs.com)
-- [ ] [Jobspresso](http://jobspresso.co)
-- [ ] [We Work Remotely](https://weworkremotely.com/)
-- [x] [Python.org](https://www.python.org/jobs/)
-- [ ] [Working Nomads](https://www.workingnomads.co/jobs)
-- [ ] [Remote Work Hub](https://remoteworkhub.com)
-- [ ] [Telecommunity](http://remotejobs.telecommunity.net/#s=1)
-- [ ] [Remote Base](https://remotebase.io/)
-- [ ] [WFH](https://www.wfh.io)
-- [ ] [Remote Ok](https://remoteok.io)
-- [ ] [Remotely Awesome Job](https://www.remotelyawesomejobs.com/remote-django-jobs)
+**This project is for educational purposes only, I'm not responsible for what you do with the code.**
 
 
 

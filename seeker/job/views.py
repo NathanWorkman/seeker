@@ -13,9 +13,10 @@ class JobListView(ListView):
     """Job List View."""
     paginate_by = 10
     model = Job
+    context_object_name = 'job_list'
+    queryset = Job.objects.order_by('-scrape_date')
 
     def get_context_data(self, *args, **kwargs):
         context = super(JobListView, self).get_context_data(*args, **kwargs)
-        context['jobs_list'] = Job.objects.all()
-        context['jobs_count'] = Job.objects.all().count()
+        context['job_count'] = Job.objects.all().count()
         return context
