@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% load tz humanize %} {% block content %}
 <div class="col-md-8">
   <div class="media-item-total mb-4">
-    <p>There are currently <strong>{{ jobs_count }}</strong> jobs listed.</p>
+    <p>There are currently <strong>{{ job_count }}</strong> jobs listed.</p>
   </div>
   {% for job in job_list %}
   <!-- Job Post -->
@@ -15,6 +15,7 @@
     </a>
     <div class="media-body">
       <h2 class="mt-0"><a href="{{ job.get_absolute_url }}">{{ job.title }}</a></h2>
+      <p> {{ job.board }} | {{ job.scrape_date }}</p>
     </div>
   </div>
   {% endfor %} {% include 'includes/pagination.html' %}

@@ -149,3 +149,22 @@ build:
 		cd seeker; \
 		gulp build; \
 	)
+
+
+deploy_staging:
+# deploy to staging server
+	$(call ECHO_BLUE, deploy changes to the STAGING server... )
+	(\
+		ssh-add -K; \
+		cd ansible; \
+		$(PLAYBOOK) -i hosts deploy_staging.yml --verbose --extra-vars branch=$(branch);  \
+	)
+
+deploy_production:
+# deploy to production server
+	$(call ECHO_RED, deploy changes to the PRODUCTION server... )
+	(\
+		ssh-add -K; \
+		cd ansible; \
+		$(PLAYBOOK) -i hosts deploy_production.yml --verbose --extra-vars branch=$(branch);  \
+	)
