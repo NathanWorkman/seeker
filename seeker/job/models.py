@@ -54,3 +54,10 @@ class Job(models.Model):
     def get_count(self):
 
         return self.objects.all().count()
+
+
+class SearchTerms(models.Model):
+    term = models.CharField(max_length=55)
+
+    def __str__(self):
+        return u"%s" % self.term
