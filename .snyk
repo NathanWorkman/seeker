@@ -26,3 +26,6 @@ patch:
         patched: '2018-06-06T12:51:33.933Z'
     - browser-sync > serve-index > debug > ms:
         patched: '2018-06-06T12:51:33.933Z'
+  'npm:lodash:20180130':
+    - browser-sync > easy-extender > lodash:
+        patched: '2018-07-03T08:41:16.563Z'

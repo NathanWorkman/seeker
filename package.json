@@ -25,11 +25,12 @@
     "gulp-watch": "^5.0.0",
     "jquery": "^3.3.1",
     "node-sass": "^4.5.3",
-    "snyk": "^1.82.1"
+    "snyk": "^1.88.0"
   },
   "scripts": {
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "npm run snyk-protect",
+    "prepare": "npm run snyk-protect"
   },
   "snyk": true
 }
