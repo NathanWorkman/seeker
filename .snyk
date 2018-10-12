@@ -12,6 +12,8 @@ patch:
         patched: '2018-06-06T12:51:33.933Z'
     - browser-sync > localtunnel > debug:
         patched: '2018-06-06T12:51:33.933Z'
+    - gulp-spawn > plexer > debug:
+        patched: '2018-10-12T05:42:57.847Z'
   'npm:minimatch:20160620':
     - gulp > vinyl-fs > glob-stream > minimatch:
         patched: '2018-06-06T12:51:33.933Z'
@@ -26,3 +28,5 @@ patch:
         patched: '2018-06-06T12:51:33.933Z'
     - browser-sync > serve-index > debug > ms:
         patched: '2018-06-06T12:51:33.933Z'
+    - gulp-spawn > plexer > debug > ms:
+        patched: '2018-10-12T05:42:57.847Z'
