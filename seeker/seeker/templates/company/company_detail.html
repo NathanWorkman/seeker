@@ -1,8 +1,8 @@
-{% extends "base.html" %} 
-{% load tz %} 
+{% extends "base.html" %}
+{% load tz %}
 {% block title %}
-    {{ company.title }}{{ block.super }}
-{% endblock %} 
+{{ company.title }}{{ block.super }}
+{% endblock %}
 {% block content %}
 <div class="col-md-8 offset-md-2">
     <h2>{{ company.title }}</h2>

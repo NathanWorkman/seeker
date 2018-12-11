@@ -1,23 +1,23 @@
 {% extends "base.html" %} {% load tz humanize %} {% block content %}
 <div class="col-md-8">
-  <div class="media-item-total mb-4">
-    <p>There are currently <strong>{{ job_count }}</strong> jobs listed.</p>
-  </div>
-  {% for job in job_list %}
-  <!-- Job Post -->
-  <div class="media media-item mb-4">
-    <a href="{{ job.get_absolute_url }}">
-      {% if job.company.logo %}
-        <img class="align-self-start mr-3" src="{{ job.company.logo }}" alt="{{ job.company.name }}">
-      {% else %}
-        <img class="align-self-start mr-3" src="https://dummyimage.com/200x200?text=No%20Logo" alt="Placeholder logo">
-      {% endif %}
-    </a>
-    <div class="media-body">
-      <h2 class="mt-0"><a href="{{ job.get_absolute_url }}">{{ job.title }}</a></h2>
-      <p> {{ job.board }} | {{ job.scrape_date }}</p>
+    <div class="media-item-total mb-4">
+        <p>There are currently <strong>{{ job_count }}</strong> jobs listed.</p>
     </div>
-  </div>
-  {% endfor %} {% include 'includes/pagination.html' %}
+    {% for job in job_list %}
+    <!-- Job Post -->
+    <div class="media media-item mb-4">
+        <a href="{{ job.get_absolute_url }}">
+            {% if job.company.logo %}
+            <img class="align-self-start mr-3" src="{{ job.company.logo }}" alt="{{ job.company.name }}">
+            {% else %}
+            <img class="align-self-start mr-3" src="https://dummyimage.com/200x200?text=No%20Logo" alt="Placeholder logo">
+            {% endif %}
+        </a>
+        <div class="media-body">
+            <h2 class="mt-0"><a href="{{ job.get_absolute_url }}">{{ job.title }}</a></h2>
+            <p> {{ job.board }} | {{ job.scrape_date }}</p>
+        </div>
+    </div>
+    {% endfor %} {% include 'includes/pagination.html' %}
 </div>
 {% include 'includes/job_sidebar.html' %} {% endblock %}
