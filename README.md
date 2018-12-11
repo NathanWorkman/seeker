@@ -32,7 +32,7 @@ cd seeker/
 virtualenv venv -p python3
 source venv/bin/activate
 pip install -r requirements.txt
-yarn 
+yarn
 cd seeker/
 python manage.py migrate
 python manage.py createsuperuser
