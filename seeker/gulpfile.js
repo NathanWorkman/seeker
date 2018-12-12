@@ -1,25 +1,23 @@
-var gulp            = require('gulp');
-var $               = require('gulp-load-plugins')();
-var browserSync     = require('browser-sync');
-var gutil           = require('gulp-util');
-var exec            = require('child_process').exec;
-var spawn           = require('child_process').spawn;
-var reload          = browserSync.reload;
-var src             = 'seeker/static_src/';
-var dist            = 'seeker/static_src/dist/';
-var ignore          = ['!node_modules'];
+let gulp            = require('gulp');
+let $               = require('gulp-load-plugins')();
+let browserSync     = require('browser-sync').create();
+let exec            = require('child_process').exec;
+let spawn           = require('child_process').spawn;
+let cleanCSS        = require('gulp-clean-css');
+let log             = require('fancy-log');
+let c               = require('ansi-colors');
+let reload          = browserSync.reload;
+
+const src             = 'seeker/static_src/';
+const dist            = 'seeker/static_src/dist/';
+const ignore          = ['!node_modules'];
 
 // +++++++++++++++++++++++++++++++++++++++
 // Gulp tasks to build static assets
 // +++++++++++++++++++++++++++++++++++++++
 
 function errorAlert(err) {
-  $.notify.onError({
-    title: "Gulp Error",
-    message: "Check your terminal",
-    sound: "Basso"
-  })(err);
-  gutil.log(gutil.colors.red(err.toString()));
+  log(c.red(err.toString()));
   this.emit("end");
 }
 
@@ -28,13 +26,10 @@ gulp.task('css', function() {
   return gulp.src(src + 'css/style.scss')
   .pipe($.plumber({errorHandler: errorAlert}))
   .pipe($.sourcemaps.init())
-  .pipe($.sass())
-  .pipe($.autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false }))
-  .pipe($.cssnano())
+  .pipe(cleanCSS({compatibility: 'ie11'}))
   .pipe($.sourcemaps.write('.'))
   .pipe(gulp.dest(dist + 'css/'))
+  .pipe(browserSync.stream());
 });
 
 // Scripts
@@ -48,24 +43,27 @@ gulp.task('js', function() {
   .pipe($.concat('main.min.js'))
   .pipe($.uglify())
   .pipe(gulp.dest(dist + 'js/'))
+  .pipe(browserSync.stream());
 });
 
 // Move Images
 gulp.task('images', function() {
   return gulp.src(src + 'img/**/**')
   .pipe(gulp.dest(dist + 'img'))
+  .pipe(browserSync.stream());
 })
 
 //  Build static assets
 gulp.task('build',['css','js','images']);
 
 // Deafult Gulp Task
-gulp.task('default',['runserver'], function() {
+gulp.task('default', ['runserver'], function() {
     browserSync.init({
         notify: true,
         online: true,
         injectChanges: true,
-        proxy: "localhost:8000"
+        proxy: "localhost:8000",
+        open: false
     });
     gulp.watch(ignore, ['/**/**/**/**/*.{html,py}'], reload);
     gulp.watch(src + 'css/**/*.scss', ['css', reload]);
@@ -74,9 +72,9 @@ gulp.task('default',['runserver'], function() {
 
 // Start Virtualenv and start server
 gulp.task('runserver', function() {
-  var proc;
-  proc = exec('PYTHONUNBUFFERED=1 ./manage.py runserver');
-  proc.stderr.on('data', function(data) {
-    return process.stdout.write(data);
+  var cmd = spawn('python3', ['manage.py', 'runserver'], {stdio: 'inherit'});
+  cmd.on('close', function(code) {
+    console.log('runServer exited with code ' + code);
+    cb(code);
   });
 });
