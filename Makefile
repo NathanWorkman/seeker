@@ -32,7 +32,7 @@ ECHO_GREEN = @echo "\033[33;32m $1\033[0m"
 HOST ?= localhost:8000
 
 reset: delete_sqlite migrate user run
-setup: virtualenv requirements migrate user yarn build collectstatic 
+setup: virtualenv requirements migrate user yarn build collectstatic
 
 virtualenv:
 # Create virtualenv
@@ -128,43 +128,24 @@ crawl_spider:
 		scrapy crawl $(spider);  \
 	)
 
-delete_sqlite: 
+delete_sqlite:
 # delete project db
 	( \
 		cd seeker; \
 		rm -rf db.sqlite3;\
 	)
 
-yarn: 
+yarn:
 # install npm modules
 	$(call ECHO_GREEN, Installing npm modules... )
 	( \
 		yarn; \
 	)
 
-build: 
+build:
 # build static assets
 	$(call ECHO_GREEN, Compiling static assets... )
 	( \
 		cd seeker; \
 		gulp build; \
-	)
-
-
-deploy_staging:
-# deploy to staging server
-	$(call ECHO_BLUE, deploy changes to the STAGING server... )
-	(\
-		ssh-add -K; \
-		cd ansible; \
-		$(PLAYBOOK) -i hosts deploy_staging.yml --verbose --extra-vars branch=$(branch);  \
-	)
-
-deploy_production:
-# deploy to production server
-	$(call ECHO_RED, deploy changes to the PRODUCTION server... )
-	(\
-		ssh-add -K; \
-		cd ansible; \
-		$(PLAYBOOK) -i hosts deploy_production.yml --verbose --extra-vars branch=$(branch);  \
 	)

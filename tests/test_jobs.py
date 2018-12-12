@@ -1,4 +1,4 @@
-import pytest # noqa
+import pytest  # noqa
 # from seeker.job.models import Board
 
 
