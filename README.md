@@ -11,7 +11,18 @@ To change the search terms edit the query inside each spider.
 
 ## Setup
 
-Some quick setup instructions:
+### Docker
+
+Docker installation should be fairly straight forward.
+
+```
+git clone git@github.com:NathanWorkman/seeker.git
+cd seeker/
+docker-compose build
+docker-compose up
+```
+
+### The hard(er) way:
 
 You will need `yarn` and `virtualenv` installed on your machine.
 

@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+    db:
+        image: postgres
+    web:
+        build:
+            context: .
+            dockerfile: ./docker/web/Dockerfile
+        entrypoint: ./docker/web/web-entrypoint.sh
+        volumes:
+            - .:/code:cached
+        ports:
+            - "8000:8000"
+            - "3000:3000"
+            - "3001:3001"
+        depends_on:
+            - db
