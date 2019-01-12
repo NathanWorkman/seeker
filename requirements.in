@@ -24,8 +24,11 @@ django-dotenv==1.4.2
 # Mailer Utiliity
 django-anymail==5.0
 
-# HTTP Server
-gunicorn==19.9.0
+# Send and Recieve through SMTP
+django-mailbox==4.7.1
+
+# Sane HTTP
+requests==2.21.0
 
 # Static Assets
 django-compressor==2.2
@@ -37,3 +40,12 @@ psycopg2-binary==2.7.6.1
 
 # Make forms suck less
 django-widget-tweaks==1.4.3
+
+# PDF Generation
+WeasyPrint==44.0.0
+
+# Lazy Cron
+django-cron==0.5.1
+
+# Better filtering
+django-filter==2.0.0
