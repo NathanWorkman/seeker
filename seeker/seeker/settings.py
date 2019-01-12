@@ -41,8 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'debug_toolbar',
-    'widget_tweaks',
+    'debug_toolbar',  # debug toolbar
+    'widget_tweaks',  # better forms
+    'compressor',  # compile static assets
+    'django_cron',  # recurring tasks without the task queue
 
     'job',
     'company',
@@ -129,12 +131,17 @@ USE_L10N = True
 USE_TZ = True
 
 
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 ]
 
 STATICFILES_DIRS = [
@@ -148,3 +155,9 @@ STATIC_URL = '/static/'
 MEDIAFILES_LOCATION = 'media'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+CRON_CLASSES = [
+    # "job.jobs.RunSpidersCronJob",
+    # ...
+]
