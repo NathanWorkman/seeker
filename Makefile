@@ -108,7 +108,7 @@ run:
 	$(call ECHO_GREEN, Starting Django Server...)
 	( \
 		cd seeker; \
-		gulp; \
+		$(MANAGE_CMD) runserver ; \
 	)
 
 
@@ -133,19 +133,4 @@ delete_sqlite:
 	( \
 		cd seeker; \
 		rm -rf db.sqlite3;\
-	)
-
-yarn:
-# install npm modules
-	$(call ECHO_GREEN, Installing npm modules... )
-	( \
-		yarn; \
-	)
-
-build:
-# build static assets
-	$(call ECHO_GREEN, Compiling static assets... )
-	( \
-		cd seeker; \
-		gulp build; \
 	)
