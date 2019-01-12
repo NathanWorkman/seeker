@@ -1,4 +1,7 @@
-# :sunglasses: Seeker [WIP]
+<div style="text-align:center;">
+    <img src="snitch.png" width="150" height="150"/>
+    <h1>Seeker</h1>
+</div>
 
 [![Build Status](https://travis-ci.org/NathanWorkman/seeker.svg?branch=master)](https://travis-ci.org/NathanWorkman/seeker)
 
@@ -73,7 +76,3 @@ Navigate to the django admin to view your results.
 
 
 **This project is for educational purposes only, I'm not responsible for what you do with the code.**
-
-
-
-
