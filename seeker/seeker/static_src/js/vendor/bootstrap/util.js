@@ -1,173 +1,168 @@
-/**
- * --------------------------------------------------------------------------
- * Bootstrap (v4.2.1): util.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * --------------------------------------------------------------------------
- */
+/*!
+  * Bootstrap util.js v4.2.1 (https://getbootstrap.com/)
+  * Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  */
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('jquery')) :
+  typeof define === 'function' && define.amd ? define(['jquery'], factory) :
+  (global.Util = factory(global.jQuery));
+}(this, (function ($) { 'use strict';
 
-import $ from 'jquery'
+  $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
 
-/**
- * ------------------------------------------------------------------------
- * Private TransitionEnd Helpers
- * ------------------------------------------------------------------------
- */
+  /**
+   * --------------------------------------------------------------------------
+   * Bootstrap (v4.2.1): util.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * --------------------------------------------------------------------------
+   */
+  /**
+   * ------------------------------------------------------------------------
+   * Private TransitionEnd Helpers
+   * ------------------------------------------------------------------------
+   */
 
-const TRANSITION_END = 'transitionend'
-const MAX_UID = 1000000
-const MILLISECONDS_MULTIPLIER = 1000
+  var TRANSITION_END = 'transitionend';
+  var MAX_UID = 1000000;
+  var MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
 
-// Shoutout AngusCroll (https://goo.gl/pxwQGp)
-function toType(obj) {
-  return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase()
-}
-
-function getSpecialTransitionEndEvent() {
-  return {
-    bindType: TRANSITION_END,
-    delegateType: TRANSITION_END,
-    handle(event) {
-      if ($(event.target).is(this)) {
-        return event.handleObj.handler.apply(this, arguments) // eslint-disable-line prefer-rest-params
-      }
-      return undefined // eslint-disable-line no-undefined
-    }
+  function toType(obj) {
+    return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
   }
-}
 
-function transitionEndEmulator(duration) {
-  let called = false
+  function getSpecialTransitionEndEvent() {
+    return {
+      bindType: TRANSITION_END,
+      delegateType: TRANSITION_END,
+      handle: function handle(event) {
+        if ($(event.target).is(this)) {
+          return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
+        }
 
-  $(this).one(Util.TRANSITION_END, () => {
-    called = true
-  })
+        return undefined; // eslint-disable-line no-undefined
+      }
+    };
+  }
 
-  setTimeout(() => {
-    if (!called) {
-      Util.triggerTransitionEnd(this)
-    }
-  }, duration)
+  function transitionEndEmulator(duration) {
+    var _this = this;
 
-  return this
-}
+    var called = false;
+    $(this).one(Util.TRANSITION_END, function () {
+      called = true;
+    });
+    setTimeout(function () {
+      if (!called) {
+        Util.triggerTransitionEnd(_this);
+      }
+    }, duration);
+    return this;
+  }
 
-function setTransitionEndSupport() {
-  $.fn.emulateTransitionEnd = transitionEndEmulator
-  $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent()
-}
+  function setTransitionEndSupport() {
+    $.fn.emulateTransitionEnd = transitionEndEmulator;
+    $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
+  }
+  /**
+   * --------------------------------------------------------------------------
+   * Public Util Api
+   * --------------------------------------------------------------------------
+   */
 
-/**
- * --------------------------------------------------------------------------
- * Public Util Api
- * --------------------------------------------------------------------------
- */
 
-const Util = {
+  var Util = {
+    TRANSITION_END: 'bsTransitionEnd',
+    getUID: function getUID(prefix) {
+      do {
+        // eslint-disable-next-line no-bitwise
+        prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
+      } while (document.getElementById(prefix));
 
-  TRANSITION_END: 'bsTransitionEnd',
+      return prefix;
+    },
+    getSelectorFromElement: function getSelectorFromElement(element) {
+      var selector = element.getAttribute('data-target');
 
-  getUID(prefix) {
-    do {
-      // eslint-disable-next-line no-bitwise
-      prefix += ~~(Math.random() * MAX_UID) // "~~" acts like a faster Math.floor() here
-    } while (document.getElementById(prefix))
-    return prefix
-  },
+      if (!selector || selector === '#') {
+        var hrefAttr = element.getAttribute('href');
+        selector = hrefAttr && hrefAttr !== '#' ? hrefAttr.trim() : '';
+      }
 
-  getSelectorFromElement(element) {
-    let selector = element.getAttribute('data-target')
+      return selector && document.querySelector(selector) ? selector : null;
+    },
+    getTransitionDurationFromElement: function getTransitionDurationFromElement(element) {
+      if (!element) {
+        return 0;
+      } // Get transition-duration of the element
 
-    if (!selector || selector === '#') {
-      const hrefAttr = element.getAttribute('href')
-      selector = hrefAttr && hrefAttr !== '#' ? hrefAttr.trim() : ''
-    }
 
-    return selector && document.querySelector(selector) ? selector : null
-  },
+      var transitionDuration = $(element).css('transition-duration');
+      var transitionDelay = $(element).css('transition-delay');
+      var floatTransitionDuration = parseFloat(transitionDuration);
+      var floatTransitionDelay = parseFloat(transitionDelay); // Return 0 if element or transition duration is not found
 
-  getTransitionDurationFromElement(element) {
-    if (!element) {
-      return 0
-    }
+      if (!floatTransitionDuration && !floatTransitionDelay) {
+        return 0;
+      } // If multiple durations are defined, take the first
 
-    // Get transition-duration of the element
-    let transitionDuration = $(element).css('transition-duration')
-    let transitionDelay = $(element).css('transition-delay')
 
-    const floatTransitionDuration = parseFloat(transitionDuration)
-    const floatTransitionDelay = parseFloat(transitionDelay)
+      transitionDuration = transitionDuration.split(',')[0];
+      transitionDelay = transitionDelay.split(',')[0];
+      return (parseFloat(transitionDuration) + parseFloat(transitionDelay)) * MILLISECONDS_MULTIPLIER;
+    },
+    reflow: function reflow(element) {
+      return element.offsetHeight;
+    },
+    triggerTransitionEnd: function triggerTransitionEnd(element) {
+      $(element).trigger(TRANSITION_END);
+    },
+    // TODO: Remove in v5
+    supportsTransitionEnd: function supportsTransitionEnd() {
+      return Boolean(TRANSITION_END);
+    },
+    isElement: function isElement(obj) {
+      return (obj[0] || obj).nodeType;
+    },
+    typeCheckConfig: function typeCheckConfig(componentName, config, configTypes) {
+      for (var property in configTypes) {
+        if (Object.prototype.hasOwnProperty.call(configTypes, property)) {
+          var expectedTypes = configTypes[property];
+          var value = config[property];
+          var valueType = value && Util.isElement(value) ? 'element' : toType(value);
 
-    // Return 0 if element or transition duration is not found
-    if (!floatTransitionDuration && !floatTransitionDelay) {
-      return 0
-    }
-
-    // If multiple durations are defined, take the first
-    transitionDuration = transitionDuration.split(',')[0]
-    transitionDelay = transitionDelay.split(',')[0]
-
-    return (parseFloat(transitionDuration) + parseFloat(transitionDelay)) * MILLISECONDS_MULTIPLIER
-  },
-
-  reflow(element) {
-    return element.offsetHeight
-  },
-
-  triggerTransitionEnd(element) {
-    $(element).trigger(TRANSITION_END)
-  },
-
-  // TODO: Remove in v5
-  supportsTransitionEnd() {
-    return Boolean(TRANSITION_END)
-  },
-
-  isElement(obj) {
-    return (obj[0] || obj).nodeType
-  },
-
-  typeCheckConfig(componentName, config, configTypes) {
-    for (const property in configTypes) {
-      if (Object.prototype.hasOwnProperty.call(configTypes, property)) {
-        const expectedTypes = configTypes[property]
-        const value         = config[property]
-        const valueType     = value && Util.isElement(value)
-          ? 'element' : toType(value)
-
-        if (!new RegExp(expectedTypes).test(valueType)) {
-          throw new Error(
-            `${componentName.toUpperCase()}: ` +
-            `Option "${property}" provided type "${valueType}" ` +
-            `but expected type "${expectedTypes}".`)
+          if (!new RegExp(expectedTypes).test(valueType)) {
+            throw new Error(componentName.toUpperCase() + ": " + ("Option \"" + property + "\" provided type \"" + valueType + "\" ") + ("but expected type \"" + expectedTypes + "\"."));
+          }
         }
       }
+    },
+    findShadowRoot: function findShadowRoot(element) {
+      if (!document.documentElement.attachShadow) {
+        return null;
+      } // Can find the shadow root otherwise it'll return the document
+
+
+      if (typeof element.getRootNode === 'function') {
+        var root = element.getRootNode();
+        return root instanceof ShadowRoot ? root : null;
+      }
+
+      if (element instanceof ShadowRoot) {
+        return element;
+      } // when we don't find a shadow root
+
+
+      if (!element.parentNode) {
+        return null;
+      }
+
+      return Util.findShadowRoot(element.parentNode);
     }
-  },
+  };
+  setTransitionEndSupport();
 
-  findShadowRoot(element) {
-    if (!document.documentElement.attachShadow) {
-      return null
-    }
+  return Util;
 
-    // Can find the shadow root otherwise it'll return the document
-    if (typeof element.getRootNode === 'function') {
-      const root = element.getRootNode()
-      return root instanceof ShadowRoot ? root : null
-    }
-
-    if (element instanceof ShadowRoot) {
-      return element
-    }
-
-    // when we don't find a shadow root
-    if (!element.parentNode) {
-      return null
-    }
-
-    return Util.findShadowRoot(element.parentNode)
-  }
-}
-
-setTransitionEndSupport()
-
-export default Util
+})));
+//# sourceMappingURL=util.js.map
