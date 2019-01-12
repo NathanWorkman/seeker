@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='seeker',
-    version='0.2.0',
+    version='0.6.0',
     author=u'Nathan Workman',
     author_email='nathancworkman@gmail.com',
     url='https://github.com/NathanWorkman/seeker.git',
