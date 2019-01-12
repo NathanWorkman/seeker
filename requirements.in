@@ -1,21 +1,21 @@
 
 # Django framework
-Django==2.1.4
+Django==2.1.5
 
 # Testing / Debug
 django-debug-toolbar==1.11
-pytest==4.0.1
-pytest-django==3.4.4
+pytest==4.1.1
+pytest-django==3.4.5
 pytest-factoryboy==2.0.2
 flake8==3.6.0
-tox==3.5.3
+tox==3.7.0
 
 # Scrapy Framework
 Scrapy==1.5.1
 scrapy-djangoitem==1.1.1
 
 # Pip Tools
-pip-tools==3.1.0
+pip-tools==3.2.0
 pur==5.2.1
 
 # Env
@@ -24,16 +24,15 @@ django-dotenv==1.4.2
 # Mailer Utiliity
 django-anymail==5.0
 
-
 # HTTP Server
 gunicorn==19.9.0
 
-# Task Queue
-celery==4.2.1
-redis==3.0.1
+# Static Assets
+django-compressor==2.2
+django-libsass==0.7
 
 # Database
-#psycopg2==2.7.6.1
+psycopg2==2.7.6.1
 psycopg2-binary==2.7.6.1
 
 # Make forms suck less
