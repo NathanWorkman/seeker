@@ -32,3 +32,8 @@ seeker/media
 # due to ansible logs
 *.log
 *.retry
+
+
+# temp ignore
+seeker/seeker/static_src/scss/theme/*
+ 
