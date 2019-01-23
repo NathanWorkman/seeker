@@ -1,4 +1,26 @@
-{% extends "base.html" %} {% load tz humanize %} {% block content %}
+{% extends "base.html" %}
+{% load tz humanize %}
+{% block content %}
+{% include 'includes/user-sidebar.html' %}
+<div class="dashboard-content-wrapper">
+    <div class="dashboard-section user-statistic-block">
+        <div class="user-statistic">
+            <i data-feather="pie-chart"></i>
+            <h3>132</h3>
+            <span>Companies Viewed</span>
+        </div>
+        <div class="user-statistic">
+            <i data-feather="briefcase"></i>
+            <h3>12</h3>
+            <span>Applied Jobs</span>
+        </div>
+        <div class="user-statistic">
+            <i data-feather="heart"></i>
+            <h3>32</h3>
+            <span>Favourite Jobs</span>
+        </div>
+    </div>
+</div>
 <div class="col-md-8">
     <div class="media-item-total mb-4">
         <p>There are currently <strong>{{ job_count }}</strong> jobs listed.</p>
@@ -18,6 +40,6 @@
             <p> {{ job.board }} | {{ job.scrape_date }}</p>
         </div>
     </div>
-    {% endfor %} {% include 'includes/pagination.html' %}
+    <!-- {% endfor %} {% include 'includes/pagination.html' %} -->
 </div>
-{% include 'includes/job_sidebar.html' %} {% endblock %}
+{% endblock %}

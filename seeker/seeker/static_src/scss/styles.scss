@@ -2,3 +2,13 @@
 @import 'vendor/bootstrap/bootstrap.scss';
 // Select2
 @import 'vendor/select2.min.css';
+
+// Theme
+@import 'theme/theme.scss';
+
+// Base
+@import 'theme/base/config';
+// Components
+@import 'theme/components/nav';
+
+// Pages
