@@ -34,24 +34,11 @@ HOST ?= localhost:8000
 reset: delete_sqlite migrate user run
 setup: virtualenv requirements migrate user yarn build collectstatic
 
-virtualenv:
-# Create virtualenv
-	$(call ECHO_GREEN, Creating virtualenv... )
-	virtualenv -p python3 $(VIRTUALENV_NAME)
-
-requirements:
-# Install project requirements
-	$(call ECHO_GREEN, Installing requirements... )
-	( \
-		source venv/bin/activate;\
-		$(PIP_INSTALL_CMD) -r requirements.txt; \
-	)
 
 migrate:
 # Run django migrations
 	$(call ECHO_GREEN, Running migrations... )
 	( \
-		cd seeker; \
 		$(MANAGE_CMD) migrate; \
 	)
 
@@ -59,14 +46,12 @@ user:
 # Create user account
 	$(call ECHO_GREEN, Creating super user... )
 	( \
-		cd seeker; \
 		echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@email.com', 'pass')" | ./manage.py shell; \
 	)
 
 test:
 # Run the test cases
 	( \
-		cd seeker; \
 		$(MANAGE_CMD) test; \
 	)
 
@@ -84,14 +69,12 @@ clean:
 shell:
 # Run a local shell for debugging
 	( \
-		cd seeker; \
-		$(MANAGE_CMD) shell; \
+		$(MANAGE_CMD) shell_plus; \
 	)
 
 migrations:
 # Create database migrations
 	( \
-		cd seeker; \
 		$(MANAGE_CMD) makemigrations; \
 	)
 
@@ -99,7 +82,6 @@ collectstatic:
 # Collect static assets
 	$(call ECHO_GREEN, Collecting static assets...)
 	( \
-		cd seeker; \
 		$(MANAGE_CMD) collectstatic; \
 	)
 
@@ -107,7 +89,6 @@ run:
 # run django server
 	$(call ECHO_GREEN, Starting Django Server...)
 	( \
-		cd seeker; \
 		$(MANAGE_CMD) runserver ; \
 	)
 
@@ -116,21 +97,18 @@ crawl:
 # Run ALL scrapy spiders
 	$(call ECHO_GREEN, Running spiders... )
 	 (\
-		cd seeker; \
-		python crawl.py;  \
+		python seeker/crawl.py;  \
 	)
 
 crawl_spider:
 # Run scrapy spider
 	$(call ECHO_GREEN, Running $(spider) spider... )
 	 (\
-		cd seeker; \
 		scrapy crawl $(spider);  \
 	)
 
 delete_sqlite:
 # delete project db
 	( \
-		cd seeker; \
 		rm -rf db.sqlite3;\
 	)

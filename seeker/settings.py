@@ -46,8 +46,8 @@ INSTALLED_APPS = [
     'compressor',  # compile static assets
     'django_cron',  # recurring tasks without the task queue
 
-    'job',
-    'company',
+    'seeker.job',
+    'seeker.company',
 ]
 
 MIDDLEWARE = [

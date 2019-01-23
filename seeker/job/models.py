@@ -2,7 +2,7 @@
 from django.urls import reverse
 from django.db import models
 
-from company.models import Company
+from seeker.company.models import Company
 
 
 class Board(models.Model):

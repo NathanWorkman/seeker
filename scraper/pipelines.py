@@ -8,8 +8,8 @@
 from django.utils.text import slugify
 from scrapy.exceptions import DropItem
 
-from job.models import Job, Board
-from company.models import Company
+from seeker.job.models import Job, Board
+from seeker.company.models import Company
 
 
 class JobsPipeline(object):

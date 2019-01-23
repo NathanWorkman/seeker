@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from seeker.job import urls as job_urls
+from seeker.company import urls as company_urls
+
 from .views import AboutView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', AboutView.as_view(), name='about'),
-    path('', include('job.urls')),
-    path('companies/', include('company.urls'))
+    path('', include(job_urls)),
+    path('companies/', include(company_urls))
 ]
