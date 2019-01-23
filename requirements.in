@@ -11,7 +11,7 @@ flake8==3.6.0
 tox==3.7.0
 
 # Scrapy Framework
-Scrapy==1.5.1
+Scrapy==1.5.2
 scrapy-djangoitem==1.1.1
 
 # Pip Tools
@@ -35,8 +35,8 @@ django-compressor==2.2
 django-libsass==0.7
 
 # Database
-psycopg2==2.7.6.1
-psycopg2-binary==2.7.6.1
+psycopg2==2.7.7
+psycopg2-binary==2.7.7
 
 # Make forms suck less
 django-widget-tweaks==1.4.3
@@ -48,4 +48,4 @@ WeasyPrint==44.0.0
 django-cron==0.5.1
 
 # Better filtering
-django-filter==2.0.0
+django-filter==2.1.0

@@ -1,45 +1,111 @@
 {% extends "base.html" %}
 {% load tz humanize %}
 {% block content %}
-{% include 'includes/user-sidebar.html' %}
-<div class="dashboard-content-wrapper">
-    <div class="dashboard-section user-statistic-block">
-        <div class="user-statistic">
-            <i data-feather="pie-chart"></i>
-            <h3>132</h3>
-            <span>Companies Viewed</span>
-        </div>
-        <div class="user-statistic">
-            <i data-feather="briefcase"></i>
-            <h3>12</h3>
-            <span>Applied Jobs</span>
-        </div>
-        <div class="user-statistic">
-            <i data-feather="heart"></i>
-            <h3>32</h3>
-            <span>Favourite Jobs</span>
+<!-- Job Listing -->
+<div class="alice-bg">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="job-listing-container">
+                <div class="filtered-job-listing-wrapper">
+                    <div class="job-view-controller-wrapper">
+                        <div class="job-view-controller">
+                            <div class="controller list active">
+                                <i data-feather="menu"></i>
+                            </div>
+                            <div class="controller grid">
+                                <i data-feather="grid"></i>
+                            </div>
+                            <div class="job-view-filter">
+                                <select class="selectpicker">
+                                    <option value="" selected>Most Recent</option>
+                                    <option value="california">Top Rated</option>
+                                    <option value="las-vegas">Most Popular</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="showing-number">
+                            <span>Showing 1–12 of 28 Jobs</span>
+                        </div>
+                    </div>
+                    <div class="job-filter-result">
+                        {% for job in job_list %}
+                        <!-- Job Post -->
+                        <div class="job-list">
+                            <div class="thumb">
+                                <a href="{{ job.get_absolute_url }}">
+                                    {% if job.company.logo %}
+                                    <img class="img-fluid" src="{{ job.company.logo }}" alt="{{ job.company.name }}">
+                                    {% else %}
+                                    <img class="img-fluid" src="https://dummyimage.com/300x300?text=No%20Logo" alt="Placeholder logo">
+                                    {% endif %}
+                                </a>
+                            </div>
+                            <div class="body">
+                                <div class="content">
+                                    <h4><a href="{{ job.get_absolute_url }}">{{ job.title }}</a></h4>
+                                    <div class="info">
+                                        <span class="company"><a href="#"><i data-feather="briefcase"></i>{{ job.board }}</a></span>
+                                        <span class="office-location"><a href="#"><i data-feather="map-pin"></i>New Orleans</a></span>
+                                        <span class="job-type temporary"><a href="#"><i data-feather="clock"></i>Temporary</a></span>
+                                    </div>
+                                </div>
+                                <div class="more">
+                                    <div class="buttons">
+                                        <a href="{{ job.get_absolute_url }}" class="button">View Post</a>
+                                        <a href="#" class="favourite"><i data-feather="heart"></i></a>
+                                    </div>
+                                    <p class="deadline">Scraped: {{ job.scrape_date }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="pagination-list text-center">
+                        <nav class="navigation pagination">
+                            <div class="nav-links">
+                                <a class="prev page-numbers" href="job-listing-with-map.html#"><i class="fas fa-angle-left"></i></a>
+                                <a class="page-numbers" href="job-listing-with-map.html#">1</a>
+                                <span aria-current="page" class="page-numbers current">2</span>
+                                <a class="page-numbers" href="job-listing-with-map.html#">3</a>
+                                <a class="page-numbers" href="job-listing-with-map.html#">4</a>
+                                <a class="next page-numbers" href="job-listing-with-map.html#"><i class="fas fa-angle-right"></i></a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="job-filter-wrapper">
+                    <div data-id="job-type" class="job-filter job-type">
+                        <h4 class="option-title">Job Type</h4>
+                        <ul>
+                            <li class="full-time"><i data-feather="clock"></i><a href="job-listing.html#" data-attr="Full Time">Full Time</a></li>
+                            <li class="part-time"><i data-feather="clock"></i><a href="job-listing.html#" data-attr="Part Time">Part Time</a></li>
+                            <li class="freelance"><i data-feather="clock"></i><a href="job-listing.html#" data-attr="Freelance">Freelance</a></li>
+                            <li class="temporary"><i data-feather="clock"></i><a href="job-listing.html#" data-attr="Temporary">Temporary</a></li>
+                        </ul>
+                    </div>
+                    <div data-id="experience" class="job-filter experience">
+                        <h4 class="option-title">Experience</h4>
+                        <ul>
+                            <li><a href="job-listing.html#" data-attr="Fresh">N00B</a></li>
+                            <li><a href="job-listing.html#" data-attr="Less than 1 year">1-3 Years</a></li>
+                            <li><a href="job-listing.html#" data-attr="2 Year">3-5 Years</a></li>
+                            <li><a href="job-listing.html#" data-attr="3 Year">5-10 Years</a></li>
+                            <li><a href="job-listing.html#" data-attr="4 Year">10+</a></li>
+                        </ul>
+                    </div>
+                    <div data-id="post" class="job-filter post">
+                        <h4 class="option-title">Scrape Date</h4>
+                        <ul>
+                            <li><a href="job-listing.html#" data-attr="Last 7 days">Last 7 days</a></li>
+                            <li><a href="job-listing.html#" data-attr="Last 14 days">Last 14 days</a></li>
+                            <li><a href="job-listing.html#" data-attr="Last 30 days">Last 30 days</a></li>
+                            <li><a href="job-listing.html#" data-attr="Last 30 days">Last 90 days</a></li>
+                            <li><a href="job-listing.html#" data-attr="Last 30 days">All</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<div class="col-md-8">
-    <div class="media-item-total mb-4">
-        <p>There are currently <strong>{{ job_count }}</strong> jobs listed.</p>
-    </div>
-    {% for job in job_list %}
-    <!-- Job Post -->
-    <div class="media media-item mb-4">
-        <a href="{{ job.get_absolute_url }}">
-            {% if job.company.logo %}
-            <img class="align-self-start mr-3" src="{{ job.company.logo }}" alt="{{ job.company.name }}">
-            {% else %}
-            <img class="align-self-start mr-3" src="https://dummyimage.com/200x200?text=No%20Logo" alt="Placeholder logo">
-            {% endif %}
-        </a>
-        <div class="media-body">
-            <h2 class="mt-0"><a href="{{ job.get_absolute_url }}">{{ job.title }}</a></h2>
-            <p> {{ job.board }} | {{ job.scrape_date }}</p>
-        </div>
-    </div>
-    <!-- {% endfor %} {% include 'includes/pagination.html' %} -->
 </div>
 {% endblock %}

@@ -1,0 +1,58 @@
+.testimonial {
+    text-align: center;
+}
+
+.testimonial .testimonial-quote {
+    margin-bottom: 40px;
+}
+
+.testimonial .testimonial-for .testimonial-item {
+    padding-bottom: 60px;
+    outline: none;
+}
+
+.testimonial .testimonial-for .testimonial-item p {
+    font-size: 2.0rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.testimonial .testimonial-for .testimonial-item h5 {
+    font-size: 1.4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: #246df8;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+.testimonial .testimonial-nav {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.testimonial .testimonial-nav .commenter-thumb {
+    text-align: center;
+    outline: none;
+}
+
+.testimonial .testimonial-nav .commenter-thumb .commenter {
+    padding: 0 20px;
+    border-radius: 50%;
+}
+
+.testimonial .testimonial-nav .commenter-thumb .comapnyLogo {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.testimonial .testimonial-nav .commenter-thumb.slick-active {
+    opacity: .3;
+    cursor: pointer;
+}
+
+.testimonial .testimonial-nav .commenter-thumb.slick-active.slick-current {
+    opacity: 1;
+}

@@ -1,0 +1,359 @@
+.employer-filter-result.grid {
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.employer-filter-result.grid:before {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    bottom: 0;
+    width: 1px;
+    background: rgba(0, 0, 0, 0.08);
+    content: '';
+}
+
+.employer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+    border-radius: 3px;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.employer .thumb {
+    width: 80px;
+    height: 80px;
+    background: #f9f9f9;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.employer .thumb a {
+    height: 80px;
+    width: 80px;
+    position: relative;
+}
+
+.employer .thumb a img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.employer .thumb+.body {
+    padding-left: 20px;
+}
+
+.employer .body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: calc(100% - 80px);
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.employer .body .content h4 {
+    font-size: 1.8rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.employer .body .content h4:hover {
+    color: #246df8;
+}
+
+.employer .body .content .info span {
+    color: #6f7484;
+    margin-right: 15px;
+}
+
+.employer .body .content .info span.work-post svg {
+    color: rgba(36, 109, 248, 0.4);
+}
+
+.employer .body .content .info span.location svg {
+    color: #6f7484;
+}
+
+.employer .body .content .info span svg {
+    height: 15px;
+    color: #aaa;
+}
+
+.employer .body .button-area a {
+    font-size: 1.4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    padding: 8px 15px;
+    color: #246df8;
+    border-radius: 3px;
+    background: rgba(36, 109, 248, 0.15);
+}
+
+.employer:hover {
+    border-bottom-color: transparent;
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+.employer:hover .body .button-area a {
+    background: #246df8;
+    border-color: #246df8;
+    color: #ffffff;
+}
+
+.employer.half-grid {
+    width: calc(50% - 30px);
+}
+
+.employer.half-grid .body {
+    display: block;
+    margin-top: 0;
+}
+
+.employer.half-grid .body .content span {
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.employer.half-grid .body .button-area {
+    margin-top: 10px;
+}
+
+/*---------------------------------------------
+	Employer Details
+---------------------------------------------*/
+.company-details {
+    background: #ffffff;
+    padding: 30px;
+    -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.03);
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.03);
+}
+
+.company-details .title-and-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.company-details .title-and-info .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.company-details .title-and-info .title .thumb {
+    width: 100px;
+    height: 100px;
+    background: #f9f9f9;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.company-details .title-and-info .title .thumb img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.company-details .title-and-info .title .thumb+.title-body {
+    padding-left: 20px;
+}
+
+.company-details .title-and-info .title .title-body h4 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    padding-bottom: 15px;
+}
+
+.company-details .title-and-info .title .title-body .info span {
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    margin-right: 15px;
+    color: #6f7484;
+}
+
+.company-details .title-and-info .title .title-body .info span svg {
+    height: 15px;
+    margin-right: 5px;
+}
+
+.company-details .title-and-info .download-resume a {
+    padding: 15px 30px;
+    border-radius: 3px;
+    background: rgba(36, 109, 248, 0.15);
+    color: #246df8;
+    font-size: 1.4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+.company-details .title-and-info .download-resume a svg {
+    height: 18px;
+    margin-left: 10px;
+}
+
+.company-details .title-and-info .download-resume a:hover {
+    color: #ffffff;
+    background: #246df8;
+}
+
+.company-details .title-and-info .download-resume .save-btn {
+    text-align: center;
+    background: transparent;
+    margin-right: 10px;
+    border: 1px solid rgba(247, 249, 252, 0.05);
+    background-image: -webkit-gradient(linear, right top, left top, from(rgba(247, 249, 252, 0)), to(#f7f9fc));
+    background-image: -webkit-linear-gradient(right, rgba(247, 249, 252, 0), #f7f9fc);
+    background-image: -o-linear-gradient(right, rgba(247, 249, 252, 0), #f7f9fc);
+    background-image: linear-gradient(to left, rgba(247, 249, 252, 0), #f7f9fc);
+}
+
+.company-details .title-and-info .download-resume .save-btn svg {
+    margin-left: 0;
+}
+
+.company-details .title-and-info .download-resume .save-btn:hover {
+    background: transparent;
+    background-image: -webkit-gradient(linear, right top, left top, from(rgba(247, 249, 252, 0)), to(#f7f9fc));
+    background-image: -webkit-linear-gradient(right, rgba(247, 249, 252, 0), #f7f9fc);
+    background-image: -o-linear-gradient(right, rgba(247, 249, 252, 0), #f7f9fc);
+    background-image: linear-gradient(to left, rgba(247, 249, 252, 0), #f7f9fc);
+    border-color: rgba(36, 109, 248, 0.2);
+    color: #246df8;
+}
+
+.open-job .job-list {
+    padding: 30px 20px;
+}
+
+.open-job .job-list .body {
+    padding-left: 0;
+    width: 100%;
+}
+
+.open-job .job-list .body .content h4 {
+    margin-bottom: 0;
+}
+
+.company-details .details-information {
+    border-bottom: 0;
+}
+
+.information-and-contact .information ul li a {
+    color: #246df8;
+}
+
+.company-details .job-location {
+    background-image: -webkit-gradient(linear, right top, left top, from(rgba(247, 249, 252, 0)), to(#f7f9fc));
+    background-image: -webkit-linear-gradient(right, rgba(247, 249, 252, 0), #f7f9fc);
+    background-image: -o-linear-gradient(right, rgba(247, 249, 252, 0), #f7f9fc);
+    background-image: linear-gradient(to left, rgba(247, 249, 252, 0), #f7f9fc);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    margin-top: 50px;
+    padding: 30px;
+}
+
+.company-details .job-location h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.company-details .job-location .cp-map {
+    height: 250px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media all and (max-width: 991px) {
+    .company-details .title-and-info {
+        display: block;
+    }
+
+    .company-details .title-and-info .download-resume {
+        margin-top: 20px;
+    }
+
+    .company-details .title-and-info .download-resume a {
+        margin-bottom: 10px;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .employer .body {
+        display: block;
+    }
+
+    .employer .body .button-area {
+        margin-top: 20px;
+    }
+
+    .company-details {
+        padding: 20px;
+    }
+}
+
+@media all and (max-width: 439px) {
+    .employer {
+        display: block;
+    }
+
+    .employer .thumb+.body {
+        padding-left: 0;
+        margin-top: 15px;
+    }
+
+    .employer .body {
+        width: 100%;
+    }
+
+    .company-details .title-and-info .title {
+        display: block;
+    }
+
+    .company-details .title-and-info .title .thumb+.title-body {
+        padding-left: 0;
+    }
+
+    .information {
+        padding: 20px;
+    }
+
+    .information h4 {
+        margin-bottom: 20px;
+    }
+}

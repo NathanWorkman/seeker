@@ -1,0 +1,1621 @@
+.searchAndFilter-wrapper {
+    background: #f7f9fc;
+}
+
+.searchAndFilter {
+    padding: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    background: #ffffff;
+    position: relative;
+    -webkit-transform: translateY(-120px);
+    -ms-transform: translateY(-120px);
+    transform: translateY(-120px);
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.05);
+}
+
+.searchAndFilter input {
+    height: 60px;
+    border: 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+    background: transparent;
+    outline: none;
+    width: calc(33% - 78px);
+    margin-right: 25px;
+}
+
+.searchAndFilter input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: rgba(111, 116, 132, 0.8);
+}
+
+.searchAndFilter input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: rgba(111, 116, 132, 0.8);
+}
+
+.searchAndFilter input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: rgba(111, 116, 132, 0.8);
+}
+
+.searchAndFilter input:-moz-placeholder {
+    /* Firefox 18- */
+    color: rgba(111, 116, 132, 0.8);
+}
+
+.searchAndFilter input:focus {
+    border-bottom-color: #246df8;
+}
+
+.searchAndFilter select option {
+    color: #6f7484;
+}
+
+.searchAndFilter .button {
+    border: 0;
+    padding: 17px 10px;
+    width: 155px;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.searchAndFilter .button i {
+    margin-right: 10px;
+}
+
+.searchAndFilter .button:hover {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(36, 109, 248, 0.3);
+    box-shadow: 0px 5px 15px 0px rgba(36, 109, 248, 0.3);
+}
+
+.searchAndFilter.searchAndFilter-2 {
+    background: #246df8;
+    -webkit-transform: translateY(-60px);
+    -ms-transform: translateY(-60px);
+    transform: translateY(-60px);
+    z-index: 9;
+}
+
+.searchAndFilter.searchAndFilter-2 input {
+    color: #ffffff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.searchAndFilter.searchAndFilter-2 input::-webkit-input-placeholder {
+    color: #ffffff;
+}
+
+.searchAndFilter.searchAndFilter-2 input::-moz-placeholder {
+    color: #ffffff;
+}
+
+.searchAndFilter.searchAndFilter-2 input:-ms-input-placeholder {
+    color: #ffffff;
+}
+
+.searchAndFilter.searchAndFilter-2 input:-moz-placeholder {
+    color: #ffffff;
+}
+
+.searchAndFilter.searchAndFilter-2 input:focus {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.searchAndFilter.searchAndFilter-2 .button {
+    background: #ffffff;
+    color: #232630;
+}
+
+.searchAndFilter .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+    width: calc(33% - 78px);
+}
+
+.searchAndFilter .bootstrap-select.show:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    border-bottom-color: #246df8;
+}
+
+.searchAndFilter.searchAndFilter-2 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.searchAndFilter.searchAndFilter-2 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn):focus {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.searchAndFilter .bootstrap-select {
+    margin-right: 25px;
+}
+
+.searchAndFilter .bootstrap-select .dropdown-toggle .filter-option-inner {
+    padding-top: 2px;
+}
+
+.searchAndFilter .bootstrap-select .dropdown-toggle:after {
+    border-top: 0 solid;
+    border-right: 0 solid transparent;
+    border-bottom: 0;
+    border-left: 0 solid transparent;
+    position: absolute;
+    top: 6px;
+    right: 20px;
+    content: '\f107';
+    font-family: Font Awesome\ 5 Free;
+    font-weight: 900;
+}
+
+.searchAndFilter .bootstrap-select .dropdown-toggle:after {
+    right: 10px;
+}
+
+.searchAndFilter .bootstrap-select .dropdown-toggle .filter-option {
+    padding: 0 15px;
+}
+
+.searchAndFilter .bootstrap-select .dropdown-toggle .filter-option {
+    padding: 0;
+}
+
+.searchAndFilter .bootstrap-select:focus {
+    outline: none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.searchAndFilter .btn:focus,
+.searchAndFilter .btn-light:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.searchAndFilter .btn {
+    padding: 0;
+}
+
+.searchAndFilter .bootstrap-select .dropdown-toggle {
+    height: 56px;
+    background: transparent;
+    font-size: 1.4rem;
+    border-radius: 0;
+    color: #6f7484;
+    line-height: 51px;
+}
+
+.searchAndFilter .bootstrap-select .dropdown-toggle:active:focus {
+    background: transparent;
+    outline: none !important;
+}
+
+.searchAndFilter .bootstrap-select .dropdown-toggle:focus {
+    outline: none !important;
+    color: #6f7484;
+}
+
+.searchAndFilter.searchAndFilter-2 .bootstrap-select .dropdown-toggle {
+    color: #ffffff;
+}
+
+.searchAndFilter.searchAndFilter-2 .bootstrap-select .dropdown-toggle:focus {
+    color: #ffffff;
+}
+
+.searchAndFilter .btn-light:not(:disabled):not(.disabled).active,
+.btn-light:not(:disabled):not(.disabled):active,
+.show>.btn-light.dropdown-toggle {
+    border-color: transparent;
+}
+
+.searchAndFilter .btn-light:not(:disabled):not(.disabled).active,
+.btn-light:not(:disabled):not(.disabled):active,
+.show>.btn-light.dropdown-toggle {
+    color: #6f7484;
+    background: transparent;
+}
+
+.searchAndFilter.searchAndFilter-2 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.searchAndFilter.searchAndFilter-2 .bootstrap-select.show:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    border-bottom-color: #ffffff;
+}
+
+.searchAndFilter.searchAndFilter-2 .bootstrap-select.show {
+    border-bottom-color: #ffffff;
+}
+
+.searchAndFilter .bootstrap-select .btn-light,
+.searchAndFilter.searchAndFilter-2 .bootstrap-select .btn-light {
+    border: 0;
+}
+
+.searchAndFilter .dropdown-menu {
+    font-size: 1.4rem;
+}
+
+.searchAndFilter-3 {
+    background: #ffffff;
+    -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.05);
+    position: relative;
+    -webkit-transform: translateY(-120px);
+    -ms-transform: translateY(-120px);
+    transform: translateY(-120px);
+}
+
+.searchAndFilter-3 .search-form {
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.searchAndFilter-3 .search-form label {
+    display: block;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.searchAndFilter-3 .search-form input {
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    width: 100%;
+}
+
+.searchAndFilter-3 .search-form .keyword {
+    max-width: 300px;
+    width: 100%;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.searchAndFilter-3 .search-form .location-input,
+.searchAndFilter-3 .search-form .category-input {
+    width: 30%;
+    padding: 0 30px;
+}
+
+.searchAndFilter-3 .search-form .location-input {
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.searchAndFilter-3 .search-form .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100%;
+}
+
+.searchAndFilter-3 .search-form .btn-light {
+    background: transparent;
+}
+
+.searchAndFilter-3 .search-form .btn-light:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.searchAndFilter-3 .search-form .btn-light:not(:disabled):not(.disabled):active {
+    border-bottom: 0;
+}
+
+.searchAndFilter-3 .search-form .bootstrap-select .dropdown-toggle .filter-option {
+    padding: 0;
+}
+
+.searchAndFilter-3 .search-form .btn {
+    border: 0;
+    padding: 0;
+    font-size: 1.4rem;
+}
+
+.searchAndFilter-3 .search-form .bootstrap-select:focus {
+    outline: none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.searchAndFilter-3 .search-form .bootstrap-select .dropdown-toggle:active:focus {
+    background: transparent;
+    outline: none !important;
+}
+
+.searchAndFilter-3 .search-form .bootstrap-select .dropdown-toggle:focus {
+    outline: none !important;
+    color: #6f7484;
+}
+
+.searchAndFilter-3 .search-form .bootstrap-select .dropdown-menu {
+    font-size: 1.4rem;
+}
+
+.searchAndFilter-3 .search-form .button {
+    padding: 0 30px;
+    color: #ffffff;
+    margin-left: auto;
+}
+
+.searchAndFilter-3 .filter-categories {
+    padding: 55px;
+}
+
+.searchAndFilter-3 .filter-categories h4 {
+    position: relative;
+}
+
+.searchAndFilter-3 .filter-categories h4 svg {
+    position: absolute;
+    top: 0;
+    left: -30px;
+    height: 20px;
+    color: #aaa;
+}
+
+.searchAndFilter-3 .filter-categories ul li {
+    padding: 8px 0;
+}
+
+.searchAndFilter-3 .filter-location {
+    padding: 55px;
+    padding-top: 0;
+}
+
+.searchAndFilter-3 .filter-location h4 {
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    color: #515666;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.searchAndFilter-3 .filter-location h4 svg {
+    position: absolute;
+    top: 0;
+    left: -30px;
+    height: 20px;
+    color: #aaa;
+}
+
+.searchAndFilter-3 .filter-location ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.searchAndFilter-3 .filter-location ul:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.searchAndFilter-3 .filter-location ul li {
+    padding: 8px 0;
+    float: left;
+    width: 33%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    position: relative;
+}
+
+.searchAndFilter-3 .filter-location ul li a span {
+    color: #6f7484;
+}
+
+.searchAndFilter-3 .filter-location ul li a:hover {
+    color: #246df8;
+}
+
+.filter-categories {
+    padding-top: 30px;
+}
+
+.filter-categories h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    color: #515666;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.filter-categories ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.filter-categories ul:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.filter-categories ul li {
+    float: left;
+    width: 33%;
+    padding: 8px 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    position: relative;
+    padding-left: 30px;
+    color: #6f7484;
+}
+
+.filter-categories ul li a svg {
+    color: rgba(36, 109, 248, 0.3);
+    margin-right: 10px;
+    height: 18px;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    position: absolute;
+    top: 11px;
+    left: 0;
+}
+
+.filter-categories ul li a span {
+    font-family: "Roboto", sans-serif;
+    color: #aaa;
+}
+
+.filter-categories ul li a:hover {
+    color: #246df8;
+}
+
+.filter-categories ul li a:hover span {
+    color: #246df8;
+}
+
+.filter-categories ul li a:hover svg {
+    color: #246df8;
+}
+
+.job-filter-wrapper,
+.candidate-filter-wrapper,
+.employer-filter-wrapper {
+    background-image: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#f7f9fc));
+    background-image: -webkit-linear-gradient(left, #ffffff, #f7f9fc);
+    background-image: -o-linear-gradient(left, #ffffff, #f7f9fc);
+    background-image: linear-gradient(to right, #ffffff, #f7f9fc);
+}
+
+.job-filter-wrapper .job-filter,
+.candidate-filter-wrapper .job-filter,
+.employer-filter-wrapper .job-filter,
+.job-filter-wrapper .candidate-filter,
+.candidate-filter-wrapper .candidate-filter,
+.employer-filter-wrapper .candidate-filter,
+.job-filter-wrapper .employer-filter,
+.candidate-filter-wrapper .employer-filter,
+.employer-filter-wrapper .employer-filter {
+    padding: 30px 30px 30px 50px;
+    position: relative;
+}
+
+.job-filter-wrapper .job-filter:before,
+.candidate-filter-wrapper .job-filter:before,
+.employer-filter-wrapper .job-filter:before,
+.job-filter-wrapper .candidate-filter:before,
+.candidate-filter-wrapper .candidate-filter:before,
+.employer-filter-wrapper .candidate-filter:before,
+.job-filter-wrapper .employer-filter:before,
+.candidate-filter-wrapper .employer-filter:before,
+.employer-filter-wrapper .employer-filter:before {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.08);
+    content: '';
+}
+
+.job-filter-wrapper .job-filter .option-title,
+.candidate-filter-wrapper .job-filter .option-title,
+.employer-filter-wrapper .job-filter .option-title,
+.job-filter-wrapper .candidate-filter .option-title,
+.candidate-filter-wrapper .candidate-filter .option-title,
+.employer-filter-wrapper .candidate-filter .option-title,
+.job-filter-wrapper .employer-filter .option-title,
+.candidate-filter-wrapper .employer-filter .option-title,
+.employer-filter-wrapper .employer-filter .option-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    cursor: pointer;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.job-filter-wrapper .job-filter .option-title:before,
+.candidate-filter-wrapper .job-filter .option-title:before,
+.employer-filter-wrapper .job-filter .option-title:before,
+.job-filter-wrapper .candidate-filter .option-title:before,
+.candidate-filter-wrapper .candidate-filter .option-title:before,
+.employer-filter-wrapper .candidate-filter .option-title:before,
+.job-filter-wrapper .employer-filter .option-title:before,
+.candidate-filter-wrapper .employer-filter .option-title:before,
+.employer-filter-wrapper .employer-filter .option-title:before {
+    position: absolute;
+    content: "\e622";
+    font-family: 'themify';
+    top: 0;
+    right: 0;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.job-filter-wrapper .job-filter .option-title.compress:hover,
+.candidate-filter-wrapper .job-filter .option-title.compress:hover,
+.employer-filter-wrapper .job-filter .option-title.compress:hover,
+.job-filter-wrapper .candidate-filter .option-title.compress:hover,
+.candidate-filter-wrapper .candidate-filter .option-title.compress:hover,
+.employer-filter-wrapper .candidate-filter .option-title.compress:hover,
+.job-filter-wrapper .employer-filter .option-title.compress:hover,
+.candidate-filter-wrapper .employer-filter .option-title.compress:hover,
+.employer-filter-wrapper .employer-filter .option-title.compress:hover {
+    color: #246df8;
+}
+
+.job-filter-wrapper .job-filter .option-title.compress:before,
+.candidate-filter-wrapper .job-filter .option-title.compress:before,
+.employer-filter-wrapper .job-filter .option-title.compress:before,
+.job-filter-wrapper .candidate-filter .option-title.compress:before,
+.candidate-filter-wrapper .candidate-filter .option-title.compress:before,
+.employer-filter-wrapper .candidate-filter .option-title.compress:before,
+.job-filter-wrapper .employer-filter .option-title.compress:before,
+.candidate-filter-wrapper .employer-filter .option-title.compress:before,
+.employer-filter-wrapper .employer-filter .option-title.compress:before {
+    content: "\e61a";
+}
+
+.job-filter-wrapper .job-filter ul,
+.candidate-filter-wrapper .job-filter ul,
+.employer-filter-wrapper .job-filter ul,
+.job-filter-wrapper .candidate-filter ul,
+.candidate-filter-wrapper .candidate-filter ul,
+.employer-filter-wrapper .candidate-filter ul,
+.job-filter-wrapper .employer-filter ul,
+.candidate-filter-wrapper .employer-filter ul,
+.employer-filter-wrapper .employer-filter ul {
+    padding: 20px 0 0;
+    margin: 0;
+    list-style: none;
+}
+
+.job-filter-wrapper .job-filter ul li,
+.candidate-filter-wrapper .job-filter ul li,
+.employer-filter-wrapper .job-filter ul li,
+.job-filter-wrapper .candidate-filter ul li,
+.candidate-filter-wrapper .candidate-filter ul li,
+.employer-filter-wrapper .candidate-filter ul li,
+.job-filter-wrapper .employer-filter ul li,
+.candidate-filter-wrapper .employer-filter ul li,
+.employer-filter-wrapper .employer-filter ul li {
+    position: relative;
+    padding-left: 20px;
+}
+
+.job-filter-wrapper .job-filter ul li+li,
+.candidate-filter-wrapper .job-filter ul li+li,
+.employer-filter-wrapper .job-filter ul li+li,
+.job-filter-wrapper .candidate-filter ul li+li,
+.candidate-filter-wrapper .candidate-filter ul li+li,
+.employer-filter-wrapper .candidate-filter ul li+li,
+.job-filter-wrapper .employer-filter ul li+li,
+.candidate-filter-wrapper .employer-filter ul li+li,
+.employer-filter-wrapper .employer-filter ul li+li {
+    margin-top: 7px;
+}
+
+.job-filter-wrapper .job-filter ul li a,
+.candidate-filter-wrapper .job-filter ul li a,
+.employer-filter-wrapper .job-filter ul li a,
+.job-filter-wrapper .candidate-filter ul li a,
+.candidate-filter-wrapper .candidate-filter ul li a,
+.employer-filter-wrapper .candidate-filter ul li a,
+.job-filter-wrapper .employer-filter ul li a,
+.candidate-filter-wrapper .employer-filter ul li a,
+.employer-filter-wrapper .employer-filter ul li a {
+    color: #6f7484;
+    font-size: 1.4rem;
+}
+
+.job-filter-wrapper .job-filter ul li a:hover,
+.candidate-filter-wrapper .job-filter ul li a:hover,
+.employer-filter-wrapper .job-filter ul li a:hover,
+.job-filter-wrapper .candidate-filter ul li a:hover,
+.candidate-filter-wrapper .candidate-filter ul li a:hover,
+.employer-filter-wrapper .candidate-filter ul li a:hover,
+.job-filter-wrapper .employer-filter ul li a:hover,
+.candidate-filter-wrapper .employer-filter ul li a:hover,
+.employer-filter-wrapper .employer-filter ul li a:hover {
+    color: #246df8;
+}
+
+.job-filter-wrapper .job-filter ul li:before,
+.candidate-filter-wrapper .job-filter ul li:before,
+.employer-filter-wrapper .job-filter ul li:before,
+.job-filter-wrapper .candidate-filter ul li:before,
+.candidate-filter-wrapper .candidate-filter ul li:before,
+.employer-filter-wrapper .candidate-filter ul li:before,
+.job-filter-wrapper .employer-filter ul li:before,
+.candidate-filter-wrapper .employer-filter ul li:before,
+.employer-filter-wrapper .employer-filter ul li:before {
+    position: absolute;
+    content: "\e622";
+    font-family: 'themify';
+    top: 0;
+    left: 0;
+}
+
+.job-filter-wrapper .job-filter:last-child:after,
+.candidate-filter-wrapper .job-filter:last-child:after,
+.employer-filter-wrapper .job-filter:last-child:after,
+.job-filter-wrapper .candidate-filter:last-child:after,
+.candidate-filter-wrapper .candidate-filter:last-child:after,
+.employer-filter-wrapper .candidate-filter:last-child:after,
+.job-filter-wrapper .employer-filter:last-child:after,
+.candidate-filter-wrapper .employer-filter:last-child:after,
+.employer-filter-wrapper .employer-filter:last-child:after {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.08);
+    content: '';
+}
+
+.job-filter-wrapper .job-filter.job-type ul li,
+.candidate-filter-wrapper .job-filter.job-type ul li,
+.employer-filter-wrapper .job-filter.job-type ul li,
+.job-filter-wrapper .job-type.candidate-filter ul li,
+.candidate-filter-wrapper .job-type.candidate-filter ul li,
+.employer-filter-wrapper .job-type.candidate-filter ul li,
+.job-filter-wrapper .candidate-filter.candidate-type ul li,
+.candidate-filter-wrapper .candidate-filter.candidate-type ul li,
+.employer-filter-wrapper .candidate-filter.candidate-type ul li,
+.job-filter-wrapper .candidate-filter.employer-type ul li,
+.candidate-filter-wrapper .candidate-filter.employer-type ul li,
+.employer-filter-wrapper .candidate-filter.employer-type ul li,
+.job-filter-wrapper .job-filter.candidate-type ul li,
+.candidate-filter-wrapper .job-filter.candidate-type ul li,
+.employer-filter-wrapper .job-filter.candidate-type ul li,
+.job-filter-wrapper .candidate-type.employer-filter ul li,
+.candidate-filter-wrapper .candidate-type.employer-filter ul li,
+.employer-filter-wrapper .candidate-type.employer-filter ul li,
+.job-filter-wrapper .job-type.employer-filter ul li,
+.candidate-filter-wrapper .job-type.employer-filter ul li,
+.employer-filter-wrapper .job-type.employer-filter ul li,
+.job-filter-wrapper .employer-filter.employer-type ul li,
+.candidate-filter-wrapper .employer-filter.employer-type ul li,
+.employer-filter-wrapper .employer-filter.employer-type ul li,
+.job-filter-wrapper .job-filter.employer-type ul li,
+.candidate-filter-wrapper .job-filter.employer-type ul li,
+.employer-filter-wrapper .job-filter.employer-type ul li {
+    padding-left: 0;
+}
+
+.job-filter-wrapper .job-filter.job-type ul li:before,
+.candidate-filter-wrapper .job-filter.job-type ul li:before,
+.employer-filter-wrapper .job-filter.job-type ul li:before,
+.job-filter-wrapper .job-type.candidate-filter ul li:before,
+.candidate-filter-wrapper .job-type.candidate-filter ul li:before,
+.employer-filter-wrapper .job-type.candidate-filter ul li:before,
+.job-filter-wrapper .candidate-filter.candidate-type ul li:before,
+.candidate-filter-wrapper .candidate-filter.candidate-type ul li:before,
+.employer-filter-wrapper .candidate-filter.candidate-type ul li:before,
+.job-filter-wrapper .candidate-filter.employer-type ul li:before,
+.candidate-filter-wrapper .candidate-filter.employer-type ul li:before,
+.employer-filter-wrapper .candidate-filter.employer-type ul li:before,
+.job-filter-wrapper .job-filter.candidate-type ul li:before,
+.candidate-filter-wrapper .job-filter.candidate-type ul li:before,
+.employer-filter-wrapper .job-filter.candidate-type ul li:before,
+.job-filter-wrapper .candidate-type.employer-filter ul li:before,
+.candidate-filter-wrapper .candidate-type.employer-filter ul li:before,
+.employer-filter-wrapper .candidate-type.employer-filter ul li:before,
+.job-filter-wrapper .job-type.employer-filter ul li:before,
+.candidate-filter-wrapper .job-type.employer-filter ul li:before,
+.employer-filter-wrapper .job-type.employer-filter ul li:before,
+.job-filter-wrapper .employer-filter.employer-type ul li:before,
+.candidate-filter-wrapper .employer-filter.employer-type ul li:before,
+.employer-filter-wrapper .employer-filter.employer-type ul li:before,
+.job-filter-wrapper .job-filter.employer-type ul li:before,
+.candidate-filter-wrapper .job-filter.employer-type ul li:before,
+.employer-filter-wrapper .job-filter.employer-type ul li:before {
+    content: '';
+}
+
+.job-filter-wrapper .job-filter.job-type ul li svg,
+.candidate-filter-wrapper .job-filter.job-type ul li svg,
+.employer-filter-wrapper .job-filter.job-type ul li svg,
+.job-filter-wrapper .job-type.candidate-filter ul li svg,
+.candidate-filter-wrapper .job-type.candidate-filter ul li svg,
+.employer-filter-wrapper .job-type.candidate-filter ul li svg,
+.job-filter-wrapper .candidate-filter.candidate-type ul li svg,
+.candidate-filter-wrapper .candidate-filter.candidate-type ul li svg,
+.employer-filter-wrapper .candidate-filter.candidate-type ul li svg,
+.job-filter-wrapper .candidate-filter.employer-type ul li svg,
+.candidate-filter-wrapper .candidate-filter.employer-type ul li svg,
+.employer-filter-wrapper .candidate-filter.employer-type ul li svg,
+.job-filter-wrapper .job-filter.candidate-type ul li svg,
+.candidate-filter-wrapper .job-filter.candidate-type ul li svg,
+.employer-filter-wrapper .job-filter.candidate-type ul li svg,
+.job-filter-wrapper .candidate-type.employer-filter ul li svg,
+.candidate-filter-wrapper .candidate-type.employer-filter ul li svg,
+.employer-filter-wrapper .candidate-type.employer-filter ul li svg,
+.job-filter-wrapper .job-type.employer-filter ul li svg,
+.candidate-filter-wrapper .job-type.employer-filter ul li svg,
+.employer-filter-wrapper .job-type.employer-filter ul li svg,
+.job-filter-wrapper .employer-filter.employer-type ul li svg,
+.candidate-filter-wrapper .employer-filter.employer-type ul li svg,
+.employer-filter-wrapper .employer-filter.employer-type ul li svg,
+.job-filter-wrapper .job-filter.employer-type ul li svg,
+.candidate-filter-wrapper .job-filter.employer-type ul li svg,
+.employer-filter-wrapper .job-filter.employer-type ul li svg {
+    height: 14px;
+    width: 14px;
+    margin-right: 7px;
+}
+
+.job-filter-wrapper .job-filter.job-type ul .full-time svg,
+.candidate-filter-wrapper .job-filter.job-type ul .full-time svg,
+.employer-filter-wrapper .job-filter.job-type ul .full-time svg,
+.job-filter-wrapper .job-type.candidate-filter ul .full-time svg,
+.candidate-filter-wrapper .job-type.candidate-filter ul .full-time svg,
+.employer-filter-wrapper .job-type.candidate-filter ul .full-time svg,
+.job-filter-wrapper .candidate-filter.candidate-type ul .full-time svg,
+.candidate-filter-wrapper .candidate-filter.candidate-type ul .full-time svg,
+.employer-filter-wrapper .candidate-filter.candidate-type ul .full-time svg,
+.job-filter-wrapper .candidate-filter.employer-type ul .full-time svg,
+.candidate-filter-wrapper .candidate-filter.employer-type ul .full-time svg,
+.employer-filter-wrapper .candidate-filter.employer-type ul .full-time svg,
+.job-filter-wrapper .job-filter.candidate-type ul .full-time svg,
+.candidate-filter-wrapper .job-filter.candidate-type ul .full-time svg,
+.employer-filter-wrapper .job-filter.candidate-type ul .full-time svg,
+.job-filter-wrapper .candidate-type.employer-filter ul .full-time svg,
+.candidate-filter-wrapper .candidate-type.employer-filter ul .full-time svg,
+.employer-filter-wrapper .candidate-type.employer-filter ul .full-time svg,
+.job-filter-wrapper .job-type.employer-filter ul .full-time svg,
+.candidate-filter-wrapper .job-type.employer-filter ul .full-time svg,
+.employer-filter-wrapper .job-type.employer-filter ul .full-time svg,
+.job-filter-wrapper .employer-filter.employer-type ul .full-time svg,
+.candidate-filter-wrapper .employer-filter.employer-type ul .full-time svg,
+.employer-filter-wrapper .employer-filter.employer-type ul .full-time svg,
+.job-filter-wrapper .job-filter.employer-type ul .full-time svg,
+.candidate-filter-wrapper .job-filter.employer-type ul .full-time svg,
+.employer-filter-wrapper .job-filter.employer-type ul .full-time svg {
+    color: #ff9247;
+}
+
+.job-filter-wrapper .job-filter.job-type ul .part-time svg,
+.candidate-filter-wrapper .job-filter.job-type ul .part-time svg,
+.employer-filter-wrapper .job-filter.job-type ul .part-time svg,
+.job-filter-wrapper .job-type.candidate-filter ul .part-time svg,
+.candidate-filter-wrapper .job-type.candidate-filter ul .part-time svg,
+.employer-filter-wrapper .job-type.candidate-filter ul .part-time svg,
+.job-filter-wrapper .candidate-filter.candidate-type ul .part-time svg,
+.candidate-filter-wrapper .candidate-filter.candidate-type ul .part-time svg,
+.employer-filter-wrapper .candidate-filter.candidate-type ul .part-time svg,
+.job-filter-wrapper .candidate-filter.employer-type ul .part-time svg,
+.candidate-filter-wrapper .candidate-filter.employer-type ul .part-time svg,
+.employer-filter-wrapper .candidate-filter.employer-type ul .part-time svg,
+.job-filter-wrapper .job-filter.candidate-type ul .part-time svg,
+.candidate-filter-wrapper .job-filter.candidate-type ul .part-time svg,
+.employer-filter-wrapper .job-filter.candidate-type ul .part-time svg,
+.job-filter-wrapper .candidate-type.employer-filter ul .part-time svg,
+.candidate-filter-wrapper .candidate-type.employer-filter ul .part-time svg,
+.employer-filter-wrapper .candidate-type.employer-filter ul .part-time svg,
+.job-filter-wrapper .job-type.employer-filter ul .part-time svg,
+.candidate-filter-wrapper .job-type.employer-filter ul .part-time svg,
+.employer-filter-wrapper .job-type.employer-filter ul .part-time svg,
+.job-filter-wrapper .employer-filter.employer-type ul .part-time svg,
+.candidate-filter-wrapper .employer-filter.employer-type ul .part-time svg,
+.employer-filter-wrapper .employer-filter.employer-type ul .part-time svg,
+.job-filter-wrapper .job-filter.employer-type ul .part-time svg,
+.candidate-filter-wrapper .job-filter.employer-type ul .part-time svg,
+.employer-filter-wrapper .job-filter.employer-type ul .part-time svg {
+    color: #6e75d0;
+}
+
+.job-filter-wrapper .job-filter.job-type ul .freelance svg,
+.candidate-filter-wrapper .job-filter.job-type ul .freelance svg,
+.employer-filter-wrapper .job-filter.job-type ul .freelance svg,
+.job-filter-wrapper .job-type.candidate-filter ul .freelance svg,
+.candidate-filter-wrapper .job-type.candidate-filter ul .freelance svg,
+.employer-filter-wrapper .job-type.candidate-filter ul .freelance svg,
+.job-filter-wrapper .candidate-filter.candidate-type ul .freelance svg,
+.candidate-filter-wrapper .candidate-filter.candidate-type ul .freelance svg,
+.employer-filter-wrapper .candidate-filter.candidate-type ul .freelance svg,
+.job-filter-wrapper .candidate-filter.employer-type ul .freelance svg,
+.candidate-filter-wrapper .candidate-filter.employer-type ul .freelance svg,
+.employer-filter-wrapper .candidate-filter.employer-type ul .freelance svg,
+.job-filter-wrapper .job-filter.candidate-type ul .freelance svg,
+.candidate-filter-wrapper .job-filter.candidate-type ul .freelance svg,
+.employer-filter-wrapper .job-filter.candidate-type ul .freelance svg,
+.job-filter-wrapper .candidate-type.employer-filter ul .freelance svg,
+.candidate-filter-wrapper .candidate-type.employer-filter ul .freelance svg,
+.employer-filter-wrapper .candidate-type.employer-filter ul .freelance svg,
+.job-filter-wrapper .job-type.employer-filter ul .freelance svg,
+.candidate-filter-wrapper .job-type.employer-filter ul .freelance svg,
+.employer-filter-wrapper .job-type.employer-filter ul .freelance svg,
+.job-filter-wrapper .employer-filter.employer-type ul .freelance svg,
+.candidate-filter-wrapper .employer-filter.employer-type ul .freelance svg,
+.employer-filter-wrapper .employer-filter.employer-type ul .freelance svg,
+.job-filter-wrapper .job-filter.employer-type ul .freelance svg,
+.candidate-filter-wrapper .job-filter.employer-type ul .freelance svg,
+.employer-filter-wrapper .job-filter.employer-type ul .freelance svg {
+    color: #82d219;
+}
+
+.job-filter-wrapper .job-filter.job-type ul .temporary svg,
+.candidate-filter-wrapper .job-filter.job-type ul .temporary svg,
+.employer-filter-wrapper .job-filter.job-type ul .temporary svg,
+.job-filter-wrapper .job-type.candidate-filter ul .temporary svg,
+.candidate-filter-wrapper .job-type.candidate-filter ul .temporary svg,
+.employer-filter-wrapper .job-type.candidate-filter ul .temporary svg,
+.job-filter-wrapper .candidate-filter.candidate-type ul .temporary svg,
+.candidate-filter-wrapper .candidate-filter.candidate-type ul .temporary svg,
+.employer-filter-wrapper .candidate-filter.candidate-type ul .temporary svg,
+.job-filter-wrapper .candidate-filter.employer-type ul .temporary svg,
+.candidate-filter-wrapper .candidate-filter.employer-type ul .temporary svg,
+.employer-filter-wrapper .candidate-filter.employer-type ul .temporary svg,
+.job-filter-wrapper .job-filter.candidate-type ul .temporary svg,
+.candidate-filter-wrapper .job-filter.candidate-type ul .temporary svg,
+.employer-filter-wrapper .job-filter.candidate-type ul .temporary svg,
+.job-filter-wrapper .candidate-type.employer-filter ul .temporary svg,
+.candidate-filter-wrapper .candidate-type.employer-filter ul .temporary svg,
+.employer-filter-wrapper .candidate-type.employer-filter ul .temporary svg,
+.job-filter-wrapper .job-type.employer-filter ul .temporary svg,
+.candidate-filter-wrapper .job-type.employer-filter ul .temporary svg,
+.employer-filter-wrapper .job-type.employer-filter ul .temporary svg,
+.job-filter-wrapper .employer-filter.employer-type ul .temporary svg,
+.candidate-filter-wrapper .employer-filter.employer-type ul .temporary svg,
+.employer-filter-wrapper .employer-filter.employer-type ul .temporary svg,
+.job-filter-wrapper .job-filter.employer-type ul .temporary svg,
+.candidate-filter-wrapper .job-filter.employer-type ul .temporary svg,
+.employer-filter-wrapper .job-filter.employer-type ul .temporary svg {
+    color: #ff5377;
+}
+
+.job-filter-wrapper .job-filter .nstSlider,
+.candidate-filter-wrapper .job-filter .nstSlider,
+.employer-filter-wrapper .job-filter .nstSlider,
+.job-filter-wrapper .candidate-filter .nstSlider,
+.candidate-filter-wrapper .candidate-filter .nstSlider,
+.employer-filter-wrapper .candidate-filter .nstSlider,
+.job-filter-wrapper .employer-filter .nstSlider,
+.candidate-filter-wrapper .employer-filter .nstSlider,
+.employer-filter-wrapper .employer-filter .nstSlider {
+    width: 100%;
+    height: 3px;
+    margin: 20px 0 37px;
+    background: #e3e3e3;
+    cursor: auto;
+}
+
+.job-filter-wrapper .job-filter .nstSlider .bar,
+.candidate-filter-wrapper .job-filter .nstSlider .bar,
+.employer-filter-wrapper .job-filter .nstSlider .bar,
+.job-filter-wrapper .candidate-filter .nstSlider .bar,
+.candidate-filter-wrapper .candidate-filter .nstSlider .bar,
+.employer-filter-wrapper .candidate-filter .nstSlider .bar,
+.job-filter-wrapper .employer-filter .nstSlider .bar,
+.candidate-filter-wrapper .employer-filter .nstSlider .bar,
+.employer-filter-wrapper .employer-filter .nstSlider .bar {
+    height: 3px;
+    top: 0;
+    min-width: 0;
+    background: #246df8;
+}
+
+.job-filter-wrapper .job-filter .nstSlider .leftGrip,
+.candidate-filter-wrapper .job-filter .nstSlider .leftGrip,
+.employer-filter-wrapper .job-filter .nstSlider .leftGrip,
+.job-filter-wrapper .candidate-filter .nstSlider .leftGrip,
+.candidate-filter-wrapper .candidate-filter .nstSlider .leftGrip,
+.employer-filter-wrapper .candidate-filter .nstSlider .leftGrip,
+.job-filter-wrapper .employer-filter .nstSlider .leftGrip,
+.candidate-filter-wrapper .employer-filter .nstSlider .leftGrip,
+.employer-filter-wrapper .employer-filter .nstSlider .leftGrip,
+.job-filter-wrapper .job-filter .nstSlider .rightGrip,
+.candidate-filter-wrapper .job-filter .nstSlider .rightGrip,
+.employer-filter-wrapper .job-filter .nstSlider .rightGrip,
+.job-filter-wrapper .candidate-filter .nstSlider .rightGrip,
+.candidate-filter-wrapper .candidate-filter .nstSlider .rightGrip,
+.employer-filter-wrapper .candidate-filter .nstSlider .rightGrip,
+.job-filter-wrapper .employer-filter .nstSlider .rightGrip,
+.candidate-filter-wrapper .employer-filter .nstSlider .rightGrip,
+.employer-filter-wrapper .employer-filter .nstSlider .rightGrip {
+    height: 15px;
+    width: 15px;
+    background: #ffffff;
+    border: 3px solid #246df8;
+    top: -6px;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.job-filter-wrapper .job-filter .nstSlider .grip-label,
+.candidate-filter-wrapper .job-filter .nstSlider .grip-label,
+.employer-filter-wrapper .job-filter .nstSlider .grip-label,
+.job-filter-wrapper .candidate-filter .nstSlider .grip-label,
+.candidate-filter-wrapper .candidate-filter .nstSlider .grip-label,
+.employer-filter-wrapper .candidate-filter .nstSlider .grip-label,
+.job-filter-wrapper .employer-filter .nstSlider .grip-label,
+.candidate-filter-wrapper .employer-filter .nstSlider .grip-label,
+.employer-filter-wrapper .employer-filter .nstSlider .grip-label {
+    padding-top: 20px;
+}
+
+.job-filter-wrapper .job-filter .nstSlider .grip-label .leftLabel:before,
+.candidate-filter-wrapper .job-filter .nstSlider .grip-label .leftLabel:before,
+.employer-filter-wrapper .job-filter .nstSlider .grip-label .leftLabel:before,
+.job-filter-wrapper .candidate-filter .nstSlider .grip-label .leftLabel:before,
+.candidate-filter-wrapper .candidate-filter .nstSlider .grip-label .leftLabel:before,
+.employer-filter-wrapper .candidate-filter .nstSlider .grip-label .leftLabel:before,
+.job-filter-wrapper .employer-filter .nstSlider .grip-label .leftLabel:before,
+.candidate-filter-wrapper .employer-filter .nstSlider .grip-label .leftLabel:before,
+.employer-filter-wrapper .employer-filter .nstSlider .grip-label .leftLabel:before,
+.job-filter-wrapper .job-filter .nstSlider .grip-label .rightLabel:before,
+.candidate-filter-wrapper .job-filter .nstSlider .grip-label .rightLabel:before,
+.employer-filter-wrapper .job-filter .nstSlider .grip-label .rightLabel:before,
+.job-filter-wrapper .candidate-filter .nstSlider .grip-label .rightLabel:before,
+.candidate-filter-wrapper .candidate-filter .nstSlider .grip-label .rightLabel:before,
+.employer-filter-wrapper .candidate-filter .nstSlider .grip-label .rightLabel:before,
+.job-filter-wrapper .employer-filter .nstSlider .grip-label .rightLabel:before,
+.candidate-filter-wrapper .employer-filter .nstSlider .grip-label .rightLabel:before,
+.employer-filter-wrapper .employer-filter .nstSlider .grip-label .rightLabel:before {
+    content: "$";
+}
+
+.job-filter-wrapper .job-filter .nstSlider .grip-label .leftLabel:after,
+.candidate-filter-wrapper .job-filter .nstSlider .grip-label .leftLabel:after,
+.employer-filter-wrapper .job-filter .nstSlider .grip-label .leftLabel:after,
+.job-filter-wrapper .candidate-filter .nstSlider .grip-label .leftLabel:after,
+.candidate-filter-wrapper .candidate-filter .nstSlider .grip-label .leftLabel:after,
+.employer-filter-wrapper .candidate-filter .nstSlider .grip-label .leftLabel:after,
+.job-filter-wrapper .employer-filter .nstSlider .grip-label .leftLabel:after,
+.candidate-filter-wrapper .employer-filter .nstSlider .grip-label .leftLabel:after,
+.employer-filter-wrapper .employer-filter .nstSlider .grip-label .leftLabel:after {
+    content: '-';
+    padding-left: 8px;
+    padding-right: 5px;
+}
+
+.job-filter-wrapper .job-filter .price-range-slider,
+.candidate-filter-wrapper .job-filter .price-range-slider,
+.employer-filter-wrapper .job-filter .price-range-slider,
+.job-filter-wrapper .candidate-filter .price-range-slider,
+.candidate-filter-wrapper .candidate-filter .price-range-slider,
+.employer-filter-wrapper .candidate-filter .price-range-slider,
+.job-filter-wrapper .employer-filter .price-range-slider,
+.candidate-filter-wrapper .employer-filter .price-range-slider,
+.employer-filter-wrapper .employer-filter .price-range-slider {
+    padding-bottom: 30px;
+}
+
+.job-filter-wrapper .job-filter-dropdown,
+.candidate-filter-wrapper .job-filter-dropdown,
+.employer-filter-wrapper .job-filter-dropdown,
+.job-filter-wrapper .candidate-filter-dropdown,
+.candidate-filter-wrapper .candidate-filter-dropdown,
+.employer-filter-wrapper .candidate-filter-dropdown,
+.job-filter-wrapper .employer-filter-dropdown,
+.candidate-filter-wrapper .employer-filter-dropdown,
+.employer-filter-wrapper .employer-filter-dropdown {
+    padding: 20px 30px 0 50px;
+}
+
+.job-filter-wrapper .job-filter-dropdown .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn),
+.candidate-filter-wrapper .job-filter-dropdown .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn),
+.employer-filter-wrapper .job-filter-dropdown .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn),
+.job-filter-wrapper .candidate-filter-dropdown .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn),
+.candidate-filter-wrapper .candidate-filter-dropdown .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn),
+.employer-filter-wrapper .candidate-filter-dropdown .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn),
+.job-filter-wrapper .employer-filter-dropdown .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn),
+.candidate-filter-wrapper .employer-filter-dropdown .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn),
+.employer-filter-wrapper .employer-filter-dropdown .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100%;
+}
+
+.job-filter-wrapper .job-filter-dropdown .dropdown.bootstrap-select:focus,
+.candidate-filter-wrapper .job-filter-dropdown .dropdown.bootstrap-select:focus,
+.employer-filter-wrapper .job-filter-dropdown .dropdown.bootstrap-select:focus,
+.job-filter-wrapper .candidate-filter-dropdown .dropdown.bootstrap-select:focus,
+.candidate-filter-wrapper .candidate-filter-dropdown .dropdown.bootstrap-select:focus,
+.employer-filter-wrapper .candidate-filter-dropdown .dropdown.bootstrap-select:focus,
+.job-filter-wrapper .employer-filter-dropdown .dropdown.bootstrap-select:focus,
+.candidate-filter-wrapper .employer-filter-dropdown .dropdown.bootstrap-select:focus,
+.employer-filter-wrapper .employer-filter-dropdown .dropdown.bootstrap-select:focus {
+    outline: none !important;
+}
+
+.job-filter-wrapper .job-filter-dropdown .btn-light:not(:disabled):not(.disabled):active:focus,
+.candidate-filter-wrapper .job-filter-dropdown .btn-light:not(:disabled):not(.disabled):active:focus,
+.employer-filter-wrapper .job-filter-dropdown .btn-light:not(:disabled):not(.disabled):active:focus,
+.job-filter-wrapper .candidate-filter-dropdown .btn-light:not(:disabled):not(.disabled):active:focus,
+.candidate-filter-wrapper .candidate-filter-dropdown .btn-light:not(:disabled):not(.disabled):active:focus,
+.employer-filter-wrapper .candidate-filter-dropdown .btn-light:not(:disabled):not(.disabled):active:focus,
+.job-filter-wrapper .employer-filter-dropdown .btn-light:not(:disabled):not(.disabled):active:focus,
+.candidate-filter-wrapper .employer-filter-dropdown .btn-light:not(:disabled):not(.disabled):active:focus,
+.employer-filter-wrapper .employer-filter-dropdown .btn-light:not(:disabled):not(.disabled):active:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.job-filter-wrapper .job-filter-dropdown .bootstrap-select .dropdown-toggle:focus,
+.candidate-filter-wrapper .job-filter-dropdown .bootstrap-select .dropdown-toggle:focus,
+.employer-filter-wrapper .job-filter-dropdown .bootstrap-select .dropdown-toggle:focus,
+.job-filter-wrapper .candidate-filter-dropdown .bootstrap-select .dropdown-toggle:focus,
+.candidate-filter-wrapper .candidate-filter-dropdown .bootstrap-select .dropdown-toggle:focus,
+.employer-filter-wrapper .candidate-filter-dropdown .bootstrap-select .dropdown-toggle:focus,
+.job-filter-wrapper .employer-filter-dropdown .bootstrap-select .dropdown-toggle:focus,
+.candidate-filter-wrapper .employer-filter-dropdown .bootstrap-select .dropdown-toggle:focus,
+.employer-filter-wrapper .employer-filter-dropdown .bootstrap-select .dropdown-toggle:focus {
+    outline: none !important;
+}
+
+.job-filter-wrapper .job-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option-inner-inner,
+.candidate-filter-wrapper .job-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option-inner-inner,
+.employer-filter-wrapper .job-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option-inner-inner,
+.job-filter-wrapper .candidate-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option-inner-inner,
+.candidate-filter-wrapper .candidate-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option-inner-inner,
+.employer-filter-wrapper .candidate-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option-inner-inner,
+.job-filter-wrapper .employer-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option-inner-inner,
+.candidate-filter-wrapper .employer-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option-inner-inner,
+.employer-filter-wrapper .employer-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+    font-size: 1.4rem;
+    padding: 9px 0;
+}
+
+.job-filter-wrapper .job-filter-dropdown .btn:not(:disabled):not(.disabled),
+.candidate-filter-wrapper .job-filter-dropdown .btn:not(:disabled):not(.disabled),
+.employer-filter-wrapper .job-filter-dropdown .btn:not(:disabled):not(.disabled),
+.job-filter-wrapper .candidate-filter-dropdown .btn:not(:disabled):not(.disabled),
+.candidate-filter-wrapper .candidate-filter-dropdown .btn:not(:disabled):not(.disabled),
+.employer-filter-wrapper .candidate-filter-dropdown .btn:not(:disabled):not(.disabled),
+.job-filter-wrapper .employer-filter-dropdown .btn:not(:disabled):not(.disabled),
+.candidate-filter-wrapper .employer-filter-dropdown .btn:not(:disabled):not(.disabled),
+.employer-filter-wrapper .employer-filter-dropdown .btn:not(:disabled):not(.disabled) {
+    height: 40px;
+}
+
+.job-filter-wrapper .job-filter-dropdown .bootstrap-select>.dropdown-toggle.bs-placeholder,
+.candidate-filter-wrapper .job-filter-dropdown .bootstrap-select>.dropdown-toggle.bs-placeholder,
+.employer-filter-wrapper .job-filter-dropdown .bootstrap-select>.dropdown-toggle.bs-placeholder,
+.job-filter-wrapper .candidate-filter-dropdown .bootstrap-select>.dropdown-toggle.bs-placeholder,
+.candidate-filter-wrapper .candidate-filter-dropdown .bootstrap-select>.dropdown-toggle.bs-placeholder,
+.employer-filter-wrapper .candidate-filter-dropdown .bootstrap-select>.dropdown-toggle.bs-placeholder,
+.job-filter-wrapper .employer-filter-dropdown .bootstrap-select>.dropdown-toggle.bs-placeholder,
+.candidate-filter-wrapper .employer-filter-dropdown .bootstrap-select>.dropdown-toggle.bs-placeholder,
+.employer-filter-wrapper .employer-filter-dropdown .bootstrap-select>.dropdown-toggle.bs-placeholder {
+    height: 40px;
+    color: #6f7484;
+}
+
+.job-filter-wrapper .job-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option,
+.candidate-filter-wrapper .job-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option,
+.employer-filter-wrapper .job-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option,
+.job-filter-wrapper .candidate-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option,
+.candidate-filter-wrapper .candidate-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option,
+.employer-filter-wrapper .candidate-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option,
+.job-filter-wrapper .employer-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option,
+.candidate-filter-wrapper .employer-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option,
+.employer-filter-wrapper .employer-filter-dropdown .bootstrap-select .dropdown-toggle .filter-option {
+    padding: 0;
+}
+
+.job-filter-wrapper .job-filter-dropdown .btn-light,
+.candidate-filter-wrapper .job-filter-dropdown .btn-light,
+.employer-filter-wrapper .job-filter-dropdown .btn-light,
+.job-filter-wrapper .candidate-filter-dropdown .btn-light,
+.candidate-filter-wrapper .candidate-filter-dropdown .btn-light,
+.employer-filter-wrapper .candidate-filter-dropdown .btn-light,
+.job-filter-wrapper .employer-filter-dropdown .btn-light,
+.candidate-filter-wrapper .employer-filter-dropdown .btn-light,
+.employer-filter-wrapper .employer-filter-dropdown .btn-light {
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+}
+
+.job-filter-wrapper .job-filter-dropdown .btn,
+.candidate-filter-wrapper .job-filter-dropdown .btn,
+.employer-filter-wrapper .job-filter-dropdown .btn,
+.job-filter-wrapper .candidate-filter-dropdown .btn,
+.candidate-filter-wrapper .candidate-filter-dropdown .btn,
+.employer-filter-wrapper .candidate-filter-dropdown .btn,
+.job-filter-wrapper .employer-filter-dropdown .btn,
+.candidate-filter-wrapper .employer-filter-dropdown .btn,
+.employer-filter-wrapper .employer-filter-dropdown .btn {
+    padding: 0;
+}
+
+.job-filter-wrapper .job-filter-dropdown .dropdown-toggle::after,
+.candidate-filter-wrapper .job-filter-dropdown .dropdown-toggle::after,
+.employer-filter-wrapper .job-filter-dropdown .dropdown-toggle::after,
+.job-filter-wrapper .candidate-filter-dropdown .dropdown-toggle::after,
+.candidate-filter-wrapper .candidate-filter-dropdown .dropdown-toggle::after,
+.employer-filter-wrapper .candidate-filter-dropdown .dropdown-toggle::after,
+.job-filter-wrapper .employer-filter-dropdown .dropdown-toggle::after,
+.candidate-filter-wrapper .employer-filter-dropdown .dropdown-toggle::after,
+.employer-filter-wrapper .employer-filter-dropdown .dropdown-toggle::after {
+    position: absolute;
+    top: 17px;
+    right: 0;
+}
+
+.job-filter-wrapper .job-filter-dropdown .bootstrap-select .dropdown-menu li a,
+.candidate-filter-wrapper .job-filter-dropdown .bootstrap-select .dropdown-menu li a,
+.employer-filter-wrapper .job-filter-dropdown .bootstrap-select .dropdown-menu li a,
+.job-filter-wrapper .candidate-filter-dropdown .bootstrap-select .dropdown-menu li a,
+.candidate-filter-wrapper .candidate-filter-dropdown .bootstrap-select .dropdown-menu li a,
+.employer-filter-wrapper .candidate-filter-dropdown .bootstrap-select .dropdown-menu li a,
+.job-filter-wrapper .employer-filter-dropdown .bootstrap-select .dropdown-menu li a,
+.candidate-filter-wrapper .employer-filter-dropdown .bootstrap-select .dropdown-menu li a,
+.employer-filter-wrapper .employer-filter-dropdown .bootstrap-select .dropdown-menu li a {
+    font-size: 1.4rem;
+}
+
+.job-filter-wrapper .selected-options,
+.candidate-filter-wrapper .selected-options,
+.employer-filter-wrapper .selected-options {
+    padding: 20px;
+    display: none;
+    position: relative;
+}
+
+.job-filter-wrapper .selected-options:before,
+.candidate-filter-wrapper .selected-options:before,
+.employer-filter-wrapper .selected-options:before {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.08);
+    content: '';
+}
+
+.job-filter-wrapper .selected-options .selection-title,
+.candidate-filter-wrapper .selected-options .selection-title,
+.employer-filter-wrapper .selected-options .selection-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.job-filter-wrapper .selected-options .selection-title h4,
+.candidate-filter-wrapper .selected-options .selection-title h4,
+.employer-filter-wrapper .selected-options .selection-title h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+}
+
+.job-filter-wrapper .selected-options .selection-title a,
+.candidate-filter-wrapper .selected-options .selection-title a,
+.employer-filter-wrapper .selected-options .selection-title a {
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 5px 8px;
+    border-radius: 3px;
+    background: rgba(248, 36, 71, 0.1);
+    color: #f82447;
+    line-height: 1.3;
+}
+
+.job-filter-wrapper .selected-options .filtered-options,
+.candidate-filter-wrapper .selected-options .filtered-options,
+.employer-filter-wrapper .selected-options .filtered-options {
+    padding: 0;
+    padding-top: 20px;
+    margin: 0;
+    list-style: none;
+}
+
+.job-filter-wrapper .selected-options .filtered-options li+li,
+.candidate-filter-wrapper .selected-options .filtered-options li+li,
+.employer-filter-wrapper .selected-options .filtered-options li+li {
+    margin-top: 5px;
+}
+
+.job-filter-wrapper .selected-options .filtered-options li,
+.candidate-filter-wrapper .selected-options .filtered-options li,
+.employer-filter-wrapper .selected-options .filtered-options li {
+    color: #246df8;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.job-filter-wrapper .selected-options .filtered-options li span,
+.candidate-filter-wrapper .selected-options .filtered-options li span,
+.employer-filter-wrapper .selected-options .filtered-options li span {
+    font-size: 1rem;
+    color: #f82447;
+    cursor: pointer;
+}
+
+.filtered-job-listing-wrapper,
+.filtered-candidate-wrapper,
+.filtered-employer-wrapper {
+    padding: 40px 30px;
+    background: #ffffff;
+}
+
+.listing-with-map .job-listing-container .filtered-job-listing-wrapper,
+.listing-with-map .candidate-container .filtered-job-listing-wrapper,
+.listing-with-map .employer-container .filtered-job-listing-wrapper,
+.listing-with-map .job-listing-container .filtered-candidate-wrapper,
+.listing-with-map .candidate-container .filtered-candidate-wrapper,
+.listing-with-map .employer-container .filtered-candidate-wrapper,
+.listing-with-map .job-listing-container .filtered-employer-wrapper,
+.listing-with-map .candidate-container .filtered-employer-wrapper,
+.listing-with-map .employer-container .filtered-employer-wrapper {
+    width: calc(100% - 280px);
+}
+
+.listing-with-map .job-listing-container .filtered-job-listing-wrapper.change-padding,
+.listing-with-map .candidate-container .filtered-job-listing-wrapper.change-padding,
+.listing-with-map .employer-container .filtered-job-listing-wrapper.change-padding,
+.listing-with-map .job-listing-container .change-padding.filtered-candidate-wrapper,
+.listing-with-map .candidate-container .change-padding.filtered-candidate-wrapper,
+.listing-with-map .employer-container .change-padding.filtered-candidate-wrapper,
+.listing-with-map .job-listing-container .change-padding.filtered-employer-wrapper,
+.listing-with-map .candidate-container .change-padding.filtered-employer-wrapper,
+.listing-with-map .employer-container .change-padding.filtered-employer-wrapper {
+    padding-left: 50px;
+}
+
+.listing-with-map .job-listing-container .job-filter-wrapper,
+.listing-with-map .candidate-container .job-filter-wrapper,
+.listing-with-map .employer-container .job-filter-wrapper,
+.listing-with-map .job-listing-container .candidate-filter-wrapper,
+.listing-with-map .candidate-container .candidate-filter-wrapper,
+.listing-with-map .employer-container .candidate-filter-wrapper,
+.listing-with-map .job-listing-container .employer-filter-wrapper,
+.listing-with-map .candidate-container .employer-filter-wrapper,
+.listing-with-map .employer-container .employer-filter-wrapper {
+    min-width: 280px;
+}
+
+.listing-with-map .job-listing-container .filtered-job-listing-wrapper,
+.listing-with-map .candidate-container .filtered-job-listing-wrapper,
+.listing-with-map .employer-container .filtered-job-listing-wrapper,
+.listing-with-map .job-listing-container .filtered-candidate-wrapper,
+.listing-with-map .candidate-container .filtered-candidate-wrapper,
+.listing-with-map .employer-container .filtered-candidate-wrapper,
+.listing-with-map .job-listing-container .filtered-employer-wrapper,
+.listing-with-map .candidate-container .filtered-employer-wrapper,
+.listing-with-map .employer-container .filtered-employer-wrapper {
+    padding-right: 50px;
+}
+
+.job-view-controller-wrapper,
+.candidate-view-controller-wrapper,
+.employer-view-controller-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.job-view-controller-wrapper .job-view-controller,
+.candidate-view-controller-wrapper .job-view-controller,
+.employer-view-controller-wrapper .job-view-controller,
+.job-view-controller-wrapper .candidate-view-controller,
+.candidate-view-controller-wrapper .candidate-view-controller,
+.employer-view-controller-wrapper .candidate-view-controller,
+.job-view-controller-wrapper .employer-view-controller,
+.candidate-view-controller-wrapper .employer-view-controller,
+.employer-view-controller-wrapper .employer-view-controller {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.job-view-controller-wrapper .job-view-controller .controller,
+.candidate-view-controller-wrapper .job-view-controller .controller,
+.employer-view-controller-wrapper .job-view-controller .controller,
+.job-view-controller-wrapper .candidate-view-controller .controller,
+.candidate-view-controller-wrapper .candidate-view-controller .controller,
+.employer-view-controller-wrapper .candidate-view-controller .controller,
+.job-view-controller-wrapper .employer-view-controller .controller,
+.candidate-view-controller-wrapper .employer-view-controller .controller,
+.employer-view-controller-wrapper .employer-view-controller .controller {
+    margin-right: 15px;
+    height: 40px;
+    width: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 3px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    color: #b1b1b1;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.job-view-controller-wrapper .job-view-controller .controller.active,
+.candidate-view-controller-wrapper .job-view-controller .controller.active,
+.employer-view-controller-wrapper .job-view-controller .controller.active,
+.job-view-controller-wrapper .candidate-view-controller .controller.active,
+.candidate-view-controller-wrapper .candidate-view-controller .controller.active,
+.employer-view-controller-wrapper .candidate-view-controller .controller.active,
+.job-view-controller-wrapper .employer-view-controller .controller.active,
+.candidate-view-controller-wrapper .employer-view-controller .controller.active,
+.employer-view-controller-wrapper .employer-view-controller .controller.active {
+    color: #246df8;
+    border-color: rgba(36, 109, 248, 0.3);
+}
+
+.job-view-controller-wrapper .job-view-controller .controller svg,
+.candidate-view-controller-wrapper .job-view-controller .controller svg,
+.employer-view-controller-wrapper .job-view-controller .controller svg,
+.job-view-controller-wrapper .candidate-view-controller .controller svg,
+.candidate-view-controller-wrapper .candidate-view-controller .controller svg,
+.employer-view-controller-wrapper .candidate-view-controller .controller svg,
+.job-view-controller-wrapper .employer-view-controller .controller svg,
+.candidate-view-controller-wrapper .employer-view-controller .controller svg,
+.employer-view-controller-wrapper .employer-view-controller .controller svg {
+    height: 24px;
+}
+
+.job-view-controller-wrapper .showing-number span,
+.candidate-view-controller-wrapper .showing-number span,
+.employer-view-controller-wrapper .showing-number span {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.job-view-filter .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn),
+.candidate-view-filter .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn),
+.employer-view-filter .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 150px;
+}
+
+.job-view-filter .bootstrap-select .dropdown-toggle .filter-option-inner-inner,
+.candidate-view-filter .bootstrap-select .dropdown-toggle .filter-option-inner-inner,
+.employer-view-filter .bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+    font-size: 1.4rem;
+    padding: 9px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 3px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.job-view-filter .btn:not(:disabled):not(.disabled),
+.candidate-view-filter .btn:not(:disabled):not(.disabled),
+.employer-view-filter .btn:not(:disabled):not(.disabled) {
+    height: 40px;
+}
+
+.job-view-filter .bootstrap-select>.dropdown-toggle.bs-placeholder,
+.candidate-view-filter .bootstrap-select>.dropdown-toggle.bs-placeholder,
+.employer-view-filter .bootstrap-select>.dropdown-toggle.bs-placeholder {
+    height: 40px;
+}
+
+.job-view-filter .bootstrap-select .dropdown-toggle .filter-option,
+.candidate-view-filter .bootstrap-select .dropdown-toggle .filter-option,
+.employer-view-filter .bootstrap-select .dropdown-toggle .filter-option {
+    padding: 0;
+}
+
+.job-view-filter .btn,
+.candidate-view-filter .btn,
+.employer-view-filter .btn {
+    padding: 0;
+}
+
+.job-view-filter .dropdown-toggle::after,
+.candidate-view-filter .dropdown-toggle::after,
+.employer-view-filter .dropdown-toggle::after {
+    position: absolute;
+    top: 17px;
+    right: 15px;
+}
+
+.job-view-filter .dropdown.bootstrap-select:focus,
+.candidate-view-filter .dropdown.bootstrap-select:focus,
+.employer-view-filter .dropdown.bootstrap-select:focus {
+    outline: none !important;
+}
+
+.job-view-filter .btn-light:not(:disabled):not(.disabled):active:focus,
+.candidate-view-filter .btn-light:not(:disabled):not(.disabled):active:focus,
+.employer-view-filter .btn-light:not(:disabled):not(.disabled):active:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.job-view-filter .bootstrap-select .dropdown-toggle:focus,
+.candidate-view-filter .bootstrap-select .dropdown-toggle:focus,
+.employer-view-filter .bootstrap-select .dropdown-toggle:focus {
+    outline: none !important;
+}
+
+.job-view-filter .bootstrap-select .dropdown-menu li a,
+.candidate-view-filter .bootstrap-select .dropdown-menu li a,
+.employer-view-filter .bootstrap-select .dropdown-menu li a {
+    font-size: 1.4rem;
+}
+
+@media all and (max-width: 1199px) {
+
+    .filtered-job-listing-wrapper,
+    .filtered-candidate-wrapper,
+    .filtered-employer-wrapper {
+        padding: 30px 20px;
+        background: #ffffff;
+    }
+}
+
+@media all and (max-width: 991px) {
+
+    .listing-with-map .job-listing-container .filtered-job-listing-wrapper,
+    .listing-with-map .candidate-container .filtered-job-listing-wrapper,
+    .listing-with-map .employer-container .filtered-job-listing-wrapper,
+    .listing-with-map .job-listing-container .filtered-candidate-wrapper,
+    .listing-with-map .candidate-container .filtered-candidate-wrapper,
+    .listing-with-map .employer-container .filtered-candidate-wrapper,
+    .listing-with-map .job-listing-container .filtered-employer-wrapper,
+    .listing-with-map .candidate-container .filtered-employer-wrapper,
+    .listing-with-map .employer-container .filtered-employer-wrapper {
+        width: 100%;
+        padding-right: 20px;
+    }
+
+    .job-listing-container .job-search-wrapper,
+    .candidate-container .job-search-wrapper,
+    .employer-container .job-search-wrapper {
+        padding: 30px 20px;
+    }
+
+    .searchAndFilter input {
+        width: 50%;
+        margin-bottom: 25px;
+    }
+
+    .searchAndFilter .bootstrap-select {
+        margin-bottom: 25px;
+    }
+
+    .searchAndFilter .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        width: calc(50% - 30px);
+    }
+
+    .searchAndFilter .bootstrap-select:nth-child(2) {
+        margin-right: 0;
+        width: 50%;
+    }
+
+    .searchAndFilter .bootstrap-select:nth-child(3) {
+        margin-right: 25px;
+    }
+
+    .searchAndFilter .bootstrap-select:nth-child(3):not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        width: 50%;
+    }
+
+    .searchAndFilter-3 .search-form .keyword {
+        max-width: 180px;
+    }
+
+    .searchAndFilter-3 .search-form .location-input,
+    .searchAndFilter-3 .search-form .category-input {
+        padding: 0 15px;
+    }
+
+    .filter-categories ul li {
+        width: 50%;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .searchAndFilter-3 .search-form {
+        display: block;
+    }
+
+    .searchAndFilter-3 .search-form .keyword {
+        max-width: 100%;
+        border-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .searchAndFilter-3 .search-form .location-input,
+    .searchAndFilter-3 .search-form .category-input {
+        padding: 0;
+        width: 100%;
+        margin-bottom: 20px;
+        border-right: 0;
+    }
+
+    .searchAndFilter-3 .search-form .button {
+        padding: 11px 30px;
+    }
+
+    .searchAndFilter-3 .filter-categories,
+    .searchAndFilter-3 .filter-location {
+        padding: 30px 15px 30px 45px;
+    }
+
+    .searchAndFilter-3 .filter-location ul li {
+        width: 50%;
+    }
+}
+
+@media all and (max-width: 539px) {
+    .searchAndFilter input {
+        width: 100%;
+    }
+
+    .searchAndFilter .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        width: 100%;
+    }
+
+    .searchAndFilter .bootstrap-select:nth-child(2) {
+        width: 100%;
+    }
+
+    .searchAndFilter .bootstrap-select:nth-child(3) {
+        margin-right: 0;
+    }
+
+    .searchAndFilter .bootstrap-select:nth-child(3):not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        width: 100%;
+    }
+
+    .searchAndFilter .button {
+        margin-bottom: 25px;
+    }
+
+    .filter-categories ul li {
+        width: 100%;
+    }
+
+    .searchAndFilter-3 .filter-location ul li {
+        width: 100%;
+    }
+}

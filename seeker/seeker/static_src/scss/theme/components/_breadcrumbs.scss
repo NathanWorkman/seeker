@@ -1,0 +1,83 @@
+.breadcrumb-area h1 {
+    font-size: 2.6rem;
+    font-weight: 500;
+}
+
+.breadcrumb-area .breadcrumb {
+    padding: 0;
+    padding-top: 12px;
+    margin: 0;
+    background: transparent;
+}
+
+.breadcrumb-area .breadcrumb li {
+    color: #6f7484;
+}
+
+.breadcrumb-area .breadcrumb li a {
+    color: #aaaaaa;
+}
+
+.breadcrumb-area .breadcrumb li a:hover {
+    color: #246df8;
+}
+
+.breadcrumb-form {
+    text-align: right;
+}
+
+.breadcrumb-form form {
+    max-width: 350px;
+    position: relative;
+    margin-left: auto;
+}
+
+.breadcrumb-form form input {
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid rgba(36, 109, 248, 0.2);
+    background: transparent;
+    outline: none;
+    height: 50px;
+    padding: 0;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.breadcrumb-form form input:focus {
+    border-color: #246df8;
+}
+
+.breadcrumb-form form input:focus+button {
+    color: #246df8;
+}
+
+.breadcrumb-form form button {
+    background: transparent;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    color: rgba(36, 109, 248, 0.3);
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.breadcrumb-form form button:hover {
+    color: #246df8;
+}
+
+@media all and (max-width: 767px) {
+    .breadcrumb-form form {
+        margin-right: auto;
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}

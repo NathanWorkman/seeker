@@ -1,0 +1,242 @@
+.categories {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.categories:before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.08);
+    content: '';
+}
+
+.categories .category {
+    text-align: center;
+    padding: 40px 10px;
+    width: 20%;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.categories .category .icon {
+    margin-bottom: 15px;
+}
+
+.categories .category .icon svg {
+    color: #246df8;
+}
+
+.categories .category h5 {
+    font-size: 1.4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.categories .category h5 span {
+    color: #aaa;
+}
+
+.categories .category span {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    display: block;
+    margin-top: 5px;
+}
+
+.categories .category:hover {
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.05);
+}
+
+.categories .category:hover h5 {
+    color: #246df8;
+}
+
+.categories>.vr {
+    position: absolute;
+    top: 40px;
+    bottom: 40px;
+    width: 1px;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.categories .vr-1 {
+    left: 20%;
+}
+
+.categories .vr-2 {
+    left: 40%;
+}
+
+.categories .vr-3 {
+    left: 60%;
+}
+
+.categories .vr-4 {
+    left: 80%;
+}
+
+@media all and (max-width: 991px) {
+    .categories:before {
+        top: 33.33%;
+    }
+
+    .categories:after {
+        position: absolute;
+        top: 66.66%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.08);
+        content: '';
+    }
+
+    .categories .category {
+        width: 25%;
+    }
+
+    .categories .vr-1 {
+        left: 25%;
+    }
+
+    .categories .vr-2 {
+        left: 50%;
+    }
+
+    .categories .vr-3 {
+        left: 75%;
+    }
+
+    .categories .vr-4 {
+        left: 0%;
+        width: 0;
+        height: 0;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .categories:before {
+        top: 25%;
+    }
+
+    .categories:after {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.08);
+        content: '';
+    }
+
+    .categories .category {
+        width: 33.33%;
+    }
+
+    .categories .vr-1 {
+        left: 33.33%;
+    }
+
+    .categories .vr-2 {
+        left: 66.66%;
+    }
+
+    .categories .vr-3 {
+        height: 1px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 75%;
+    }
+}
+
+@media all and (max-width: 575px) {
+    .categories:before {
+        top: 0;
+        left: 50%;
+        height: 100%;
+        width: 1px;
+    }
+
+    .categories:after {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 0;
+    }
+
+    .categories .category {
+        width: 50%;
+    }
+
+    .categories .vr-1 {
+        height: 1px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 20%;
+    }
+
+    .categories .vr-2 {
+        height: 1px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 40%;
+    }
+
+    .categories .vr-3 {
+        height: 1px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 60%;
+    }
+
+    .categories .vr-4 {
+        height: 1px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 80%;
+    }
+}
+
+@media all and (max-width: 379px) {
+    .categories:before {
+        height: 0;
+        width: 0;
+    }
+
+    .categories .category {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .categories .vr-1 {
+        height: 0;
+    }
+
+    .categories .vr-2 {
+        height: 0;
+    }
+
+    .categories .vr-3 {
+        height: 0;
+    }
+
+    .categories .vr-4 {
+        height: 0;
+    }
+}

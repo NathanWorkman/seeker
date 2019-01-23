@@ -1,0 +1,60 @@
+.pagination-list .pagination {
+    padding: 40px 0 30px;
+    margin: 0;
+    display: block;
+    font-size: 0;
+}
+
+.pagination-list .pagination.navigation {
+    margin-top: 10px;
+}
+
+.pagination-list .pagination.navigation.padding-top-60 {
+    margin-top: 0;
+}
+
+.pagination-list .pagination .nav-links .page-numbers {
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 1.5rem;
+    display: inline-block;
+    margin: 0 5px;
+    font-weight: 400;
+    color: #6f7484;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    position: relative;
+}
+
+.pagination-list .pagination .nav-links .page-numbers:hover {
+    color: #246df8;
+}
+
+.pagination-list .pagination .nav-links .page-numbers:last-child:before {
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.pagination-list .pagination .nav-links .page-numbers.current {
+    color: #ffffff;
+    background: #246df8;
+    border-color: #246df8;
+}
+
+.pagination-list .pagination .next,
+.pagination-list .pagination .prev {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #f9fbfe;
+}
+
+@media all and (max-width: 767px) {
+    .pagination-list .pagination .nav-links .page-numbers {
+        height: 32px;
+        width: 32px;
+        line-height: 32px;
+        margin: 0 3px;
+    }
+}

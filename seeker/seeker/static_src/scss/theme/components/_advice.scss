@@ -1,0 +1,80 @@
+.advice {
+    padding: 30px;
+    padding-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 3px;
+    margin-bottom: 30px;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.advice .body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.advice .body .date .day {
+    font-size: 2.4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.advice .body .date .month {
+    font-size: 1.4rem;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    color: #246df8;
+    text-transform: uppercase;
+}
+
+.advice .body .content {
+    padding-left: 20px;
+}
+
+.advice .body .content h4 {
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.advice .body .content p {
+    color: #6f7484;
+}
+
+.advice .info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.advice .info a {
+    color: #6f7484;
+}
+
+.advice .info a svg {
+    height: 16px;
+    margin-right: 2px;
+}
+
+.advice .info a:hover {
+    color: #246df8;
+}
+
+.advice:hover {
+    -webkit-box-shadow: 0px 15px 40px 0px rgba(237, 237, 237, 0.4);
+    box-shadow: 0px 15px 40px 0px rgba(237, 237, 237, 0.4);
+}
+
+.advice:hover .body .content h4 {
+    color: #246df8;
+}

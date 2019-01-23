@@ -26,7 +26,7 @@ django-compressor==2.2
 django-cron==0.5.1
 django-debug-toolbar==1.11
 django-dotenv==1.4.2
-django-filter==2.0.0
+django-filter==2.1.0
 django-libsass==0.7
 django-mailbox==4.7.1
 django-widget-tweaks==1.4.3
@@ -48,8 +48,8 @@ parsel==1.5.0             # via scrapy
 pillow==5.4.1             # via cairosvg
 pip-tools==3.2.0
 pluggy==0.8.1             # via pytest, tox
-psycopg2-binary==2.7.6.1
-psycopg2==2.7.6.1
+psycopg2-binary==2.7.7
+psycopg2==2.7.7
 pur==5.2.1
 py==1.5.4                 # via pytest, tox
 pyasn1-modules==0.2.2     # via service-identity
@@ -71,7 +71,7 @@ rcssmin==1.0.6            # via django-compressor
 requests==2.21.0
 rjsmin==1.0.12            # via django-compressor
 scrapy-djangoitem==1.1.1
-scrapy==1.5.1
+scrapy==1.5.2
 service-identity==17.0.0  # via scrapy
 six==1.11.0               # via automat, cryptography, django-anymail, django-mailbox, faker, html5lib, libsass, more-itertools, parsel, pip-tools, pyhamcrest, pyopenssl, pytest, python-dateutil, scrapy, scrapy-djangoitem, tox, w3lib
 sqlparse==0.2.4           # via django-debug-toolbar

@@ -1,0 +1,164 @@
+.pricing-controller {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 50px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.pricing-controller .switch-wrap {
+    background: rgba(36, 109, 248, 0.1);
+    height: 26px;
+    width: 50px;
+    border-radius: 30px;
+    position: relative;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.pricing-controller .switch-wrap .price-switch {
+    background: #19bb4c;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    -webkit-transition: all .6s ease;
+    -o-transition: all .6s ease;
+    transition: all .6s ease;
+}
+
+.pricing-controller .switch-wrap .price-switch.year-active {
+    left: 27px;
+}
+
+.pricing-controller .duration {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #aaa;
+}
+
+.pricing-controller .duration.active {
+    color: #101725;
+}
+
+.pricing-controller .duration span {
+    color: #19bb4c;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.package-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.package-wrapper .package {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.package-wrapper .package .package-header {
+    padding: 40px;
+    background: #246df8;
+    color: #ffffff;
+}
+
+.package-wrapper .package .package-header .cost {
+    font-size: 2.6rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.package-wrapper .package .package-header .cost span {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin-left: 5px;
+}
+
+.package-wrapper .package .package-header .cost.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.package-wrapper .package .package-header .title {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-top: 5px;
+    display: block;
+}
+
+.package-wrapper .package.professional .package-header {
+    background: url("../images/bg/package-header-bg.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.package-wrapper .package .package-features {
+    padding: 40px;
+    padding-bottom: 0;
+}
+
+.package-wrapper .package .package-features ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 0;
+}
+
+.package-wrapper .package .package-features ul li {
+    font-size: 1.4rem;
+    color: #bdbdbd;
+    position: relative;
+    padding-left: 30px;
+}
+
+.package-wrapper .package .package-features ul li.active {
+    color: #6f7484;
+}
+
+.package-wrapper .package .package-features ul li:before {
+    content: '\f058';
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
+    position: absolute;
+    font-size: 1.2rem;
+    top: 2px;
+    left: 0;
+}
+
+.package-wrapper .package .package-features ul li.active:before {
+    color: #19bb4c;
+}
+
+.package-wrapper .package .package-features ul li+li {
+    margin-top: 10px;
+}
+
+.package-wrapper .package .package-features .button {
+    margin-top: 30px;
+    background: #246df8;
+    padding: 11px 25px;
+    color: #ffffff;
+}
+
+@media all and (max-width: 767px) {
+    .package-wrapper {
+        display: block;
+    }
+
+    .package-wrapper .package+.package {
+        margin-top: 40px;
+    }
+}
