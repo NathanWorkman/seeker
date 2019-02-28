@@ -1,28 +1,28 @@
 
 # Django framework
-Django==2.1.5
+Django==2.1.7
 
 # Testing / Debug
 django-debug-toolbar==1.11
-pytest==4.1.1
-pytest-django==3.4.5
+pytest==4.3.0
+pytest-django==3.4.8
 pytest-factoryboy==2.0.2
-flake8==3.6.0
+flake8==3.7.7
 tox==3.7.0
 
 # Scrapy Framework
-Scrapy==1.5.2
+Scrapy==1.6.0
 scrapy-djangoitem==1.1.1
 
 # Pip Tools
-pip-tools==3.2.0
+pip-tools==3.4.0
 pur==5.2.1
 
 # Env
 django-dotenv==1.4.2
 
 # Mailer Utiliity
-django-anymail==5.0
+django-anymail==6.0
 
 # Send and Recieve through SMTP
 django-mailbox==4.7.1
@@ -42,7 +42,7 @@ psycopg2-binary==2.7.7
 django-widget-tweaks==1.4.3
 
 # PDF Generation
-WeasyPrint==44.0.0
+WeasyPrint==45
 
 # Lazy Cron
 django-cron==0.5.1

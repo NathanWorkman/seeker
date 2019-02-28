@@ -19,7 +19,7 @@ cryptography==2.3.1       # via pyopenssl
 cssselect2==0.2.1         # via cairosvg, weasyprint
 cssselect==1.0.3          # via parsel, scrapy
 defusedxml==0.5.0         # via cairosvg
-django-anymail==5.0
+django-anymail==6.0
 django-appconf==1.0.2     # via django-compressor
 django-common-helpers==0.9.2  # via django-cron
 django-compressor==2.2
@@ -30,11 +30,12 @@ django-filter==2.1.0
 django-libsass==0.7
 django-mailbox==4.7.1
 django-widget-tweaks==1.4.3
-django==2.1.5
+django==2.1.7
+entrypoints==0.3          # via flake8
 factory-boy==2.11.1       # via pytest-factoryboy
 faker==0.9.0              # via factory-boy
 filelock==3.0.10          # via tox
-flake8==3.6.0
+flake8==3.7.7
 html5lib==1.0.1           # via weasyprint
 hyperlink==18.0.0         # via twisted
 idna==2.7                 # via cryptography, hyperlink, requests
@@ -46,7 +47,7 @@ mccabe==0.6.1             # via flake8
 more-itertools==4.3.0     # via pytest
 parsel==1.5.0             # via scrapy
 pillow==5.4.1             # via cairosvg
-pip-tools==3.2.0
+pip-tools==3.4.0
 pluggy==0.8.1             # via pytest, tox
 psycopg2-binary==2.7.7
 psycopg2==2.7.7
@@ -54,16 +55,16 @@ pur==5.2.1
 py==1.5.4                 # via pytest, tox
 pyasn1-modules==0.2.2     # via service-identity
 pyasn1==0.4.4             # via pyasn1-modules, service-identity
-pycodestyle==2.4.0        # via flake8
+pycodestyle==2.5.0        # via flake8
 pycparser==2.18           # via cffi
 pydispatcher==2.0.5       # via scrapy
-pyflakes==2.0.0           # via flake8
+pyflakes==2.1.0           # via flake8
 pyhamcrest==1.9.0         # via twisted
 pyopenssl==18.0.0         # via scrapy, service-identity
 pyphen==0.9.5             # via weasyprint
-pytest-django==3.4.5
+pytest-django==3.4.8
 pytest-factoryboy==2.0.2
-pytest==4.1.1
+pytest==4.3.0
 python-dateutil==2.7.3    # via faker
 pytz==2018.5              # via django
 queuelib==1.5.0           # via scrapy
@@ -71,7 +72,7 @@ rcssmin==1.0.6            # via django-compressor
 requests==2.21.0
 rjsmin==1.0.12            # via django-compressor
 scrapy-djangoitem==1.1.1
-scrapy==1.5.2
+scrapy==1.6.0
 service-identity==17.0.0  # via scrapy
 six==1.11.0               # via automat, cryptography, django-anymail, django-mailbox, faker, html5lib, libsass, more-itertools, parsel, pip-tools, pyhamcrest, pyopenssl, pytest, python-dateutil, scrapy, scrapy-djangoitem, tox, w3lib
 sqlparse==0.2.4           # via django-debug-toolbar
@@ -83,6 +84,6 @@ twisted==18.7.0           # via scrapy
 urllib3==1.23             # via requests
 virtualenv==16.0.0        # via tox
 w3lib==1.19.0             # via parsel, scrapy
-weasyprint==44.0.0
+weasyprint==45
 webencodings==0.5.1       # via html5lib, tinycss2
 zope.interface==4.5.0     # via twisted
