@@ -1,0 +1,28 @@
+{% extends "admin/base_site.html" %}
+{% load suit_tags admin_static i18n staticfiles compress %}
+{% block extrahead %}
+{% compress js %}
+<!-- jQuery -->
+<script src="{% static 'js/vendor/jquery-3.3.1.min.js' %}"></script>
+<!-- Bootstrap -->
+<!-- <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script> -->
+<!-- TinyMCE -->
+<!-- <script src="{% static 'js/tinymce/tinymce.min.js' %}"></script> -->
+<!-- Charts.js -->
+<!-- <script src="{% static 'js/Chart.bundle.min.js' %}"></script> -->
+<!-- Data Maps -->
+<!-- <script src="{% static 'js/datamaps.usa.min.js' %}"></script> -->
+<!-- Custom -->
+<script src="{% static 'js/main.js' %}"></script>
+{% endcompress %}
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+{% compress css %}
+<link href="{% static 'scss/styles.scss' %}" rel='stylesheet' type="text/x-scss" charset="utf-8" />
+{% endcompress %}
+{{ block.super }}
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="/"><img src="{% static 'img/snitch.png' %}" class="logo"> {% trans 'Seeker' %}</a></h1>
+{% endblock %}

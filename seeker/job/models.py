@@ -1,7 +1,7 @@
 """Job Models."""
 from django.urls import reverse
 from django.db import models
-
+from django.utils.html import format_html
 from seeker.company.models import Company
 
 
@@ -51,6 +51,14 @@ class Job(models.Model):
         """Get job detail url."""
         return reverse("job_detail", args=[str(self.pk)])
 
+    def short_url(self):
+        """Return a clickable link."""
+        if self.url:
+            short_url = self.url[:25] + '...'
+            return format_html("<a href='{}' class='simple-button' target='_blank'>View Post</a>".format(self.url))
+        else:
+            return self.url
+    
     def get_count(self):
 
         return self.objects.all().count()
