@@ -4,9 +4,6 @@ Django==2.1.7
 
 # Testing / Debug
 django-debug-toolbar==1.11
-pytest==4.3.0
-pytest-django==3.4.8
-pytest-factoryboy==2.0.2
 flake8==3.7.7
 tox==3.7.0
 
@@ -38,9 +35,6 @@ django-libsass==0.7
 psycopg2==2.7.7
 psycopg2-binary==2.7.7
 
-# Make forms suck less
-django-widget-tweaks==1.4.3
-
 # PDF Generation
 WeasyPrint==45
 
@@ -49,3 +43,6 @@ django-cron==0.5.1
 
 # Better filtering
 django-filter==2.1.0
+
+# Django-Suit Admin Theme
+-e git+https://github.com/darklow/django-suit.git@v2#egg=django_suit
