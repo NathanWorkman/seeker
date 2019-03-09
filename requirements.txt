@@ -18,7 +18,10 @@ constantly==15.1.0        # via twisted
 cryptography==2.3.1       # via pyopenssl
 cssselect2==0.2.1         # via cairosvg, weasyprint
 cssselect==1.0.3          # via parsel, scrapy
+cymem==2.0.2              # via preshed, spacy, thinc
+cytoolz==0.9.0.1          # via thinc
 defusedxml==0.5.0         # via cairosvg
+dill==0.2.9               # via spacy, thinc
 django-anymail==6.0
 django-appconf==1.0.2     # via django-compressor
 django-common-helpers==0.9.2  # via django-cron
@@ -40,10 +43,16 @@ incremental==17.5.0       # via twisted
 libsass==0.17.0           # via django-libsass
 lxml==4.2.4               # via parsel, scrapy
 mccabe==0.6.1             # via flake8
+msgpack-numpy==0.4.3.2    # via thinc
+msgpack==0.5.6            # via msgpack-numpy, thinc
+murmurhash==1.0.2         # via spacy, thinc
+numpy==1.16.2             # via msgpack-numpy, spacy, thinc
 parsel==1.5.0             # via scrapy
 pillow==5.4.1             # via cairosvg
 pip-tools==3.4.0
+plac==0.9.6               # via spacy, thinc
 pluggy==0.8.1             # via tox
+preshed==2.0.1            # via spacy, thinc
 psycopg2-binary==2.7.7
 psycopg2==2.7.7
 pur==5.2.1
@@ -60,20 +69,27 @@ pyphen==0.9.5             # via weasyprint
 pytz==2018.5              # via django
 queuelib==1.5.0           # via scrapy
 rcssmin==1.0.6            # via django-compressor
+regex==2018.01.10         # via spacy
 requests==2.21.0
 rjsmin==1.0.12            # via django-compressor
 scrapy-djangoitem==1.1.1
 scrapy==1.6.0
 service-identity==17.0.0  # via scrapy
-six==1.11.0               # via automat, cryptography, django-anymail, django-mailbox, html5lib, libsass, parsel, pip-tools, pyhamcrest, pyopenssl, scrapy, scrapy-djangoitem, tox, w3lib
+six==1.11.0               # via automat, cryptography, django-anymail, django-mailbox, html5lib, libsass, parsel, pip-tools, pyhamcrest, pyopenssl, scrapy, scrapy-djangoitem, thinc, tox, w3lib
+spacy==2.0.18
 sqlparse==0.2.4           # via django-debug-toolbar
+thinc==6.12.1             # via spacy
 tinycss2==0.6.1           # via cairosvg, cssselect2, weasyprint
 toml==0.10.0              # via tox
+toolz==0.9.0              # via cytoolz
 tox==3.7.0
+tqdm==4.31.1              # via thinc
 twisted==18.7.0           # via scrapy
+ujson==1.35               # via spacy
 urllib3==1.23             # via requests
 virtualenv==16.0.0        # via tox
 w3lib==1.19.0             # via parsel, scrapy
 weasyprint==45
 webencodings==0.5.1       # via html5lib, tinycss2
+wrapt==1.10.11            # via thinc
 zope.interface==4.5.0     # via twisted
