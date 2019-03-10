@@ -2,17 +2,16 @@ PROJECT_NAME = seeker
 SHELL := /bin/sh
 help:
 	@echo "Please use 'make <target>' where <target> is one of"
-	@echo "virtualenv                   Create virtual enviroment"
-	@echo "requirements                 Install requirements.txt"
-	@echo "migrate 						Run Django migrations"
-	@echo "user  						Create user account"
-	@echo "test  						Run tests"
-	@echo "clean 						Remove all *.pyc, .DS_Store and temp files from the project"
-	@echo "shell 						Open Django shell"
-	@echo "migrations 					Create database migrations"
-	@echo "collectstatic 				Collect static assets"
-	@echo "run 							Run Django Server"
-	@echo "crawl <spidername>           Run Scrapy Spider"
+	@echo " reset                                Complete reset of database and migrations (Be Careful)"
+	@echo " migrate                              Run Django migrations"
+	@echo " migrations                           Create Django migrations"
+	@echo " user                                 Create user account"
+	@echo " clean                                Remove all *.pyc, .DS_Store and temp files from the project"
+	@echo " collectstatic                        Collect static assets"
+	@echo " run                                  Run Django Server"
+	@echo " crawl_spider <spidername>            Run Scrapy Spider"
+	@echo " crawl                                Run ALL Scrapy Spiders"
+	@echo " dump                                 Create database dump/backup"
 
 .PHONY: requirements
 
@@ -22,7 +21,7 @@ MANAGE_CMD = python manage.py
 PIP_INSTALL_CMD = pip install
 PLAYBOOK = ansible-playbook
 VIRTUALENV_NAME = venv
-
+APP_NAME = seeker
 # Helper functions to display messagse
 ECHO_BLUE = @echo "\033[33;34m $1\033[0m"
 ECHO_RED = @echo "\033[33;31m $1\033[0m"
@@ -31,9 +30,7 @@ DATE= `date +'%m_%d_%y'`
 # The default server host local development
 HOST ?= localhost:8000
 
-reset: delete_sqlite migrate user run
-setup: virtualenv requirements migrate user yarn build collectstatic
-
+reset: dropdb createdb migrations migrate user run
 
 migrate:
 # Run django migrations
@@ -107,10 +104,14 @@ crawl_spider:
 		scrapy crawl $(spider);  \
 	)
 
-delete_sqlite:
-# delete project db
+createdb:
 	( \
-		rm -rf db.sqlite3;\
+		createdb -p 5433 $(APP_NAME); \
+	)
+
+dropdb:
+	( \
+		dropdb -p 5433 $(APP_NAME);\
 	)
 
 dump:
