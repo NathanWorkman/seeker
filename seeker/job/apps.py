@@ -7,7 +7,7 @@ class JobConfig(DjangoSuitConfig):
     layout = 'horizontal'
     menu = (
         ParentItem('Jobs', url='/job/job/'),
-        ParentItem('Companies', url='/company/company/'),
+        ParentItem('Companies', url='/job/company/'),
         ParentItem('Job Boards', url='/job/board/'),
         ParentItem('Cron Logs', url='/django_cron/cronjoblog/'),
         ParentItem('Search Terms', url='/job/searchterms/'),

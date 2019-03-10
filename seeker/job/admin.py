@@ -4,9 +4,11 @@ from django.contrib.auth.models import User, Group
 from django.contrib import messages
 from django.db.models import Count
 
+from import_export.admin import ImportExportModelAdmin
+
 from ..util.actions import ExportCsvMixin
 
-from .models import Job, Board, SearchTerms
+from .models import Job, Board, SearchTerms, Company
 
 # Remove users and groups from admin
 admin.site.unregister(User)
@@ -15,9 +17,11 @@ admin.site.unregister(Group)
 
 admin.site.register(Board)
 admin.site.register(SearchTerms)
+admin.site.register(Company)
+
 
 @admin.register(Job)
-class JobAdmin(admin.ModelAdmin, ExportCsvMixin):
+class JobAdmin(ImportExportModelAdmin, ExportCsvMixin):
     list_select_related = True
     # save_on_top = True
     date_hierarchy = 'scrape_date'
@@ -33,7 +37,6 @@ class JobAdmin(admin.ModelAdmin, ExportCsvMixin):
     )
 
     search_fields = (
-        "company",
         "title",
         "city"
     )

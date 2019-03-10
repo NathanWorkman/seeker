@@ -2,7 +2,6 @@
 from django.urls import reverse
 from django.db import models
 from django.utils.html import format_html
-from seeker.company.models import Company
 
 
 class Board(models.Model):
@@ -19,6 +18,21 @@ class Board(models.Model):
         """Set title."""
         return "%s" % self.title
 
+
+class Company(models.Model):
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True, max_length=255)
+    email = models.EmailField(blank=True)
+    url = models.URLField()
+    about = models.TextField()
+
+    class Meta:
+        """Order by title."""
+        ordering = ["title"]
+
+    def __str__(self):
+        """Set Title."""
+        return "%s" % self.title
 
 class Job(models.Model):
     title = models.CharField(max_length=255)
@@ -41,15 +55,11 @@ class Job(models.Model):
 
     class Meta:
         """Order by date published."""
-        ordering = ["scrape_date"]
+        ordering = ["-scrape_date"]
 
     def __str__(self):
         """Set title."""
         return "%s" % self.title
-
-    def get_absolute_url(self):
-        """Get job detail url."""
-        return reverse("job_detail", args=[str(self.pk)])
 
     def short_url(self):
         """Return a clickable link."""
@@ -60,7 +70,7 @@ class Job(models.Model):
             return self.url
     
     def get_count(self):
-
+        "Total Number of Jobs"
         return self.objects.all().count()
 
 

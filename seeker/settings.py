@@ -29,7 +29,6 @@ ALLOWED_HOSTS = [
     '*'
 ]
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -46,9 +45,9 @@ INSTALLED_APPS = [
     'widget_tweaks',  # better forms
     'compressor',  # compile static assets
     'django_cron',  # recurring tasks without the task queue
+    'import_export',  # import-export package
 
     'seeker.job',
-    'seeker.company',
 ]
 
 MIDDLEWARE = [
@@ -141,7 +140,6 @@ COMPRESS_PRECOMPILERS = (
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
 ]
 
