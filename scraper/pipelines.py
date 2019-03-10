@@ -7,9 +7,9 @@
 
 from django.utils.text import slugify
 from scrapy.exceptions import DropItem
+from w3lib.html import remove_tags
 
-from seeker.job.models import Job, Board
-from seeker.company.models import Company
+from seeker.job.models import Job, Board, Company
 
 
 class JobsPipeline(object):
@@ -21,7 +21,7 @@ class JobsPipeline(object):
         item['body'] = "\n".join(item['body'])  # extract() will return a list, which you need to concatenate to restore the original html
         item['pub_date'] = item['pub_date']
         item['salary'] = item['salary']
-        item['location'] = item['location']
+        item['location'] = self.clean_text(item['location'])
 
         """
         There's not a great way to find duplicate job postings so we pair
@@ -50,7 +50,6 @@ class JobsPipeline(object):
             return Board.objects.create(title=title, slug=slug, url=url)
 
     def get_or_create_company(self, title, email):
-        title = title
         slug = slugify(title)
         try:
             email = email[0].lower()
@@ -60,3 +59,7 @@ class JobsPipeline(object):
             return Company.objects.get(slug=slug)
         except Company.DoesNotExist:
             return Company.objects.create(title=title, slug=slug, email=email)
+
+    def clean_text(self, text):
+        output = remove_tags(text)
+        return output
