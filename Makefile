@@ -27,7 +27,7 @@ VIRTUALENV_NAME = venv
 ECHO_BLUE = @echo "\033[33;34m $1\033[0m"
 ECHO_RED = @echo "\033[33;31m $1\033[0m"
 ECHO_GREEN = @echo "\033[33;32m $1\033[0m"
-
+DATE= `date +'%m_%d_%y'`
 # The default server host local development
 HOST ?= localhost:8000
 
@@ -111,4 +111,9 @@ delete_sqlite:
 # delete project db
 	( \
 		rm -rf db.sqlite3;\
+	)
+
+dump:
+	( \
+		pg_dump -Fc seeker -p 5433 > backups/data_dump_$(DATE).dump; \
 	)

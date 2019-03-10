@@ -32,3 +32,6 @@ media
 # due to ansible logs
 *.log
 *.retry
+
+# local db backups
+backups/
