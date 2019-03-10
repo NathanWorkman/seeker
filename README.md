@@ -83,3 +83,12 @@ Navigate to the django admin to view your results.
 - [ ] Recruiter Box
 - [ ] Greenhouse
 - [ ] TBD
+
+
+## Made Possible By
+- [Django](https://www.djangoproject.com/)
+- [Scrapy](https://scrapy.org/)
+- [jQuery](https://jquery.com/)
+- Icons - [Devicon](http://konpa.github.io/devicon/)
+- Admin Theme - [Django Suit](https://github.com/darklow/django-suit)
+- NLP - [SpaCy](https://spacy.io/)

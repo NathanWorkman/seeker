@@ -33,9 +33,7 @@ class JobAdmin(ImportExportModelAdmin, ExportCsvMixin, SummernoteModelAdmin):
         "short_url",
         "pub_date",
         "salary",
-        "location",
-        "scrape_date",
-        "board"
+        "scrape_date"
     )
 
     search_fields = (
