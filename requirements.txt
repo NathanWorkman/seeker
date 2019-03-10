@@ -8,6 +8,7 @@
 asn1crypto==0.24.0        # via cryptography
 attrs==18.1.0             # via automat, service-identity, twisted
 automat==0.7.0            # via twisted
+backports.csv==1.0.6      # via tablib
 cairocffi==0.9.0          # via cairosvg, weasyprint
 cairosvg==2.2.1           # via weasyprint
 certifi==2018.8.24        # via requests
@@ -20,7 +21,8 @@ cssselect2==0.2.1         # via cairosvg, weasyprint
 cssselect==1.0.3          # via parsel, scrapy
 cymem==2.0.2              # via preshed, spacy, thinc
 cytoolz==0.9.0.1          # via thinc
-defusedxml==0.5.0         # via cairosvg
+defusedxml==0.5.0         # via cairosvg, odfpy
+diff-match-patch==20181111  # via django-import-export
 dill==0.2.9               # via spacy, thinc
 django-anymail==6.0
 django-appconf==1.0.2     # via django-compressor
@@ -30,16 +32,19 @@ django-cron==0.5.1
 django-debug-toolbar==1.11
 django-dotenv==1.4.2
 django-filter==2.1.0
+django-import-export==1.2.0
 django-libsass==0.7
 django-mailbox==4.7.1
 django==2.1.7
 entrypoints==0.3          # via flake8
+et-xmlfile==1.0.1         # via openpyxl
 filelock==3.0.10          # via tox
 flake8==3.7.7
 html5lib==1.0.1           # via weasyprint
 hyperlink==18.0.0         # via twisted
 idna==2.7                 # via cryptography, hyperlink, requests
 incremental==17.5.0       # via twisted
+jdcal==1.4                # via openpyxl
 libsass==0.17.0           # via django-libsass
 lxml==4.2.4               # via parsel, scrapy
 mccabe==0.6.1             # via flake8
@@ -47,6 +52,8 @@ msgpack-numpy==0.4.3.2    # via thinc
 msgpack==0.5.6            # via msgpack-numpy, thinc
 murmurhash==1.0.2         # via spacy, thinc
 numpy==1.16.2             # via msgpack-numpy, spacy, thinc
+odfpy==1.4.0              # via tablib
+openpyxl==2.6.1           # via tablib
 parsel==1.5.0             # via scrapy
 pillow==5.4.1             # via cairosvg
 pip-tools==3.4.0
@@ -67,6 +74,7 @@ pyhamcrest==1.9.0         # via twisted
 pyopenssl==18.0.0         # via scrapy, service-identity
 pyphen==0.9.5             # via weasyprint
 pytz==2018.5              # via django
+pyyaml==3.13              # via tablib
 queuelib==1.5.0           # via scrapy
 rcssmin==1.0.6            # via django-compressor
 regex==2018.01.10         # via spacy
@@ -78,6 +86,7 @@ service-identity==17.0.0  # via scrapy
 six==1.11.0               # via automat, cryptography, django-anymail, django-mailbox, html5lib, libsass, parsel, pip-tools, pyhamcrest, pyopenssl, scrapy, scrapy-djangoitem, thinc, tox, w3lib
 spacy==2.0.18
 sqlparse==0.2.4           # via django-debug-toolbar
+tablib==0.13.0            # via django-import-export
 thinc==6.12.1             # via spacy
 tinycss2==0.6.1           # via cairosvg, cssselect2, weasyprint
 toml==0.10.0              # via tox
@@ -92,4 +101,6 @@ w3lib==1.19.0             # via parsel, scrapy
 weasyprint==45
 webencodings==0.5.1       # via html5lib, tinycss2
 wrapt==1.10.11            # via thinc
+xlrd==1.2.0               # via tablib
+xlwt==1.3.0               # via tablib
 zope.interface==4.5.0     # via twisted

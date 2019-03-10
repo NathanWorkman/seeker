@@ -49,3 +49,6 @@ django-filter==2.1.0
 
 # NLP Library to get some insights
 spacy==2.0.18
+
+# import export
+django-import-export==1.2.0
