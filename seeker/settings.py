@@ -42,10 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'debug_toolbar',  # debug toolbar
-    'widget_tweaks',  # better forms
     'compressor',  # compile static assets
     'django_cron',  # recurring tasks without the task queue
     'import_export',  # import-export package
+    'django_summernote',  # summernote editor
 
     'seeker.job',
 ]
@@ -139,6 +139,7 @@ COMPRESS_PRECOMPILERS = (
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'compressor.finders.CompressorFinder',
 ]

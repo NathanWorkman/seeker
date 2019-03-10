@@ -6,11 +6,7 @@
 [![Build Status](https://travis-ci.org/NathanWorkman/seeker.svg?branch=master)](https://travis-ci.org/NathanWorkman/seeker)
 
 ## What is Seeker?
-Seeker is just another job board aggregator. Let Seeker do the leg work for you. Check multiple job boards for positions you might be interested in and organize them all in one convenient location.
-
-Currently, the search terms are hard coded to remote django and remote python positions - you'll need to manually update these for now.
-
-To change the search terms edit the query inside each spider.
+Seeker is just another job board aggregator. Check multiple job boards for positions you might be interested in and organize them all in one convenient location.
 
 ## Setup
 
@@ -74,5 +70,16 @@ python crawl.py
 
 Navigate to the django admin to view your results.
 
+## TODO
 
-**This project is for educational purposes only, I'm not responsible for what you do with the code.**
+### Boards 
+- [x] DjangoGigs
+- [ ] Indeed
+- [ ] PythonOrg
+- [ ] RemotePython
+- [ ] Stack Overflow
+- [ ] Workable
+- [ ] Lever
+- [ ] Recruiter Box
+- [ ] Greenhouse
+- [ ] TBD

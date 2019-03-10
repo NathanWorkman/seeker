@@ -52,3 +52,6 @@ spacy==2.0.18
 
 # import export
 django-import-export==1.2.0
+
+# Admin WYSIWYG editor
+django-summernote==0.8.11.4

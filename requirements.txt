@@ -35,6 +35,7 @@ django-filter==2.1.0
 django-import-export==1.2.0
 django-libsass==0.7
 django-mailbox==4.7.1
+django-summernote==0.8.11.4
 django==2.1.7
 entrypoints==0.3          # via flake8
 et-xmlfile==1.0.1         # via openpyxl
