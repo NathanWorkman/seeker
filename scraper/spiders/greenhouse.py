@@ -4,6 +4,8 @@ from scrapy.selector import Selector
 from scraper.items import JobItem
 from scrapy.http import Request
 
+from seeker.job.models import SearchTerms
+
 from django.utils import timezone
 
 
@@ -11,8 +13,17 @@ class GreenHouseSpider(Spider):
     name = "greenhouse"
     allowed_domains = ["google.com"]
 
+    def search_query(self):
+        search_terms = list(SearchTerms.objects.all())
+        query_items = []
+        for term in search_terms:
+            query_items.append(str(term))
+
+        query = "q=site:greenhouse.io+{}&tbs=qdr:m".format("+".join(query_items))
+        return query
+
     def start_requests(self):
-        search_query = "q=site:greenhouse.io+django&tbs=qdr:m"
+        search_query = self.search_query()
         base_url = "https://www.google.com/search?"
         start_urls = []
 
@@ -35,7 +46,7 @@ class GreenHouseSpider(Spider):
         for job in jobs:
             item = JobItem()
             item["title"] = job.xpath('//h1[contains(@class, "app-title")]/text()').extract_first()
-            item["company"] = str('n/a')
+            item["company"] = job.xpath('//span[contains(@class, "company-name")]/text()').extract_first()
             item["body"] = job.xpath('//div[contains(@id, "content")]').extract()
             item["location"] = job.xpath('//div[contains(@class, "location")]').extract_first()
             item["url"] = response.request.url

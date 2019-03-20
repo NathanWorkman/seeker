@@ -32,7 +32,6 @@ class JobsPipeline(object):
             item.save()
         else:
             raise DropItem('Job already exists.')
-
         """
         For every job that we create, delete the oldest job
         """
@@ -50,6 +49,12 @@ class JobsPipeline(object):
             return Board.objects.create(title=title, slug=slug, url=url)
 
     def get_or_create_company(self, title, email):
+
+        # Clean greenhouse company name
+        if 'at' in title:
+            cleantitle = title.replace("at", "")
+            title = cleantitle
+        
         slug = slugify(title)
         try:
             email = email[0].lower()

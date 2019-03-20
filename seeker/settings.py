@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'seeker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'seeker',
+        'NAME': 'seeker_test',
         'USER': 'postgres',
         'HOST': 'localhost',
         'PORT': 5433,

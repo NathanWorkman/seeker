@@ -3,7 +3,7 @@ from scrapy.spiders import Spider
 from scrapy.selector import Selector
 from scraper.items import JobItem
 from scrapy.http import Request
-
+from seeker.job.models import SearchTerms
 from django.utils import timezone
 
 
@@ -11,8 +11,17 @@ class WorkableSpider(Spider):
     name = "workable"
     allowed_domains = ["google.com"]
 
+    def search_query(self):
+        search_terms = list(SearchTerms.objects.all())
+        query_items = []
+        for term in search_terms:
+            query_items.append(str(term))
+
+        query = "q=site:workable.com+{}&tbs=qdr:m".format("+".join(query_items))
+        return query
+
     def start_requests(self):
-        search_query = "q=site:workable.com+django&tbs=qdr:m"
+        search_query = self.search_query()
         base_url = "https://www.google.com/search?"
         start_urls = []
 
@@ -34,7 +43,7 @@ class WorkableSpider(Spider):
         items = []
         for job in jobs:
             item = JobItem()
-            item["title"] = job.xpath('//h1/text()').extract_first()
+            item["title"] = str('n/a')
             item["company"] = str('n/a')
             item["body"] = job.xpath('//main[contains(@class, "stacked")]').extract()
             item["location"] = job.xpath('//p[contains(@class, "meta")]').extract_first()

@@ -86,7 +86,7 @@ run:
 # run django server
 	$(call ECHO_GREEN, Starting Django Server...)
 	( \
-		$(MANAGE_CMD) runserver ; \
+		$(MANAGE_CMD) runserver 0.0.0.0:8300 ; \
 	)
 
 

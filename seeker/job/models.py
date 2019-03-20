@@ -79,3 +79,13 @@ class SearchTerms(models.Model):
 
     def __str__(self):
         return u"%s" % self.term
+
+
+class Tag(models.Model):
+    tag = models.CharField(max_length=55)
+    job = models.ForeignKey(
+        Job,
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL
+    )

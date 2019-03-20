@@ -4,6 +4,8 @@ from scrapy.selector import Selector
 from scraper.items import JobItem
 from scrapy.http import Request
 
+from seeker.job.models import SearchTerms
+
 from django.utils import timezone
 
 
@@ -11,8 +13,17 @@ class LeverSpider(Spider):
     name = "lever"
     allowed_domains = ["google.com"]
 
+    def search_query(self):
+        search_terms = list(SearchTerms.objects.all())
+        query_items = []
+        for term in search_terms:
+            query_items.append(str(term))
+
+        query = "q=site:lever.co+{}&tbs=qdr:m".format("+".join(query_items))
+        return query
+
     def start_requests(self):
-        search_query = "q=site:lever.co+django&tbs=qdr:m"
+        search_query = self.search_query()
         base_url = "https://www.google.com/search?"
         start_urls = []
 
