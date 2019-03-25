@@ -23,8 +23,8 @@ __pycache__
 /node_modules
 
 # project dist static files
-seeker/static
-seeker/media
+/static/
+/media/
 
 # project secrets
 .env
@@ -32,3 +32,6 @@ seeker/media
 # due to ansible logs
 *.log
 *.retry
+
+# local db backups
+backups/

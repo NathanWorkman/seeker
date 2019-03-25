@@ -1,8 +1,7 @@
 """Job Models."""
 from django.urls import reverse
 from django.db import models
-
-from company.models import Company
+from django.utils.html import format_html
 
 
 class Board(models.Model):
@@ -19,6 +18,21 @@ class Board(models.Model):
         """Set title."""
         return "%s" % self.title
 
+
+class Company(models.Model):
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True, max_length=255)
+    email = models.EmailField(blank=True)
+    url = models.URLField()
+    about = models.TextField()
+
+    class Meta:
+        """Order by title."""
+        ordering = ["title"]
+
+    def __str__(self):
+        """Set Title."""
+        return "%s" % self.title
 
 class Job(models.Model):
     title = models.CharField(max_length=255)
@@ -41,18 +55,22 @@ class Job(models.Model):
 
     class Meta:
         """Order by date published."""
-        ordering = ["scrape_date"]
+        ordering = ["-scrape_date"]
 
     def __str__(self):
         """Set title."""
         return "%s" % self.title
 
-    def get_absolute_url(self):
-        """Get job detail url."""
-        return reverse("job_detail", args=[str(self.pk)])
-
+    def short_url(self):
+        """Return a clickable link."""
+        if self.url:
+            short_url = self.url[:25] + '...'
+            return format_html("<a href='{}' class='simple-button' target='_blank'>View Post</a>".format(self.url))
+        else:
+            return self.url
+    
     def get_count(self):
-
+        "Total Number of Jobs"
         return self.objects.all().count()
 
 
@@ -61,3 +79,13 @@ class SearchTerms(models.Model):
 
     def __str__(self):
         return u"%s" % self.term
+
+
+class Tag(models.Model):
+    tag = models.CharField(max_length=55)
+    job = models.ForeignKey(
+        Job,
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL
+    )
