@@ -12,7 +12,7 @@ Scrapy==1.6.0
 scrapy-djangoitem==1.1.1
 
 # Pip Tools
-pip-tools==3.4.0
+pip-tools==3.5.0
 pur==5.2.1
 
 # Env
@@ -36,7 +36,7 @@ psycopg2==2.7.7
 psycopg2-binary==2.7.7
 
 # PDF Generation
-WeasyPrint==45
+WeasyPrint==46
 
 # Lazy Cron
 django-cron==0.5.1
@@ -48,7 +48,7 @@ django-filter==2.1.0
 -e git+https://github.com/darklow/django-suit.git@v2#egg=django_suit
 
 # NLP Library to get some insights
-spacy==2.0.18
+spacy==2.1.3
 
 # import export
 django-import-export==1.2.0
