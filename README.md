@@ -1,13 +1,12 @@
-# :sunglasses: Seeker [WIP]
+<div style="text-align:center;">
+    <img src="snitch.png" width="150" height="150"/>
+    <h1>Seeker</h1>
+</div>
 
 [![Build Status](https://travis-ci.org/NathanWorkman/seeker.svg?branch=master)](https://travis-ci.org/NathanWorkman/seeker)
 
 ## What is Seeker?
-Seeker is just another job board aggregator. Let Seeker do the leg work for you. Check multiple job boards for positions you might be interested in and organize them all in one convenient location.
-
-Currently, the search terms are hard coded to remote django and remote python positions - you'll need to manually update these for now.
-
-To change the search terms edit the query inside each spider.
+Seeker is just another job board aggregator. Check multiple job boards for positions you might be interested in and organize them all in one convenient location.
 
 ## Setup
 
@@ -71,9 +70,42 @@ python crawl.py
 
 Navigate to the django admin to view your results.
 
+## TODO
 
-**This project is for educational purposes only, I'm not responsible for what you do with the code.**
+### Boards 
+- [x] DjangoGigs
+- [ ] Indeed
+- [ ] PythonOrg
+- [ ] RemotePython
+- [ ] Stack Overflow
+- [ ] Workable
+- [ ] Lever
+- [ ] Recruiter Box
+- [ ] Greenhouse
+- [ ] TBD
+- [ ] https://hireremote.io
+- [ ] https://weworkremotely.com
+- [ ] https://remoteok.io/
+- [ ] https://jobspresso.co/
+- [ ] https://remotive.io/find-a-remote-job/#s=1
+- [ ] https://www.workingnomads.co/jobs
+- [ ] https://www.mikesremotelist.com/
+- [ ] https://stackoverflow.com/jobs
+- [ ] https://bestremotejob.com/
+- [ ] https://justremote.co/
+- [ ] https://whoishiring.io/
+- [ ] https://www.techjobsforgood.com/?search=remote
+- [ ] https://rmtwrk.com/
+- [ ] https://remotepath.io/
+- [ ] https://www.hiringremote.ly/
+- [ ] https://www.honestlance.com/
 
 
 
-
+## Made Possible By
+- [Django](https://www.djangoproject.com/)
+- [Scrapy](https://scrapy.org/)
+- [jQuery](https://jquery.com/)
+- Icons - [Devicon](http://konpa.github.io/devicon/)
+- Admin Theme - [Django Suit](https://github.com/darklow/django-suit)
+- NLP - [SpaCy](https://spacy.io/)

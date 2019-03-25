@@ -2,17 +2,16 @@ PROJECT_NAME = seeker
 SHELL := /bin/sh
 help:
 	@echo "Please use 'make <target>' where <target> is one of"
-	@echo "virtualenv                   Create virtual enviroment"
-	@echo "requirements                 Install requirements.txt"
-	@echo "migrate 						Run Django migrations"
-	@echo "user  						Create user account"
-	@echo "test  						Run tests"
-	@echo "clean 						Remove all *.pyc, .DS_Store and temp files from the project"
-	@echo "shell 						Open Django shell"
-	@echo "migrations 					Create database migrations"
-	@echo "collectstatic 				Collect static assets"
-	@echo "run 							Run Django Server"
-	@echo "crawl <spidername>           Run Scrapy Spider"
+	@echo " reset                                Complete reset of database and migrations (Be Careful)"
+	@echo " migrate                              Run Django migrations"
+	@echo " migrations                           Create Django migrations"
+	@echo " user                                 Create user account"
+	@echo " clean                                Remove all *.pyc, .DS_Store and temp files from the project"
+	@echo " collectstatic                        Collect static assets"
+	@echo " run                                  Run Django Server"
+	@echo " crawl_spider <spidername>            Run Scrapy Spider"
+	@echo " crawl                                Run ALL Scrapy Spiders"
+	@echo " dump                                 Create database dump/backup"
 
 .PHONY: requirements
 
@@ -22,36 +21,21 @@ MANAGE_CMD = python manage.py
 PIP_INSTALL_CMD = pip install
 PLAYBOOK = ansible-playbook
 VIRTUALENV_NAME = venv
-
+APP_NAME = seeker
 # Helper functions to display messagse
 ECHO_BLUE = @echo "\033[33;34m $1\033[0m"
 ECHO_RED = @echo "\033[33;31m $1\033[0m"
 ECHO_GREEN = @echo "\033[33;32m $1\033[0m"
-
+DATE= `date +'%m_%d_%y'`
 # The default server host local development
 HOST ?= localhost:8000
 
-reset: delete_sqlite migrate user run
-setup: virtualenv requirements migrate user yarn build collectstatic
-
-virtualenv:
-# Create virtualenv
-	$(call ECHO_GREEN, Creating virtualenv... )
-	virtualenv -p python3 $(VIRTUALENV_NAME)
-
-requirements:
-# Install project requirements
-	$(call ECHO_GREEN, Installing requirements... )
-	( \
-		source venv/bin/activate;\
-		$(PIP_INSTALL_CMD) -r requirements.txt; \
-	)
+reset: dropdb createdb migrations migrate user run
 
 migrate:
 # Run django migrations
 	$(call ECHO_GREEN, Running migrations... )
 	( \
-		cd seeker; \
 		$(MANAGE_CMD) migrate; \
 	)
 
@@ -59,14 +43,12 @@ user:
 # Create user account
 	$(call ECHO_GREEN, Creating super user... )
 	( \
-		cd seeker; \
 		echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@email.com', 'pass')" | ./manage.py shell; \
 	)
 
 test:
 # Run the test cases
 	( \
-		cd seeker; \
 		$(MANAGE_CMD) test; \
 	)
 
@@ -84,14 +66,12 @@ clean:
 shell:
 # Run a local shell for debugging
 	( \
-		cd seeker; \
-		$(MANAGE_CMD) shell; \
+		$(MANAGE_CMD) shell_plus; \
 	)
 
 migrations:
 # Create database migrations
 	( \
-		cd seeker; \
 		$(MANAGE_CMD) makemigrations; \
 	)
 
@@ -99,7 +79,6 @@ collectstatic:
 # Collect static assets
 	$(call ECHO_GREEN, Collecting static assets...)
 	( \
-		cd seeker; \
 		$(MANAGE_CMD) collectstatic; \
 	)
 
@@ -107,8 +86,7 @@ run:
 # run django server
 	$(call ECHO_GREEN, Starting Django Server...)
 	( \
-		cd seeker; \
-		gulp; \
+		$(MANAGE_CMD) runserver 0.0.0.0:8300 ; \
 	)
 
 
@@ -116,36 +94,27 @@ crawl:
 # Run ALL scrapy spiders
 	$(call ECHO_GREEN, Running spiders... )
 	 (\
-		cd seeker; \
-		python crawl.py;  \
+		python seeker/crawl.py;  \
 	)
 
 crawl_spider:
 # Run scrapy spider
 	$(call ECHO_GREEN, Running $(spider) spider... )
 	 (\
-		cd seeker; \
 		scrapy crawl $(spider);  \
 	)
 
-delete_sqlite:
-# delete project db
+createdb:
 	( \
-		cd seeker; \
-		rm -rf db.sqlite3;\
+		createdb -p 5433 $(APP_NAME); \
 	)
 
-yarn:
-# install npm modules
-	$(call ECHO_GREEN, Installing npm modules... )
+dropdb:
 	( \
-		yarn; \
+		dropdb -p 5433 $(APP_NAME);\
 	)
 
-build:
-# build static assets
-	$(call ECHO_GREEN, Compiling static assets... )
+dump:
 	( \
-		cd seeker; \
-		gulp build; \
+		pg_dump -Fc seeker -p 5433 > backups/data_dump_$(DATE).dump; \
 	)
