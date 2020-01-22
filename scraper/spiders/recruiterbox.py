@@ -34,8 +34,9 @@ class RecruiterBoxSpider(Spider):
     def parse(self, response):
         """Extract job detail urls from response."""
         hxs = Selector(response)
-        urls = hxs.xpath('//cite/text()').extract()
+        urls = hxs.xpath('//div[contains(@class, "r")]/a/@href').extract()
         for url in urls:
+            url = url.replace("/url?q=", "")
             yield Request(url, callback=self.parse_detail_pages, dont_filter=True)
             print(url)
 
@@ -48,7 +49,7 @@ class RecruiterBoxSpider(Spider):
             item["title"] = job.xpath('//h1[contains(@class, "jobtitle")]/text()').extract_first()
             item["company"] = str('n/a')
             item["body"] = job.xpath('//div[contains(@class, "jobdesciption")]').extract()
-            item["location"] = job.xpath('//span[contains(@class, "meta-job-location-city")]').extract()
+            item["location"] = str('n/a')
             item["url"] = response.request.url
             item["pub_date"] = str('n/a')
             item["email"] = str('n/a')

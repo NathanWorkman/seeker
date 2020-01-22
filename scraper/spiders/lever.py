@@ -34,10 +34,14 @@ class LeverSpider(Spider):
     def parse(self, response):
         """Extract job detail urls from response."""
         hxs = Selector(response)
-        urls = hxs.xpath('//cite/text()').extract()
+        urls = hxs.xpath('//div[contains(@class, "r")]/a/@href').extract()
         for url in urls:
+            url = url.replace("/url?q=", "")
+            url = url.split("&")[0]
+            print(url)
             yield Request(url, callback=self.parse_detail_pages, dont_filter=True)
             print(url)
+
 
     def parse_detail_pages(self, response):
         hxs = Selector(response)
@@ -46,7 +50,8 @@ class LeverSpider(Spider):
         for job in jobs:
             item = JobItem()
             item["title"] = job.xpath('//div[contains(@class, "posting-headline")]/h2/text()').extract_first()
-            item["company"] = str('n/a')
+            item["company"] = job.xpath('//div[contains(@class, "main-footer-text page-centered")]/p/a/text()').extract()
+            item["company_url"] = job.xpath('//div[contains(@class, "main-footer-text page-centered")]/p/a/@href').extract()
             item["body"] = job.xpath('//div[contains(@class, "section page-centered")]').extract()
             item["location"] = job.xpath('//div[contains(@class, "sort-by-time posting-category medium-category-label")]').extract_first()
             item["url"] = response.request.url

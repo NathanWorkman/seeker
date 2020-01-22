@@ -2,99 +2,102 @@ PROJECT_NAME = seeker
 SHELL := /bin/sh
 help:
 	@echo "Please use 'make <target>' where <target> is one of"
-	@echo " reset                                Complete reset of database and migrations (Be Careful)"
-	@echo " migrate                              Run Django migrations"
-	@echo " migrations                           Create Django migrations"
-	@echo " user                                 Create user account"
-	@echo " clean                                Remove all *.pyc, .DS_Store and temp files from the project"
-	@echo " collectstatic                        Collect static assets"
-	@echo " run                                  Run Django Server"
-	@echo " crawl_spider <spidername>            Run Scrapy Spider"
-	@echo " crawl                                Run ALL Scrapy Spiders"
-	@echo " dump                                 Create database dump/backup"
+	@echo "migrate                   	Run database migrations"
+	@echo "collectstatic				Collect static assets"
+
 
 .PHONY: requirements
 
 
 # Command variables
+COMPOSE = docker-compose
+COMPOSE_CMD = exec app python manage.py
 MANAGE_CMD = python manage.py
-PIP_INSTALL_CMD = pip install
-PLAYBOOK = ansible-playbook
-VIRTUALENV_NAME = venv
-APP_NAME = seeker
+
 # Helper functions to display messagse
 ECHO_BLUE = @echo "\033[33;34m $1\033[0m"
 ECHO_RED = @echo "\033[33;31m $1\033[0m"
 ECHO_GREEN = @echo "\033[33;32m $1\033[0m"
-DATE= `date +'%m_%d_%y'`
+
 # The default server host local development
 HOST ?= localhost:8000
 
-reset: dropdb createdb migrations migrate user run
-
 migrate:
-# Run django migrations
+# Run django migrations inside docker
 	$(call ECHO_GREEN, Running migrations... )
 	( \
-		$(MANAGE_CMD) migrate; \
-	)
-
-user:
-# Create user account
-	$(call ECHO_GREEN, Creating super user... )
-	( \
-		echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@email.com', 'pass')" | ./manage.py shell; \
-	)
-
-test:
-# Run the test cases
-	( \
-		$(MANAGE_CMD) test; \
-	)
-
-clean:
-# Remove all *.pyc, .DS_Store and temp files from the project
-	$(call ECHO_BLUE,removing .pyc files...)
-	@find . -name '*.pyc' -exec rm -f {} \;
-	$(call ECHO_BLUE,removing static files...)
-	@rm -rf $(PROJECT_NAME)/_static/
-	$(call ECHO_BLUE,removing temp files...)
-	@rm -rf $(PROJECT_NAME)/_tmp/
-	$(call ECHO_BLUE,removing .DS_Store files...)
-	@find . -name '.DS_Store' -exec rm {} \;
-
-shell:
-# Run a local shell for debugging
-	( \
-		$(MANAGE_CMD) shell_plus; \
-	)
-
-migrations:
-# Create database migrations
-	( \
-		$(MANAGE_CMD) makemigrations; \
+		$(COMPOSE) $(COMPOSE_CMD) migrate --no-input; \
 	)
 
 collectstatic:
-# Collect static assets
-	$(call ECHO_GREEN, Collecting static assets...)
+# Run django migrations inside docker
+	$(call ECHO_GREEN, Collect static assets... )
 	( \
-		$(MANAGE_CMD) collectstatic; \
+		$(COMPOSE) $(COMPOSE_CMD) collectstatic --no-input; \
 	)
 
-run:
-# run django server
-	$(call ECHO_GREEN, Starting Django Server...)
+migrations:
+# Run django migrations inside docker
+	$(call ECHO_GREEN, Create new database migrations... )
 	( \
-		$(MANAGE_CMD) runserver 0.0.0.0:8300 ; \
+		$(COMPOSE) $(COMPOSE_CMD) makemigrations; \
+	)
+
+build:
+# Run django migrations inside docker
+	$(call ECHO_GREEN, Building new images... )
+	( \
+		$(COMPOSE) build; \
+	)
+
+down:
+# Run django migrations inside docker
+	$(call ECHO_GREEN, Tear down containers... )
+	( \
+		$(COMPOSE) down; \
+	)
+
+up:
+# Run django migrations inside docker
+	$(call ECHO_GREEN, Launching starship... )
+	( \
+		$(COMPOSE) up; \
+	)
+
+visual:
+# Generate visual representation of database
+	$(call ECHO_GREEN, Generating a pretty image...)
+	(\
+		$(COMPOSE) $(COMPOSE_CMD) graph_models --pygraphviz -a -g -o visualized.png; \
+	)
+
+dumpdata:
+# Dump database to fixture file
+	$(call ECHO_RED, Database dump...)
+	(\
+		$(COMPOSE) $(COMPOSE_CMD) dumpdata --exclude auth.permission --exclude contenttypes > ./initial_data.json; \
+	)
+
+shell:
+# Run a local shell for debugging
+	$(call ECHO_GREEN, Opening iPython shell...)
+	( \
+		$(COMPOSE) $(COMPOSE_CMD) shell; \
 	)
 
 
-crawl:
+
+
+######################
+# OLD
+######################
+
+r_crawl:
 # Run ALL scrapy spiders
-	$(call ECHO_GREEN, Running spiders... )
+	$(call ECHO_GREEN, Running Spiders Background Process... )
 	 (\
-		python seeker/crawl.py;  \
+		cd recognition; \
+		nohup python crawl.py &  \
 	)
 
 crawl_spider:
@@ -104,17 +107,99 @@ crawl_spider:
 		scrapy crawl $(spider);  \
 	)
 
-createdb:
-	( \
-		createdb -p 5433 $(APP_NAME); \
+r_crawl_spider:
+# Run scrapy spider
+	$(call ECHO_GREEN, Running $(spider) spider as background process... )
+	 (\
+		nohup scrapy crawl $(spider) &  \
 	)
 
-dropdb:
+delete_sqlite:
+# delete project db
 	( \
-		dropdb -p 5433 $(APP_NAME);\
+		rm -rf db.sqlite3;\
 	)
 
-dump:
+reset_migrations:
+# delete all migrations furing initial development
 	( \
-		pg_dump -Fc seeker -p 5433 > backups/data_dump_$(DATE).dump; \
+		find . -path "*/migrations/*.py" -not -name "__init__.py" -delete; \
+		find . -path "*/migrations/*.pyc"  -delete; \
 	)
+
+map_points:
+	( \
+		python manage.py plot_lng_lat;\
+	)
+
+r_map_points:
+	( \=
+		nohup python manage.py plot_lng_lat & \
+	)
+
+validate_urls:
+	( \
+		python manage.py valid_url;\
+	)
+
+r_validate_urls:
+	( \
+		nohup python manage.py valid_url & \
+	)
+
+find_contacts:
+	( \
+		nohup python manage.py find_contacts & \
+	)
+
+map_locations:
+	( \
+		nohup python manage.py plot_lng_lat & \
+	)
+
+rank:
+	# Start ranking centers
+	(\
+		python manage.py rank; \
+	)
+
+r_rank:
+	# Start ranking centers
+	(\
+		nohup python manage.py rank & \
+	)
+
+sql_dump:
+	# dump to fixtures file
+	(\
+		rm -rf recognition/fixtures/dump.json; \
+		./manage.py dumpdata --natural-primary --natural-foreign > fixtures/dump.json ; \
+	)
+
+
+initial_data:
+# load initial db data
+	( \
+		pg_restore -p 5433 -d recognition --verbose initial_data.dump; \
+	)
+
+r_initial_data:
+# load initial db data in vm
+	( \
+		sudo -u postgres pg_restore -p 5433 -d recognition --verbose initial_data.dump; \
+	)
+
+
+createuser:
+
+	# docker exec -it seeker_app echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@email.com', 'pass')" | ./manage.py shell;
+	( \
+		docker exec -it seeker_app python manage.py createsuperuser
+	)
+
+
+
+# docker exec -it seeker_app python manage.py createsuperuser
+
+
+# echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@email.com', 'pass')" | ./manage.py shell;

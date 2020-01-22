@@ -34,8 +34,9 @@ class GreenHouseSpider(Spider):
     def parse(self, response):
         """Extract job detail urls from response."""
         hxs = Selector(response)
-        urls = hxs.xpath('//cite/text()').extract()
+        urls = hxs.xpath('//div[contains(@class, "r")]/a/@href').extract()
         for url in urls:
+            url = url.replace("/url?q=", "")
             yield Request(url, callback=self.parse_detail_pages, dont_filter=True)
             print(url)
 
