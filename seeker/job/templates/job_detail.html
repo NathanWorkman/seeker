@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block page_title %}{{ job.title }} | Seeker{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row mb-5">
+        <a href="{% url 'jobs'%}">< Back</a>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <div class="media">
+                <img src="//logo.clearbit.com/{{ job.url }}?size=80" class="mr-3" alt="{{ job.company.name }} Logo">
+                <div class="media-body">
+                    <a href="{% url 'job_detail' pk=job.pk %}">
+                        <h5 class="mt-0 mb-1">{{ job.title }}</h5>
+                    </a>
+                    {{ job.company }}
+                    {{ job.board }}
+                </div>
+            </div>
+            <hr>
+            {{ job.body | safe }}
+        </div>
+        <div class="col-4">
+            <div class="card p-3">
+                <h5>Job Overview</h5>
+                <ul class="list-unstyled mt-2">
+                    <li><strong>Published:</strong> {{ job.pub_date }}</li>
+                    <li class="my-1"><strong>Scraped:</strong> {{ job.scrape_date | date }}</li>
+                    <li><strong>Salary:</strong> {{ job.salary }}</li>
+                    <li class="my-1"><strong>Job URL:</strong> <a href="{{ job.url }}" target="_blank">View Original</a></li>
+                </ul>
+            </div>
+            <div class="card my-4 p-3">
+                <h5>Company Overview</h5>
+                <ul class="list-unstyled mt-2">
+                    <li><strong>URL:</strong> <a href="{{ job.company.url }}" target="_blank">Company Site</a></li>
+                    <li class="my-1"><strong>Glassdoor Rating:</strong> </li>
+                    <li><strong>Location: {{ job.company.location }}</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

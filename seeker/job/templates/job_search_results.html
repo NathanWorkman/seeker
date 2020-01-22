@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block page_title %}Search Results | Seeker{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-8">
+            <ul class="list-unstyled">
+                {% for job in jobs %}
+                <li class="{% cycle 'media' 'media my-4' %}">
+                    <img src="//logo.clearbit.com/{{ job.url }}?size=80" class="mr-3" alt="{{ job.company.name }} Logo">
+                    <div class="media-body">
+                        <a href="">
+                            <h5 class="mt-0 mb-1">{{ job.title }}</h5>
+                        </a>
+                        <!-- {{ job.body | safe}} -->
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    {% load compress cache staticfiles %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block page_title %}Seeker{% endblock page_title %}</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- <link rel="apple-touch-icon" sizes="144x144" href="{% static 'img/meta/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/meta/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/meta/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'img/meta/manifest.json' %}">
+    <link rel="mask-icon" href="{% static 'img/meta/safari-pinned-tab.svg' %}" color="#5bbad5"> -->
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500" rel="stylesheet" />
+    {% compress css %}
+    <link href="{% static 'vendor/bootstrap/bootstrap.min.css' %}" rel='stylesheet' type="text/css" charset="utf-8" />
+    <link href="{% static 'vendor/datatables/datatables.min.css' %}" rel='stylesheet' type="text/css" charset="utf-8" />
+    <link href="{% static 'scss/styles.scss' %}" rel='stylesheet' type="text/x-scss" charset="utf-8" />
+    {% endcompress %}
+</head>
+{% block body %}
+
+<body>
+    {% include 'includes/navigation.html' %}
+    <!-- Start Content -->
+    {% block content %}{% endblock content %}
+    <!-- <div class="text-center">
+        <a href="https://clearbit.com">Logos provided by Clearbit</a>
+    </div> -->
+    <!-- End Content -->
+    {% endblock body %}
+    <!-- Scripts -->
+    {% compress js %}
+    <!-- jQuery -->
+    <script src="{% static 'vendor/jquery-3.4.1.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'vendor/bootstrap/bootstrap.bundle.min.js' %}"></script>
+    <!-- DataTables -->
+    <script src="{% static 'vendor/datatables/datatables.min.js' %}"></script>
+    <!-- Charts.js -->
+    <script src="{% static 'vendor/chartjs/Chart.bundle.min.js' %}"></script>
+    <!-- Custom -->
+    <script src="{% static 'js/main.js' %}"></script>
+    {% endcompress %}
+</body>
+</html>

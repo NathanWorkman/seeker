@@ -15,8 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic.base import TemplateView
+from rest_framework import routers
+
+from seeker.job import views as job_views
+
+router = routers.DefaultRouter(trailing_slash=False)
+router.register('jobs', job_views.JobViewSet)
 
 urlpatterns = [
-    path('', admin.site.urls),
-    path('summernote/', include('django_summernote.urls')),
+    path('admin/', admin.site.urls),
+    path('', TemplateView.as_view(template_name='dashboard.html'), name='dashboard'),
+    path('jobs/', job_views.JobListView.as_view(), name="jobs"),
+    path('jobs/<int:pk>/', job_views.JobDetailView.as_view(), name="job_detail"),
+    path('search/', job_views.SearchResultsView.as_view(), name="search_results"),
+    path('feed/', job_views.JobsFeed(), name="rss"),
+    path('api/v1/', include(router.urls)),
 ]
+
+import seeker.jobs  # noqa

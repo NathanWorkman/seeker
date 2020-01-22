@@ -1,5 +1,4 @@
 """Job Models."""
-from django.urls import reverse
 from django.db import models
 from django.utils.html import format_html
 
@@ -16,7 +15,7 @@ class Board(models.Model):
 
     def __str__(self):
         """Set title."""
-        return "%s" % self.title
+        return f"{self.title}"
 
 
 class Company(models.Model):
@@ -25,6 +24,7 @@ class Company(models.Model):
     email = models.EmailField(blank=True)
     url = models.URLField()
     about = models.TextField()
+    logo = models.ImageField(blank=True, null=True)
 
     class Meta:
         """Order by title."""
@@ -32,7 +32,8 @@ class Company(models.Model):
 
     def __str__(self):
         """Set Title."""
-        return "%s" % self.title
+        return f"{self.title}"
+
 
 class Job(models.Model):
     title = models.CharField(max_length=255)
@@ -59,16 +60,16 @@ class Job(models.Model):
 
     def __str__(self):
         """Set title."""
-        return "%s" % self.title
+        return f"{self.title}"
 
     def short_url(self):
         """Return a clickable link."""
         if self.url:
-            short_url = self.url[:25] + '...'
+            # short_url = self.url[:25] + '...'
             return format_html("<a href='{}' class='simple-button' target='_blank'>View Post</a>".format(self.url))
         else:
             return self.url
-    
+
     def get_count(self):
         "Total Number of Jobs"
         return self.objects.all().count()
@@ -78,7 +79,7 @@ class SearchTerms(models.Model):
     term = models.CharField(max_length=55)
 
     def __str__(self):
-        return u"%s" % self.term
+        return f"{self.term}"
 
 
 class Tag(models.Model):

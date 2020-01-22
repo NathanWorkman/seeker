@@ -1,7 +1,7 @@
 
 # general things to ignore
 build/
-dist/
+# dist/
 *.egg-info/
 *.egg
 *.py[cod]
@@ -23,9 +23,11 @@ __pycache__
 /node_modules
 
 # project dist static files
-/static/
-/media/
+/static
+media
+/finder/static/assets
 
+.vscode
 # project secrets
 .env
 
@@ -33,5 +35,22 @@ __pycache__
 *.log
 *.retry
 
-# local db backups
-backups/
+# background process stuff
+nohup.out
+
+# Ignore data dumps
+fixtures/
+initial_data.dump
+
+# ignore scraper things
+# Google Scraper specific
+Drivers/chromedriver
+Drivers/geckodriver
+Private/
+keywords.txt
+out.csv
+# cache for GoogleScraper testings
+.scrapecache/
+*.db
+/results
+*.log

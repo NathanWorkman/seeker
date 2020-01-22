@@ -3,16 +3,15 @@
     <h1>Seeker</h1>
 </div>
 
-[![Build Status](https://travis-ci.org/NathanWorkman/seeker.svg?branch=master)](https://travis-ci.org/NathanWorkman/seeker)
+# Seeker
 
-## What is Seeker?
 Seeker is just another job board aggregator. Check multiple job boards for positions you might be interested in and organize them all in one convenient location.
 
 ## Setup
 
 ### Docker
 
-Docker installation should be fairly straight forward.
+The easiest way to get started is to clone this repo and run docker-compose:
 
 ```
 git clone git@github.com:NathanWorkman/seeker.git
@@ -21,91 +20,18 @@ docker-compose build
 docker-compose up
 ```
 
-### The hard(er) way:
-
-You will need `yarn` and `virtualenv` installed on your machine.
-
-Install Yarn
-```
-brew install yarn
-```
-
-Install virtualenv
-```
-pip install virtualenv
-```
-
-### To run the project
-```
-git clone git@github.com:NathanWorkman/seeker.git
-cd seeker/
-virtualenv venv -p python3
-source venv/bin/activate
-pip install -r requirements.txt
-yarn
-cd seeker/
-python manage.py migrate
-python manage.py createsuperuser
-make build
-make run
-```
-
 ### To run the spiders
-From the root directory of the `seeker` project `cd` to the seeker app directory.
 
-```
-cd seeker
-```
-and then run the following to run the individual spiders, replacing `spidername` with the spider you wish to run.
+Execute the individual spiders from inside the docker container
 
-```
-scrapy crawl spidername
+```shell
+docker exec -it seeker_app scrapy crawl spidername
 ```
 
 or run all the spiders at once:
 
+```shell
+docker exec -it seeker_app python crawl.py
 ```
-python crawl.py
-```
 
-Navigate to the django admin to view your results.
-
-## TODO
-
-### Boards 
-- [x] DjangoGigs
-- [ ] Indeed
-- [ ] PythonOrg
-- [ ] RemotePython
-- [ ] Stack Overflow
-- [ ] Workable
-- [ ] Lever
-- [ ] Recruiter Box
-- [ ] Greenhouse
-- [ ] TBD
-- [ ] https://hireremote.io
-- [ ] https://weworkremotely.com
-- [ ] https://remoteok.io/
-- [ ] https://jobspresso.co/
-- [ ] https://remotive.io/find-a-remote-job/#s=1
-- [ ] https://www.workingnomads.co/jobs
-- [ ] https://www.mikesremotelist.com/
-- [ ] https://stackoverflow.com/jobs
-- [ ] https://bestremotejob.com/
-- [ ] https://justremote.co/
-- [ ] https://whoishiring.io/
-- [ ] https://www.techjobsforgood.com/?search=remote
-- [ ] https://rmtwrk.com/
-- [ ] https://remotepath.io/
-- [ ] https://www.hiringremote.ly/
-- [ ] https://www.honestlance.com/
-
-
-
-## Made Possible By
-- [Django](https://www.djangoproject.com/)
-- [Scrapy](https://scrapy.org/)
-- [jQuery](https://jquery.com/)
-- Icons - [Devicon](http://konpa.github.io/devicon/)
-- Admin Theme - [Django Suit](https://github.com/darklow/django-suit)
-- NLP - [SpaCy](https://spacy.io/)
+Navigate to `0.0.0.0:8000` to view results.

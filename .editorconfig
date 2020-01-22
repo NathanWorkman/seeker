@@ -1,0 +1,29 @@
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# https://editorconfig.org
+root = true
+
+[*]
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{md,rst,txt}]
+indent_style = space
+indent_size = 4
+
+[*.{ini,toml}]
+indent_style = space
+indent_size = 4
+
+[*.{js,json,yml,yaml}]
+indent_style = space
+indent_size = 2
+
+[*.{css,py,scss,html}]
+indent_size = 4
+indent_style = space
+
+[*.md]
+trim_trailing_whitespace = false
