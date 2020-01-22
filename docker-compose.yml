@@ -14,12 +14,8 @@ services:
       - POSTGRES_DB=postgres
     networks:
       - seeker
-    expose:
-      - "5435"
     ports:
-      - "5435:5435"
-    command: -p 5435
-    # restart: on-failure
+      - "5432:5432"
     volumes:
       - postgresql-data:/var/lib/postgresql/data
   app:
@@ -27,19 +23,16 @@ services:
       context: .
       dockerfile: ./Dockerfile
     container_name: seeker_app
-    command: sh -c "python manage.py collectstatic --no-input && python manage.py migrate && python manage.py runserver 0.0.0.0:8001"
-    # environment:
-    #   - DJANGO_SETTINGS_MODULE=seeker.settings.local
+    command: sh -c "python manage.py collectstatic --no-input && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     image: seeker_image
     hostname: app
     depends_on:
       - postgres
     expose:
-      - "8001"
+      - "8000"
     ports:
-      - "8001:8001"
+      - "8000:8000"
     volumes:
       - .:/usr/src/app
     networks:
       - seeker
-    # restart: on-failure
