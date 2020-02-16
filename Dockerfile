@@ -11,6 +11,7 @@ RUN apt-get install -y git apt-utils build-essential && rm -rf /var/lib/apt/list
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
+COPY ./requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
