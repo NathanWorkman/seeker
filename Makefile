@@ -67,13 +67,13 @@ up:
 test:
 	$(call ECHO_GREEN, Running pytest...)
 	( \
-		./scripts/test.sh; \
+		./utils/test.sh; \
 	)
 
 ## setup 		Project initial setup.
 setup:
 	$(call ECHO_GREEN, Setting up project...)
 	( \
-		./scripts/setup.sh; \
+		./utils/setup.sh; \
 	)
 

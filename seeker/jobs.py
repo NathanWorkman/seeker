@@ -10,7 +10,7 @@ scheduler = BackgroundScheduler()
 scheduler.add_jobstore(DjangoJobStore(), 'default')
 
 
-@register_job(scheduler, "interval", seconds=10)
+@register_job(scheduler, "interval", hours=1)
 def run_spiders():
     # Runs all Spiders
     subprocess.run(["python seeker/crawl.py"], shell=True)
