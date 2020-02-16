@@ -8,6 +8,9 @@ django-grappelli==2.14.1
 django-debug-toolbar==2.2
 flake8==3.7.9
 pytest==5.3.5
+pytest-django==3.8.0  # Django Integration
+pytest-xdist==1.31.0  # run tests in parallel!
+bandit==1.6.2 # Python Security Check
 # Database
 psycopg2-binary==2.8.4
 # Scheduler
@@ -16,6 +19,7 @@ django-apscheduler==0.3.0
 # Scrapy
 Scrapy==1.8.0
 scrapy-djangoitem==1.1.1
+scrapy-rotating-proxies==0.6.2
 scrapyd==1.2.1
 # Filter queryset from url params
 django-filter==2.2.0
