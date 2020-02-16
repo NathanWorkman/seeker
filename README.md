@@ -1,15 +1,16 @@
 <div style="text-align:center;">
-    <img src="snitch.png" width="150" height="150"/>
-    <h1>Seeker</h1>
+    <img src="snitch.png" width="50" height="50"/>
 </div>
 
-# Seeker
+# Seeker - [WIP]
 
-Seeker is just another job board aggregator. Check multiple job boards for positions you might be interested in and organize them all in one convenient location.
+Seeker is a job board aggregator. Check multiple job boards for positions you might be interested in and organize them all in one convenient location.
 
-## Setup
+*This project is a WIP. If you find a bug or would like a new spider/feature added please open a pull request.*
 
-### Docker
+## :gear:  Setup
+
+#### Docker
 
 The easiest way to get started is to clone this repo and run docker-compose:
 
@@ -20,7 +21,7 @@ docker-compose build
 docker-compose up
 ```
 
-### To run the spiders
+#### To run the spiders
 
 Execute the individual spiders from inside the docker container
 
@@ -35,3 +36,18 @@ docker exec -it seeker_app python crawl.py
 ```
 
 Navigate to `0.0.0.0:8000` to view results.
+
+
+## :computer:  Job Boards
+
+* [Django Gigs](https://djangogigs.com)
+* [Greenhouse](https://greenhouse.io)
+* [Indeed](https://indeed.com)
+* [Lever](https://lever.co)
+* [Python.org](https://www.python.org)
+* [Recruiter Box](https://recruiterbox.com)
+* [Remote Python](https://www.remotepython.com)
+* [Stackoverflow Jobs](https://stackoverflow.com/)
+* [Workable](https://workable.com)
+
+ 
