@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3'
 networks:
   seeker:
 volumes:
@@ -23,7 +23,8 @@ services:
       context: .
       dockerfile: ./Dockerfile
     container_name: seeker_app
-    command: sh -c "python manage.py collectstatic --no-input && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    command: |
+      sh -c "chmod +x ./utils/wait-for-it.sh && ./utils/wait-for-it.sh postgres:5432 -- python manage.py collectstatic --no-input && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     image: seeker_image
     hostname: app
     depends_on:

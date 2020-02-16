@@ -17,11 +17,11 @@ indent_size = 4
 indent_style = space
 indent_size = 4
 
-[*.{js,json,yml,yaml}]
+[*.{js,json,yml,yaml,scss,css}]
 indent_style = space
 indent_size = 2
 
-[*.{css,py,scss,html}]
+[*.{py,html}]
 indent_size = 4
 indent_style = space
 

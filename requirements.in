@@ -1,14 +1,16 @@
 # Django framework
-Django==2.2.9
+Django==2.2.10
 # API
 djangorestframework==3.11.0
 # Admin
-django-grappelli==2.13.3
+django-grappelli==2.14.1
 # Testing / Debug
-django-debug-toolbar==2.1
+django-debug-toolbar==2.2
 flake8==3.7.9
-tox==3.14.3
-pytest==5.3.2
+pytest==5.3.5
+pytest-django==3.8.0  # Django Integration
+pytest-xdist==1.31.0  # run tests in parallel!
+bandit==1.6.2 # Python Security Check
 # Database
 psycopg2-binary==2.8.4
 # Scheduler
@@ -17,11 +19,12 @@ django-apscheduler==0.3.0
 # Scrapy
 Scrapy==1.8.0
 scrapy-djangoitem==1.1.1
+scrapy-rotating-proxies==0.6.2
 scrapyd==1.2.1
 # Filter queryset from url params
 django-filter==2.2.0
 # Pip Tools
-pip-tools==4.3.0
+pip-tools==4.4.1
 pur==5.3.0
 # Sane HTTP
 requests==2.22.0
@@ -29,7 +32,7 @@ requests==2.22.0
 django-compressor==2.4
 django-libsass==0.8
 # import export
-django-import-export==2.0
+django-import-export==2.0.1
 # Gunicorn
 gunicorn==20.0.4
 whitenoise==5.0.1

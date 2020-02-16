@@ -4,8 +4,10 @@
 #
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
-
+import random
 from scrapy import signals
+
+from .agents import AGENTS
 
 
 class ScraperSpiderMiddleware(object):
@@ -101,3 +103,16 @@ class ScraperDownloaderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+
+class CustomUserAgentMiddleware(object):
+    """
+    Custom User Agent Middleware.
+
+    Change request header every time.
+    """
+
+    def process_request(self, request, spider):
+        """Get random user agent."""
+        agent = random.choice(AGENTS)
+        request.headers["User-Agent"] = agent
