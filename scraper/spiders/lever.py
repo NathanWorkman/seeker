@@ -19,7 +19,7 @@ class LeverSpider(Spider):
         for term in search_terms:
             query_items.append(str(term))
 
-        query = "q=site:lever.co+{}&tbs=qdr:m".format("+".join(query_items))
+        query = "q=site:jobs.lever.co+{}&tbs=qdr:m".format("+".join(query_items))
         return query
 
     def start_requests(self):
@@ -41,7 +41,6 @@ class LeverSpider(Spider):
             print(url)
             yield Request(url, callback=self.parse_detail_pages, dont_filter=True)
             print(url)
-
 
     def parse_detail_pages(self, response):
         hxs = Selector(response)

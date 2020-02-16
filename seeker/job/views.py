@@ -12,7 +12,7 @@ class JobListView(ListView):
     model = Job
     template_name = 'job_list.html'
     context_object_name = 'jobs'
-    paginate_by = 6
+    paginate_by = 20
     queryset = Job.objects.all().order_by('-id')
 
 

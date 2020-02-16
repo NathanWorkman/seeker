@@ -1,0 +1,17 @@
+body {
+  font: 16px/28px "Nunito Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #66666a;
+}
+
+a {
+  color: #22222a;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.sk-navbar {
+  background-color: #0d47a1;
+  color: #ffffff;
+}
