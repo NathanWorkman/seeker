@@ -17,30 +17,30 @@ psycopg2-binary==2.8.4
 APScheduler==3.6.3
 django-apscheduler==0.3.0
 # Scrapy
-Scrapy==1.8.0
+Scrapy==2.0.0
 scrapy-djangoitem==1.1.1
 scrapy-rotating-proxies==0.6.2
 scrapyd==1.2.1
 # Filter queryset from url params
 django-filter==2.2.0
 # Pip Tools
-pip-tools==4.4.1
+pip-tools==4.5.1
 pur==5.3.0
 # Sane HTTP
-requests==2.22.0
+requests==2.23.0
 # Static Assets
 django-compressor==2.4
 django-libsass==0.8
 # import export
-django-import-export==2.0.1
+django-import-export==2.0.2
 # Gunicorn
 gunicorn==20.0.4
 whitenoise==5.0.1
 # local flavor
-django-localflavor==2.2
+django-localflavor==3.0
 # Python Excel
 openpyxl==3.0.3
-xlsxwriter==1.2.7
+xlsxwriter==1.2.8
 # NLP Library to get some insights
 spacy==2.2.3
 # PIL

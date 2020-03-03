@@ -5,12 +5,11 @@
 #    pip-compile requirements.in
 #
 apipkg==1.5               # via execnet
-apscheduler==3.6.3
+apscheduler==3.6.3        # via -r requirements.in (line 17), django-apscheduler
 asn1crypto==0.24.0        # via cryptography
 attrs==18.1.0             # via automat, pytest, scrapy-rotating-proxies, service-identity, twisted
 automat==0.7.0            # via twisted
-backports.csv==1.0.6      # via tablib
-bandit==1.6.2
+bandit==1.6.2             # via -r requirements.in (line 13)
 blis==0.4.1               # via spacy, thinc
 catalogue==1.0.0          # via spacy
 certifi==2018.8.24        # via requests
@@ -24,23 +23,23 @@ cymem==2.0.2              # via preshed, spacy, thinc
 defusedxml==0.5.0         # via odfpy
 diff-match-patch==20181111  # via django-import-export
 django-appconf==1.0.3     # via django-compressor
-django-apscheduler==0.3.0
-django-compressor==2.4
-django-debug-toolbar==2.2
-django-filter==2.2.0
-django-grappelli==2.14.1
-django-import-export==2.0.1
-django-libsass==0.8
-django-localflavor==2.2
-django==2.2.10
-djangorestframework==3.11.0
+django-apscheduler==0.3.0  # via -r requirements.in (line 18)
+django-compressor==2.4    # via -r requirements.in (line 32), django-libsass
+django-debug-toolbar==2.2  # via -r requirements.in (line 8)
+django-filter==2.2.0      # via -r requirements.in (line 25)
+django-grappelli==2.14.1  # via -r requirements.in (line 6)
+django-import-export==2.0.2  # via -r requirements.in (line 35)
+django-libsass==0.8       # via -r requirements.in (line 33)
+django-localflavor==3.0   # via -r requirements.in (line 40)
+django==2.2.10            # via -r requirements.in (line 2), django-appconf, django-apscheduler, django-debug-toolbar, django-filter, django-import-export, django-localflavor, djangorestframework
+djangorestframework==3.11.0  # via -r requirements.in (line 4)
 entrypoints==0.3          # via flake8
 et-xmlfile==1.0.1         # via openpyxl
 execnet==1.7.1            # via pytest-xdist
-flake8==3.7.9
+flake8==3.7.9             # via -r requirements.in (line 9)
 gitdb2==3.0.0             # via gitpython
 gitpython==3.0.7          # via bandit
-gunicorn==20.0.4
+gunicorn==20.0.4          # via -r requirements.in (line 37)
 hyperlink==18.0.0         # via twisted
 idna==2.7                 # via cryptography, hyperlink, requests
 importlib-metadata==1.4.0  # via catalogue, pluggy, pytest
@@ -48,23 +47,24 @@ incremental==17.5.0       # via twisted
 jdcal==1.4                # via openpyxl
 libsass==0.17.0           # via django-libsass
 lxml==4.2.4               # via parsel, scrapy
+markuppy==1.14            # via tablib
 mccabe==0.6.1             # via flake8
 more-itertools==8.0.2     # via pytest, zipp
 murmurhash==1.0.2         # via preshed, spacy, thinc
 numpy==1.16.2             # via blis, spacy, thinc
 odfpy==1.4.0              # via tablib
-openpyxl==3.0.3
+openpyxl==3.0.3           # via -r requirements.in (line 42), tablib
 packaging==20.0           # via pytest
 parsel==1.5.0             # via scrapy
 pbr==5.4.4                # via stevedore
-pillow==7.0.0
-pip-tools==4.4.1
+pillow==7.0.0             # via -r requirements.in (line 47)
+pip-tools==4.5.1          # via -r requirements.in (line 27)
 plac==0.9.6               # via spacy, thinc
 pluggy==0.13.1            # via pytest
 preshed==3.0.2            # via spacy, thinc
 protego==0.1.16           # via scrapy
-psycopg2-binary==2.8.4
-pur==5.3.0
+psycopg2-binary==2.8.4    # via -r requirements.in (line 15)
+pur==5.3.0                # via -r requirements.in (line 28)
 py==1.5.4                 # via pytest
 pyasn1-modules==0.2.2     # via service-identity
 pyasn1==0.4.4             # via pyasn1-modules, service-identity
@@ -75,29 +75,29 @@ pyflakes==2.1.0           # via flake8
 pyhamcrest==1.9.0         # via twisted
 pyopenssl==18.0.0         # via scrapy, service-identity
 pyparsing==2.4.6          # via packaging
-pytest-django==3.8.0
+pytest-django==3.8.0      # via -r requirements.in (line 11)
 pytest-forked==1.1.3      # via pytest-xdist
-pytest-xdist==1.31.0
-pytest==5.3.5
+pytest-xdist==1.31.0      # via -r requirements.in (line 12)
+pytest==5.3.5             # via -r requirements.in (line 10), pytest-django, pytest-forked, pytest-xdist
 python-stdnum==1.12       # via django-localflavor
 pytz==2018.5              # via apscheduler, django, tzlocal
 pyyaml==3.13              # via bandit, tablib
 queuelib==1.5.0           # via scrapy
 rcssmin==1.0.6            # via django-compressor
-requests==2.22.0
+requests==2.23.0          # via -r requirements.in (line 30), spacy
 rjsmin==1.1.0             # via django-compressor
-scrapy-djangoitem==1.1.1
-scrapy-rotating-proxies==0.6.2
-scrapy==1.8.0
-scrapyd==1.2.1
+scrapy-djangoitem==1.1.1  # via -r requirements.in (line 21)
+scrapy-rotating-proxies==0.6.2  # via -r requirements.in (line 22)
+scrapy==2.0.0             # via -r requirements.in (line 20), scrapyd
+scrapyd==1.2.1            # via -r requirements.in (line 23)
 service-identity==17.0.0  # via scrapy
-six==1.13.0               # via apscheduler, automat, bandit, cryptography, django-appconf, django-compressor, django-grappelli, libsass, packaging, parsel, pip-tools, protego, pyhamcrest, pyopenssl, pytest-xdist, scrapy, scrapy-djangoitem, scrapy-rotating-proxies, scrapyd, stevedore, w3lib
+six==1.13.0               # via apscheduler, automat, bandit, cryptography, django-appconf, django-compressor, django-grappelli, libsass, packaging, parsel, pip-tools, protego, pyhamcrest, pyopenssl, pytest-xdist, scrapy-djangoitem, scrapy-rotating-proxies, scrapyd, stevedore, w3lib
 smmap2==2.0.5             # via gitdb2
-spacy==2.2.3
+spacy==2.2.3              # via -r requirements.in (line 45)
 sqlparse==0.2.4           # via django, django-debug-toolbar
 srsly==1.0.1              # via spacy, thinc
 stevedore==1.32.0         # via bandit
-tablib==0.13.0            # via django-import-export
+tablib[html,ods,xls,xlsx,yaml]==1.1.0  # via django-import-export
 thinc==7.3.1              # via spacy
 tqdm==4.31.1              # via thinc
 twisted==18.7.0           # via scrapy, scrapyd
@@ -107,9 +107,9 @@ urllib3==1.23             # via requests
 w3lib==1.19.0             # via parsel, scrapy
 wasabi==0.6.0             # via spacy, thinc
 wcwidth==0.1.8            # via pytest
-whitenoise==5.0.1
+whitenoise==5.0.1         # via -r requirements.in (line 38)
 xlrd==1.2.0               # via tablib
-xlsxwriter==1.2.7
+xlsxwriter==1.2.8         # via -r requirements.in (line 43)
 xlwt==1.3.0               # via tablib
 zipp==1.0.0               # via importlib-metadata
 zope.interface==4.5.0     # via scrapy, twisted
