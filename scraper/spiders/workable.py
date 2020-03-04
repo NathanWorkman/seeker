@@ -58,5 +58,6 @@ class WorkableSpider(Spider):
             item["scrape_date"] = timezone.now()
             item["job_board"] = "Workable"
             item["board_url"] = "www.workable.com"
+            item["company_url"] = ''
             items.append(item)
         return items

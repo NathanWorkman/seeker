@@ -24,4 +24,5 @@ class RemotePythonSpider(XMLFeedSpider):
         item["email"] = 'n/a'
         item["salary"] = 'n/a'
         item['location'] = 'n/a'
+        item["company_url"] = ''
         return item

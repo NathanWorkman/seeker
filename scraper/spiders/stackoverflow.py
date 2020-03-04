@@ -23,6 +23,7 @@ class StackOverflowSpider(XMLFeedSpider):
         item["board_url"] = "www.stackoverflow.com"
         item["email"] = str('n/a')
         item["salary"] = str('n/a')
+        item["company_url"] = ''
         if node.xpath('location/text()'):
             item['location'] = node.xpath('location/text()').extract_first()
         else:

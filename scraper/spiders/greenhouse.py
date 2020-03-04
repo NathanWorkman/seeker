@@ -57,5 +57,6 @@ class GreenHouseSpider(Spider):
             item["scrape_date"] = timezone.now()
             item["job_board"] = "Greenhouse"
             item["board_url"] = "www.greenhouse.io"
+            item["company_url"] = ''
             items.append(item)
         return items

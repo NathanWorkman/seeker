@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-8">
             <div class="media">
-                <img src="//logo.clearbit.com/{{ job.url }}?size=80" class="mr-3" alt="{{ job.company.name }} Logo">
+                <img src="//logo.clearbit.com/{{ job.company.url }}?size=80" class="mr-3" alt="{{ job.company.name }} Logo">
                 <div class="media-body">
                     <a href="{% url 'job_detail' pk=job.pk %}">
                         <h5 class="mt-0 mb-1">{{ job.title }}</h5>

@@ -57,5 +57,6 @@ class RecruiterBoxSpider(Spider):
             item["scrape_date"] = timezone.now()
             item["job_board"] = "Recruiter Box"
             item["board_url"] = "www.recruiterbox.com"
+            item["company_url"] = ''
             items.append(item)
         return items

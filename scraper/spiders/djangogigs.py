@@ -22,7 +22,8 @@ class DjangoGigsSpider(XMLFeedSpider):
         item['scrape_date'] = timezone.now()
         item['job_board'] = "Django Gigs"
         item['board_url'] = "www.djangogigs.com"
-        item['email'] = str('n/a')
-        item['salary'] = str('n/a')
-        item['location'] = str('n/a')
+        item['email'] = ''
+        item['salary'] = ''
+        item['location'] = ''
+        item["company_url"] = ''
         return item

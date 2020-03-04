@@ -24,4 +24,5 @@ class IndeedSpider(XMLFeedSpider):
         item["email"] = str('n/a')
         item["salary"] = str('n/a')
         item['location'] = str('n/a')
+        item["company_url"] = ''
         return item

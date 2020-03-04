@@ -54,9 +54,9 @@ class LeverSpider(Spider):
             item["body"] = job.xpath('//div[contains(@class, "section page-centered")]').extract()
             item["location"] = job.xpath('//div[contains(@class, "sort-by-time posting-category medium-category-label")]').extract_first()
             item["url"] = response.request.url
-            item["pub_date"] = str('n/a')
-            item["email"] = str('n/a')
-            item["salary"] = str('n/a')
+            item["pub_date"] = ''
+            item["email"] = ''
+            item["salary"] = ''
             item["scrape_date"] = timezone.now()
             item["job_board"] = "Lever"
             item["board_url"] = "lever.co"

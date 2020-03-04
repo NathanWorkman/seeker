@@ -18,4 +18,4 @@ class JobItem(DjangoItem):
     company = scrapy.Field()
     title = scrapy.Field()
     email = scrapy.Field()
-    # url = scrapy.Field()
+    company_url = scrapy.Field()

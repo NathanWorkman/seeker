@@ -17,7 +17,7 @@ class JobsPipeline(object):
     def process_item(self, item, spider):
         item['board'] = self.get_or_create_board(item['job_board'], item['board_url'])
         item['title'] = item['title']
-        item['company'] = self.get_or_create_company(item['company'], item['email'])
+        item['company'] = self.get_or_create_company(item['company'], item['email'], item['company_url'])
         item['body'] = "\n".join(item['body'])  # extract() will return a list, which you need to concatenate to restore the original html
         item['pub_date'] = item['pub_date']
         item['salary'] = item['salary']
@@ -48,22 +48,31 @@ class JobsPipeline(object):
         except Board.DoesNotExist:
             return Board.objects.create(title=title, slug=slug, url=url)
 
-    def get_or_create_company(self, title, email):
+    def get_or_create_company(self, title, email, url):
+        slug = slugify(title)
+
+        if isinstance(url, list):
+            url = url[0]
+        if isinstance(title, list):
+            title = title[0]
 
         # Clean greenhouse company name
         if 'at' in title:
             cleantitle = title.replace("at", "")
             title = cleantitle
-        
-        slug = slugify(title)
+        if 'Home Page' in title:
+            cleantitle = title.replace("Home Page", "")
+            title = cleantitle
+
         try:
             email = email[0].lower()
         except IndexError:
             email = ''
+
         try:
             return Company.objects.get(slug=slug)
         except Company.DoesNotExist:
-            return Company.objects.create(title=title, slug=slug, email=email)
+            return Company.objects.create(title=title, slug=slug, email=email, url=url)
 
     def clean_text(self, text):
         output = remove_tags(text)

@@ -167,7 +167,7 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (),
     # "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     # "DEFAULT_AUTHENTICATION_CLASSES": (
-    #     "rest_framework_jwt.authentication.JSONWebTokenAuthentication",
+    #     # "rest_framework_jwt.authentication.JSONWebTokenAuthentication",
     #     "rest_framework.authentication.SessionAuthentication",
     #     "rest_framework.authentication.BasicAuthentication",
     # ),
@@ -176,6 +176,6 @@ REST_FRAMEWORK = {
         "rest_framework.filters.SearchFilter",
         "rest_framework.filters.OrderingFilter",
     ),
-    # "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
-    # "PAGE_SIZE": 10,
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 1000,
 }
