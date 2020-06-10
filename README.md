@@ -6,9 +6,9 @@
 
 Seeker is a job board aggregator. Check multiple job boards for positions you might be interested in and organize them all in one convenient location.
 
-*This project is a WIP. If you find a bug or would like a new spider/feature added please open a pull request.*
+_This project is a WIP. If you find a bug or would like a new spider/feature added please open a pull request._
 
-## :gear:  Setup
+## :gear: Setup
 
 #### Docker
 
@@ -37,17 +37,14 @@ docker exec -it seeker_app python crawl.py
 
 Navigate to `0.0.0.0:8000` to view results.
 
+## :computer: Job Boards
 
-## :computer:  Job Boards
-
-* [Django Gigs](https://djangogigs.com)
-* [Greenhouse](https://greenhouse.io)
-* [Indeed](https://indeed.com)
-* [Lever](https://lever.co)
-* [Python.org](https://www.python.org)
-* [Recruiter Box](https://recruiterbox.com)
-* [Remote Python](https://www.remotepython.com)
-* [Stackoverflow Jobs](https://stackoverflow.com/)
-* [Workable](https://workable.com)
-
- 
+-   [Django Gigs](https://djangogigs.com)
+-   [Greenhouse](https://greenhouse.io)
+-   [Indeed](https://indeed.com)
+-   [Lever](https://lever.co)
+-   [Python.org](https://www.python.org)
+-   [Recruiter Box](https://recruiterbox.com)
+-   [Remote Python](https://www.remotepython.com)
+-   [Stackoverflow Jobs](https://stackoverflow.com/)
+-   [Workable](https://workable.com)
