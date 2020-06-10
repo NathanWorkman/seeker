@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 networks:
   seeker:
 volumes:
@@ -7,7 +7,7 @@ services:
   postgres:
     container_name: seeker_postgres
     hostname: postgres
-    image: postgres:11.6
+    image: postgres:12.2-alpine
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
