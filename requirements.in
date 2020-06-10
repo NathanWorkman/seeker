@@ -1,30 +1,30 @@
 # Django framework
-Django==2.2.12
+Django==2.2.13
 # API
 djangorestframework==3.11.0
 # Admin
-django-grappelli==2.14.1
+django-grappelli==2.14.2
 # Testing / Debug
 django-debug-toolbar==2.2
-flake8==3.7.9
-pytest==5.4.1
+flake8==3.8.3
+pytest==5.4.3
 pytest-django==3.9.0  # Django Integration
-pytest-xdist==1.31.0  # run tests in parallel!
+pytest-xdist==1.32.0  # run tests in parallel!
 bandit==1.6.2 # Python Security Check
 # Database
-psycopg2-binary==2.8.4
+psycopg2-binary==2.8.5
 # Scheduler
 APScheduler==3.6.3
 django-apscheduler==0.3.0
 # Scrapy
-Scrapy==2.0.1
+Scrapy==2.1.0
 scrapy-djangoitem==1.1.1
 scrapy-rotating-proxies==0.6.2
 scrapyd==1.2.1
 # Filter queryset from url params
-django-filter==2.2.0
+django-filter==2.3.0
 # Pip Tools
-pip-tools==4.5.1
+pip-tools==5.2.1
 pur==5.3.0
 # Sane HTTP
 requests==2.23.0
@@ -32,16 +32,16 @@ requests==2.23.0
 django-compressor==2.4
 django-libsass==0.8
 # import export
-django-import-export==2.0.2
+django-import-export==2.2.0
 # Gunicorn
 gunicorn==20.0.4
-whitenoise==5.0.1
+whitenoise==5.1.0
 # local flavor
 django-localflavor==3.0.1
 # Python Excel
 openpyxl==3.0.3
-xlsxwriter==1.2.8
+xlsxwriter==1.2.9
 # NLP Library to get some insights
-spacy==2.2.4
+# spacy==2.2.4
 # PIL
-pillow==7.1.1
+pillow==7.1.2
